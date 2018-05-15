@@ -42,23 +42,23 @@ public class excluirFuncionario extends HttpServlet {
             if (funcionario.getNome() != null) {
                 request.getRequestDispatcher("excluirFuncResult.jsp").forward(request, response);
             } else {
-                request.getRequestDispatcher("naosei.jsp").forward(request, response);
+                request.getRequestDispatcher("excluirFunc.jsp").forward(request, response);
             }
         }
         //DELETAR CLIENTES
-        funcionario.setNome(request.getParameter("nomeFunc"));
-        funcionario.setCargo(request.getParameter("cargo"));
-        funcionario.setCpf(request.getParameter("cpfFunc"));
-        funcionario.setEndereco(request.getParameter("endereco"));
-        funcionario.setDtnascimento(request.getParameter("dataFunc"));
-        funcionario.setSexo(request.getParameter("sexo"));
+        //funcionario.setNome(request.getParameter("nomeFunc"));
+        //funcionario.setCargo(request.getParameter("cargo"));
+        //funcionario.setCpf(request.getParameter("cpfFunc"));
+        //funcionario.setEndereco(request.getParameter("endereco"));
+        //funcionario.setDtnascimento(request.getParameter("dataFunc"));
+        //funcionario.setSexo(request.getParameter("sexo"));
         
 
         funcionariodados.deletar(funcionario);
         if (funcionario.getNome() != null) {
-            request.getRequestDispatcher("excluirFuncResult.jsp").forward(request, response);
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("naosei.jsp").forward(request, response);
+            request.getRequestDispatcher("excluirFunc.jsp").forward(request, response);
         }
 
     }

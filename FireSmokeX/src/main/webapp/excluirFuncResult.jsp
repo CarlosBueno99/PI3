@@ -88,7 +88,7 @@
 
                     <div class="mb-3">
                         <div><label>Digite o CPF do funcionário</label></div>
-                        <form action="editarFunc" method="POST">
+                        <form action="editarFuncionario" method="POST">
                             <label for="pesquisa"></label>
                             <input type="search" name="pesquisa" >
                             <button type="submit">Pesquisar</button>

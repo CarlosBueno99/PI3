@@ -36,11 +36,11 @@ public class cadastroProduto extends HttpServlet {
         produto.setTipo(request.getParameter("tipo"));
         produto.setMarca(request.getParameter("marca"));
         produto.setSku(request.getParameter("sku"));
-        produto.setPrecovenda(request.getParameter("precoVenda"));
-        produto.setPrecocompra(request.getParameter("precoCompra"));
+        produto.setPrecovenda(request.getParameter("precovenda"));
+        produto.setPrecocompra(request.getParameter("precocompra"));
         ProdutoDAO dao = new ProdutoDAO();
         String msg = dao.inserir(produto);
-        request.getRequestDispatcher("cadastroProd.jsp").forward(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }
 

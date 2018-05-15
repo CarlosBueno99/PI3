@@ -39,29 +39,39 @@ public class excluirProduto extends HttpServlet {
         if (!pesquisa.equalsIgnoreCase("") && pesquisa != null) {
             produto = new Produto();
             produto = produtodados.pesquisar(pesquisa);
-            request.setAttribute("produto", produto);
-            if (produto.getNome() != null) {
-                request.getRequestDispatcher("excluirProdResult.jsp").forward(request, response);
-            } else {
-                request.getRequestDispatcher("naosei.jsp").forward(request, response);
-            }
-        }
-        //DELETAR PRODUTOS
-        produto.setNome(request.getParameter("nomeProd"));
-        produto.setTipo(request.getParameter("tipo"));
-        produto.setMarca(request.getParameter("marca"));
-        produto.setSku(request.getParameter("sku"));
-        produto.setPrecovenda(request.getParameter("precoVenda"));
-        produto.setPrecocompra(request.getParameter("precoCompra"));
-        
+           // System.out.println("TESTE 1" + produto.getNome());
 
-        produtodados.deletar(produto);
-        if (produto.getNome() != null) {
-            request.getRequestDispatcher("excluirProdResult.jsp").forward(request, response);
-        } else {
-            request.getRequestDispatcher("naosei.jsp").forward(request, response);
-        }
+          //  if (produto != null) {
+                request.setAttribute("produto", produto);
+                if (produto.getNome() != null) {
+                    request.getRequestDispatcher("excluirProdResult.jsp").forward(request, response);
+                } else {
+                    request.getRequestDispatcher("excluiProd.jsp").forward(request, response);
+                }
 
+                System.out.println("TESTE 2" + request.getParameter("sku"));
+
+                //DELETAR PRODUTOS
+                //produto.setNome(request.getParameter("nomeProd"));
+                //produto.setTipo(request.getParameter("tipo"));
+                //produto.setMarca(request.getParameter("marca"));
+                //produto.setSku(request.getParameter("sku"));
+                //produto.setPrecovenda(request.getParameter("precovenda"));
+                //produto.setPrecocompra(request.getParameter("precocompra"));
+
+                
+                produtodados.deletar(produto);
+                if (produto.getNome() != null) {
+                    request.getRequestDispatcher("home.jsp").forward(request, response);
+                } else {
+                    request.getRequestDispatcher("excluirProd.jsp").forward(request, response);
+                }
+
+                
+            //} else {
+              //  request.getRequestDispatcher("naosei.jsp").forward(request, response);
+           // }
+        }
     }
 
     @Override

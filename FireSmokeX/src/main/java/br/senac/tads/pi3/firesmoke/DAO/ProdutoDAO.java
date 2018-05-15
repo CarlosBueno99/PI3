@@ -71,19 +71,22 @@ public class ProdutoDAO {
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 produto.setNome(rs.getString("nome"));
+                produto.setSku(rs.getString("sku"));
                 produto.setTipo(rs.getString("tipo"));
                 produto.setMarca(rs.getString("marca"));
                 produto.setPrecocompra(rs.getString("precocompra"));
                 produto.setPrecovenda(rs.getString("precovenda"));
-                System.out.println(produto.getNome());
+                System.out.println("TESTE 4 "+ sql);
 
             }
             rs.close();
             stmt.close();
+            return produto;
+            
         } catch (SQLException e) {
-
+            return null; 
         }
-        return produto;
+        
     }
 
     public void consulta(String pesquisa) {
@@ -119,6 +122,7 @@ public class ProdutoDAO {
             stmt.setString(1, produto.getSku());
             stmt.execute();
             stmt.close();
+            System.out.println("TESTE 5 " + produto.getSku());
             System.out.println("Produto " + produto.getNome() + " excluído com sucesso");
         } catch (SQLException e) {
             System.out.println("Produto " + produto.getNome() + "não foi excluído com sucesso" + e.getMessage());

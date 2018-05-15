@@ -43,7 +43,7 @@ public class excluirCliente extends HttpServlet {
             if (cliente.getNome() != null) {
                 request.getRequestDispatcher("excluirClienteResult.jsp").forward(request, response);
             } else {
-                request.getRequestDispatcher("naosei.jsp").forward(request, response);
+                request.getRequestDispatcher("excluirCliente.jsp").forward(request, response);
             }
         }
         //DELETAR CLIENTES
@@ -57,9 +57,9 @@ public class excluirCliente extends HttpServlet {
 
         clientedados.deletar(cliente);
         if (cliente.getNome() != null) {
-            request.getRequestDispatcher("excluirClienteResult.jsp").forward(request, response);
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("naosei.jsp").forward(request, response);
+            request.getRequestDispatcher("excluirCliente.jsp").forward(request, response);
         }
 
     }

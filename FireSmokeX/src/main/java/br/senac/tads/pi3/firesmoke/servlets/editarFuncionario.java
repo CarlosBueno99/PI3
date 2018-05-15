@@ -32,21 +32,21 @@ public class editarFuncionario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //PESQUISAR CLIENTES
+        //PESQUISAR FUNCIONÁRIOS
         String pesquisa = request.getParameter("pesquisa");
 
         FuncionarioDAO funcionariodados = new FuncionarioDAO();
-        if (!pesquisa.equalsIgnoreCase("") && pesquisa != null) {
+        if (pesquisa != null && !pesquisa.equalsIgnoreCase("")) {
             funcionario = new Funcionario();
             funcionario = funcionariodados.pesquisar(pesquisa);
             request.setAttribute("funcionario", funcionario);
             if (funcionario.getNome() != null) {
                 request.getRequestDispatcher("editarFuncResult.jsp").forward(request, response);
             } else {
-                request.getRequestDispatcher("naosei.jsp").forward(request, response);
+                request.getRequestDispatcher("editarFunc.jsp").forward(request, response);
             }
         }
-        //ALTERTAR CLIENTES
+        //ALTERTAR FUNCIONÁRIOS
         funcionario.setNome(request.getParameter("nomeFunc"));
         funcionario.setCargo(request.getParameter("cargo"));
         funcionario.setCpf(request.getParameter("cpfFunc"));
@@ -56,9 +56,9 @@ public class editarFuncionario extends HttpServlet {
 
         funcionariodados.alterar(funcionario);
         if (funcionario.getNome() != null) {
-            request.getRequestDispatcher("editarFuncResult.jsp").forward(request, response);
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("naosei.jsp").forward(request, response);
+            request.getRequestDispatcher("editarFunc.jsp").forward(request, response);
         }
 
     }

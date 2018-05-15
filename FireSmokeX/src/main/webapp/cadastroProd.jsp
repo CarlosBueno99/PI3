@@ -125,7 +125,7 @@
 
                     <div class="mb-3">
                         <label>Preço de Venda</label>
-                        <input type="money" name="precoVenda" class="form-control" >
+                        <input type="money" name="precovenda" class="form-control" >
                         <div class="invalid-feedback">
                             Preço de venda.
                         </div>
@@ -133,7 +133,7 @@
                     
                     <div class="mb-3">
                         <label>Preço de Compra</label>
-                        <input type="money" name="precoCompra" class="form-control">
+                        <input type="money" name="precocompra" class="form-control">
                         <div class="invalid-feedback">
                             Preço de Compra.
                         </div>

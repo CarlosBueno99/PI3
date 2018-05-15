@@ -42,7 +42,7 @@ public class cadastroCliente extends HttpServlet {
         cliente.setDtnascimento(request.getParameter("dtnascimento"));
         ClienteDAO dao = new ClienteDAO();
         String msg = dao.inserir(cliente);
-        request.getRequestDispatcher("clienteCadastrado.jsp").forward(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }
 

@@ -41,7 +41,7 @@ public class editarProduto extends HttpServlet {
             if (produto.getNome() != null) {
                 request.getRequestDispatcher("editarProdResult.jsp").forward(request, response);
             } else {
-                request.getRequestDispatcher("naosei.jsp").forward(request, response);
+                request.getRequestDispatcher("editarProd.jsp").forward(request, response);
             }
         }
         //ALTERTAR PRODUTOS
@@ -54,9 +54,9 @@ public class editarProduto extends HttpServlet {
         
         produtodados.alterar(produto);
         if (produto.getNome() != null) {
-            request.getRequestDispatcher("editarProdResult.jsp").forward(request, response);
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("naosei.jsp").forward(request, response);
+            request.getRequestDispatcher("editarProd.jsp").forward(request, response);
         }
 
     }

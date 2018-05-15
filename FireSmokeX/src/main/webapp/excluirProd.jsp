@@ -108,6 +108,14 @@
                                     Nome do produto.
                                 </div>
                             </div>
+                            
+                            <div class="mb-3">
+                                <label>SKU</label>
+                                <input type="text" name="sku" class="form-control" >
+                                <div class="invalid-feedback">
+                                    Sku do produto.
+                                </div>
+                            </div>
 
 
                             <div class="mb-3">
@@ -130,7 +138,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Venda</label>
-                                <input type="money" name="precoVenda" class="form-control">
+                                <input type="text" name="precovenda" class="form-control">
                                 <div class="invalid-feedback">
                                     Preço de venda.
                                 </div>
@@ -138,7 +146,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Compra</label>
-                                <input type="money" name="precoCompra" class="form-control">
+                                <input type="text" name="precocompra" class="form-control">
                                 <div class="invalid-feedback">
                                     Preço de Compra.
                                 </div>

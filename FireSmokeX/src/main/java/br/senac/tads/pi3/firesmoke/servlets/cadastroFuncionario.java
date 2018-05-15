@@ -41,7 +41,7 @@ public class cadastroFuncionario extends HttpServlet {
         funcionario.setSexo(request.getParameter("sexo"));
         FuncionarioDAO dao = new FuncionarioDAO();
         String msg = dao.inserir(funcionario);
-        request.getRequestDispatcher("cadastroFunc.jsp").forward(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }
 

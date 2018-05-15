@@ -45,7 +45,7 @@ public class editarCliente extends HttpServlet {
             if (cliente.getNome() != null) {
                 request.getRequestDispatcher("editarClienteResult.jsp").forward(request, response);
             } else {
-                request.getRequestDispatcher("naosei.jsp").forward(request, response);
+                request.getRequestDispatcher("editarCliente.jsp").forward(request, response);
             }
         }
         //ALTERTAR CLIENTES
@@ -57,9 +57,9 @@ public class editarCliente extends HttpServlet {
         
         clientedados.alterar(cliente);
         if (cliente.getNome() != null) {
-            request.getRequestDispatcher("editarClienteResult.jsp").forward(request, response);
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("naosei.jsp").forward(request, response);
+            request.getRequestDispatcher("editarCliente.jsp").forward(request, response);
         }
 
     }
