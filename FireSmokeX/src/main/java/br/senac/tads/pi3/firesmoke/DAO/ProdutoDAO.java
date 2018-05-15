@@ -29,8 +29,8 @@ public class ProdutoDAO {
             stmt.setString(2, produto.getTipo());
             stmt.setString(3, produto.getMarca());
             stmt.setString(4, produto.getSku());
-            stmt.setDouble(5, produto.getPrecovenda());
-            stmt.setDouble(6, produto.getPrecocompra());
+            stmt.setString(5, produto.getPrecovenda());
+            stmt.setString(6, produto.getPrecocompra());
             stmt.execute();
             stmt.close();
             message = "Produto " + produto.getNome() + " criado com sucesso";
@@ -48,8 +48,8 @@ public class ProdutoDAO {
             stmt.setString(1, produto.getNome());
             stmt.setString(2, produto.getTipo());
             stmt.setString(3, produto.getMarca());
-            stmt.setDouble(4, produto.getPrecovenda());
-            stmt.setDouble(5, produto.getPrecocompra());
+            stmt.setString(4, produto.getPrecovenda());
+            stmt.setString(5, produto.getPrecocompra());
             stmt.setString(6, produto.getSku());
             stmt.execute();
             stmt.close();
@@ -73,8 +73,8 @@ public class ProdutoDAO {
                 produto.setNome(rs.getString("nome"));
                 produto.setTipo(rs.getString("tipo"));
                 produto.setMarca(rs.getString("marca"));
-                produto.setPrecocompra(rs.getDouble("precocompra"));
-                produto.setPrecovenda(rs.getDouble("precovenda"));
+                produto.setPrecocompra(rs.getString("precocompra"));
+                produto.setPrecovenda(rs.getString("precovenda"));
                 System.out.println(produto.getNome());
 
             }
@@ -99,8 +99,8 @@ public class ProdutoDAO {
                 produto.setTipo(rs.getString("tipo"));
                 produto.setMarca(rs.getString("marca"));
                 produto.setSku(rs.getString("sku"));
-                produto.setPrecocompra(rs.getDouble("precocompra"));
-                produto.setPrecovenda(rs.getDouble("precovenda"));
+                produto.setPrecocompra(rs.getString("precocompra"));
+                produto.setPrecovenda(rs.getString("precovenda"));
             }
             rs.close();
             stmt.close();

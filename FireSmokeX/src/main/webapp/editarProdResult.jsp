@@ -30,7 +30,7 @@
                     <div id="myDropdown" class="dropdown-content">
                         <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
                         <a href="editarCliente.jsp">Editar Cliente</a>
-                        <a href="listaCliente.jsp">Excluir Cliente</a>
+                        <a href="excluirCliente.jsp">Excluir Cliente</a>
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@
                     <div id="myDropdown1" class="dropdown-content">
                         <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
                         <a href="editarFunc.jsp">Editar Funcionário</a>
-                        <a href="listaFunc.jsp">Excluir Funcionário</a>
+                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -55,7 +55,7 @@
                     <div id="myDropdown3" class="dropdown-content">
                         <a href="cadastroProd.jsp">Cadastrar Produto</a>
                         <a href="editarProd.jsp">Editar Produto</a>
-                        <a href="listaProd.jsp">Excluir Produto</a>
+                        <a href="excluirProd.jsp">Excluir Produto</a>
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@
 
                     <div class="mb-3">
                         <div><label>Digite o SKU do produto</label></div>
-                        <form action="editarProd" method="POST">
+                        <form action="editarProduto" method="POST">
                             <label for="pesquisa"></label>
                             <input type="search" name="pesquisa" >
                             <button type="submit">Pesquisar</button>
@@ -129,7 +129,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Venda</label>
-                                <input value="${produto.precovenda}" type="text" name="precoVenda" class="form-control" required="true">
+                                <input value="${produto.precovenda}" type="money" name="precoVenda" class="form-control" required="true">
                                 <div class="invalid-feedback">
                                     Preço de venda.
                                 </div>
@@ -137,7 +137,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Compra</label>
-                                <input value="${produto.precocompra}" type="text" name="precoCompra" class="form-control" required="true">
+                                <input value="${produto.precocompra}" type="money" name="precoCompra" class="form-control" required="true">
                                 <div class="invalid-feedback">
                                     Preço de Compra.
                                 </div>

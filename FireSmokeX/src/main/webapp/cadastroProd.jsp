@@ -89,7 +89,7 @@
 
                     <div class="mb-3">
                         <label>Nome</label>
-                        <input type="text" name="nomeProd" class="form-control" required="true" >
+                        <input type="text" name="nomeProd" class="form-control">
                         <div class="invalid-feedback">
                             Nome do produto.
                         </div>
@@ -98,7 +98,7 @@
 
                     <div class="mb-3">
                         <label>Tipo</label>
-                        <input type="text" name="tipo" class="form-control" required="true">
+                        <input type="text" name="tipo" class="form-control">
                         <div class="invalid-feedback">
                             Tipo.
                         </div>
@@ -107,7 +107,7 @@
 
                     <div class="mb-3">
                         <label>Marca</label>
-                        <input type="text" name="marca" class="form-control" required="true">
+                        <input type="text" name="marca" class="form-control">
                         <div class="invalid-feedback">
                             Marca.
                         </div>
@@ -125,7 +125,7 @@
 
                     <div class="mb-3">
                         <label>Preço de Venda</label>
-                        <input type="text" name="precoVenda" class="form-control" required="true">
+                        <input type="money" name="precoVenda" class="form-control" >
                         <div class="invalid-feedback">
                             Preço de venda.
                         </div>
@@ -133,7 +133,7 @@
                     
                     <div class="mb-3">
                         <label>Preço de Compra</label>
-                        <input type="text" name="precoCompra" class="form-control" required="true">
+                        <input type="money" name="precoCompra" class="form-control">
                         <div class="invalid-feedback">
                             Preço de Compra.
                         </div>

@@ -5,8 +5,8 @@
  */
 package br.senac.tads.pi3.firesmoke.servlets;
 
-import br.senac.tads.pi3.firesmoke.DAO.ProdutoDAO;
-import br.senac.tads.pi3.firesmoke.Model.Produto;
+import br.senac.tads.pi3.firesmoke.DAO.FuncionarioDAO;
+import br.senac.tads.pi3.firesmoke.Model.Funcionario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,15 +19,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Guilherme Feitosa
  */
-@WebServlet(name = "excluirProduto", urlPatterns = {"/excluirProduto"})
-public class excluirProduto extends HttpServlet {
-
-    @Override
+@WebServlet(name = "excluirFuncionario", urlPatterns = {"/excluirFuncionario"})
+public class excluirFuncionario extends HttpServlet {
+ @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
 
-    Produto produto;
+    Funcionario funcionario;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -35,29 +34,29 @@ public class excluirProduto extends HttpServlet {
         //PESQUISAR PRODUTOS
         String pesquisa = request.getParameter("pesquisa");
 
-        ProdutoDAO produtodados = new ProdutoDAO();
+        FuncionarioDAO funcionariodados = new FuncionarioDAO();
         if (!pesquisa.equalsIgnoreCase("") && pesquisa != null) {
-            produto = new Produto();
-            produto = produtodados.pesquisar(pesquisa);
-            request.setAttribute("produto", produto);
-            if (produto.getNome() != null) {
-                request.getRequestDispatcher("excluirProdResult.jsp").forward(request, response);
+            funcionario = new Funcionario();
+            funcionario = funcionariodados.pesquisar(pesquisa);
+            request.setAttribute("funcionario", funcionario);
+            if (funcionario.getNome() != null) {
+                request.getRequestDispatcher("excluirFuncResult.jsp").forward(request, response);
             } else {
                 request.getRequestDispatcher("naosei.jsp").forward(request, response);
             }
         }
-        //DELETAR PRODUTOS
-        produto.setNome(request.getParameter("nomeProd"));
-        produto.setTipo(request.getParameter("tipo"));
-        produto.setMarca(request.getParameter("marca"));
-        produto.setSku(request.getParameter("sku"));
-        produto.setPrecovenda(request.getParameter("precoVenda"));
-        produto.setPrecocompra(request.getParameter("precoCompra"));
+        //DELETAR CLIENTES
+        funcionario.setNome(request.getParameter("nomeFunc"));
+        funcionario.setCargo(request.getParameter("cargo"));
+        funcionario.setCpf(request.getParameter("cpfFunc"));
+        funcionario.setEndereco(request.getParameter("endereco"));
+        funcionario.setDtnascimento(request.getParameter("dataFunc"));
+        funcionario.setSexo(request.getParameter("sexo"));
         
 
-        produtodados.deletar(produto);
-        if (produto.getNome() != null) {
-            request.getRequestDispatcher("excluirProdResult.jsp").forward(request, response);
+        funcionariodados.deletar(funcionario);
+        if (funcionario.getNome() != null) {
+            request.getRequestDispatcher("excluirFuncResult.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("naosei.jsp").forward(request, response);
         }

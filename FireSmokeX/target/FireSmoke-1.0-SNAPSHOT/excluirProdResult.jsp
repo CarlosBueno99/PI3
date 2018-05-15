@@ -18,8 +18,6 @@
 
     <body>
 
-        <form action="excluirProduto" method="POST">
-
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                 <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
 
@@ -68,7 +66,7 @@
                 </div>
 
             </nav>
-        </body>
+       
 
             <main class="bg-light">
                 <div class="col-md-8 order-md-1">
@@ -103,7 +101,7 @@
 
                             <div class="mb-3">
                                 <label>Nome</label>
-                                <input type="text" name="nomeProd" class="form-control" >
+                                <input value="${produto.nome}" type="text" name="nomeProd" class="form-control" >
                                 <div class="invalid-feedback">
                                     Nome do produto.
                                 </div>
@@ -112,7 +110,7 @@
 
                             <div class="mb-3">
                                 <label>Tipo</label>
-                                <input type="text" name="tipo" class="form-control">
+                                <input value="${produto.tipo}" type="text" name="tipo" class="form-control">
                                 <div class="invalid-feedback">
                                     Tipo.
                                 </div>
@@ -121,7 +119,7 @@
 
                             <div class="mb-3">
                                 <label>Marca</label>
-                                <input type="text" name="marca" class="form-control" >
+                                <input value="${produto.marca}" type="text" name="marca" class="form-control" >
                                 <div class="invalid-feedback">
                                     Marca.
                                 </div>
@@ -130,7 +128,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Venda</label>
-                                <input type="money" name="precoVenda" class="form-control">
+                                <input value="${produto.precovenda}" type="money" name="precoVenda" class="form-control">
                                 <div class="invalid-feedback">
                                     Preço de venda.
                                 </div>
@@ -138,7 +136,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Compra</label>
-                                <input type="money" name="precoCompra" class="form-control">
+                                <input value="${produto.precocompra}" type="money" name="precoCompra" class="form-control">
                                 <div class="invalid-feedback">
                                     Preço de Compra.
                                 </div>

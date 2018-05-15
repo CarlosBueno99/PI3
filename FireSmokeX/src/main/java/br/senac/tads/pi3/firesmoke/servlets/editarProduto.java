@@ -30,7 +30,7 @@ public class editarProduto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //PESQUISAR CLIENTES
+        //PESQUISAR PRODUTOS
         String pesquisa = request.getParameter("pesquisa");
         
         ProdutoDAO produtodados = new ProdutoDAO();
@@ -39,18 +39,18 @@ public class editarProduto extends HttpServlet {
             produto = produtodados.pesquisar(pesquisa);
             request.setAttribute("produto", produto);
             if (produto.getNome() != null) {
-                request.getRequestDispatcher("editarProd.jsp").forward(request, response);
+                request.getRequestDispatcher("editarProdResult.jsp").forward(request, response);
             } else {
                 request.getRequestDispatcher("naosei.jsp").forward(request, response);
             }
         }
-        //ALTERTAR CLIENTES
+        //ALTERTAR PRODUTOS
         produto.setNome(request.getParameter("nomeProd"));
         produto.setTipo(request.getParameter("tipo"));
         produto.setMarca(request.getParameter("marca"));
         produto.setSku(request.getParameter("sku"));
-        produto.setPrecocompra(Double.parseDouble(request.getParameter("precocompra")));
-        produto.setPrecovenda(Double.parseDouble(request.getParameter("precovenda")));
+        produto.setPrecocompra(request.getParameter("precocompra"));
+        produto.setPrecovenda(request.getParameter("precovenda"));
         
         produtodados.alterar(produto);
         if (produto.getNome() != null) {

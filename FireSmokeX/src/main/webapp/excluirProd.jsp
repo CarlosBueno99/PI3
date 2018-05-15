@@ -81,7 +81,7 @@
 
                     </div>
                     <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Editar Produto</h4>
+                        <h4 class="mb-3">Excluir Produto</h4>
                     </div>
 
                     <br>
@@ -130,7 +130,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Venda</label>
-                                <input type="text" name="precoVenda" class="form-control">
+                                <input type="money" name="precoVenda" class="form-control">
                                 <div class="invalid-feedback">
                                     Preço de venda.
                                 </div>
@@ -138,7 +138,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Compra</label>
-                                <input type="text" name="precoCompra" class="form-control">
+                                <input type="money" name="precoCompra" class="form-control">
                                 <div class="invalid-feedback">
                                     Preço de Compra.
                                 </div>

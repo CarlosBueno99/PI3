@@ -42,7 +42,7 @@ public class FuncionarioDAO {
 
     public void alterar(Funcionario funcionario) {
         try {
-            String sql = "UPDATE tbfuncionarios SET nome= ?, cargo= ?, endereco= ?, dtnascimento= ? WHERE tbclientes.cpf = ?";
+            String sql = "UPDATE tbfuncionarios SET nome= ?, cargo= ?, endereco= ?, dtnascimento= ? WHERE tbfuncionarios.cpf = ?";
             conexao = ModuloConexao.conector();
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, funcionario.getNome());
@@ -69,11 +69,11 @@ public class FuncionarioDAO {
             String sql = "SELECT * FROM tbfuncionarios where cpf = '" + pesquisa + "'";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                funcionario.setNome(rs.getString("nome"));
-                funcionario.setCpf(rs.getString("cpf"));
+                funcionario.setNome(rs.getString("nomeFunc"));
+                funcionario.setCpf(rs.getString("cpfFunc"));
                 funcionario.setCargo(rs.getString("cargo"));
                 funcionario.setEndereco(rs.getString("endereco"));
-                funcionario.setDtnascimento(rs.getString("dtnascimento"));
+                funcionario.setDtnascimento(rs.getString("dataFunc"));
                 System.out.println(funcionario.getNome());
 
             }

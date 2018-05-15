@@ -14,8 +14,8 @@ public class Produto {
     private String tipo;
     private String marca;
     private String sku;
-    private double precovenda;
-    private double precocompra;
+    private String precovenda;
+    private String precocompra;
 
     public String getNome() {
         return nome;
@@ -49,20 +49,22 @@ public class Produto {
         this.sku = sku;
     }
 
-    public double getPrecovenda() {
+    public String getPrecovenda() {
         return precovenda;
     }
 
-    public void setPrecovenda(double precovenda) {
+    public void setPrecovenda(String precovenda) {
         this.precovenda = precovenda;
     }
 
-    public double getPrecocompra() {
+    public String getPrecocompra() {
         return precocompra;
     }
 
-    public void setPrecocompra(double precocompra) {
+    public void setPrecocompra(String precocompra) {
         this.precocompra = precocompra;
     }
+
+
     
 }

@@ -18,7 +18,7 @@
 
     <body>
 
-        <form action="excluirProduto" method="POST">
+        <form action="editarFuncionario" method="POST">
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                 <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
@@ -68,7 +68,6 @@
                 </div>
 
             </nav>
-        </body>
 
             <main class="bg-light">
                 <div class="col-md-8 order-md-1">
@@ -81,21 +80,21 @@
 
                     </div>
                     <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Excluir Produto</h4>
+                        <h4 class="mb-3">Editar Funcionário</h4>
                     </div>
 
                     <br>
 
 
                     <div class="mb-3">
-                        <div><label>Digite o SKU do produto</label></div>
-                        <form action="excluirProduto" method="POST">
+                        <div><label>Digite o CPF do funcionário</label></div>
+                        <form action="editarFunc" method="POST">
                             <label for="pesquisa"></label>
                             <input type="search" name="pesquisa" >
                             <button type="submit">Pesquisar</button>
 
                             <div class="invalid-feedback">
-                                Por favor, insira um SKU válido.
+                                Por favor, insira um CPF válido.
                             </div>
 
                             <br>
@@ -103,44 +102,56 @@
 
                             <div class="mb-3">
                                 <label>Nome</label>
-                                <input type="text" name="nomeProd" class="form-control" >
+                                <input value= "${funcionario.nome}" type="text" name="nomeFunc" class="form-control" >
                                 <div class="invalid-feedback">
-                                    Nome do produto.
+                                    Por favor, coloque o nome.
                                 </div>
                             </div>
 
 
                             <div class="mb-3">
-                                <label>Tipo</label>
-                                <input type="text" name="tipo" class="form-control">
+                                <label>Data de Nascimento</label>
+                                <input value="${funcionario.dtnascimento}" type="text" name="dataFunc" class="form-control" >
                                 <div class="invalid-feedback">
-                                    Tipo.
+                                    Por favor, coloque a data de nascimento.
                                 </div>
                             </div>
 
 
                             <div class="mb-3">
-                                <label>Marca</label>
-                                <input type="text" name="marca" class="form-control" >
+                                <label>CPF</label>
+                                <input value="${funcionario.cpf}" type="text" name="cpfFunc" class="form-control">
                                 <div class="invalid-feedback">
-                                    Marca.
+                                    Por favor, coloque o CPF.
                                 </div>
                             </div>
 
 
                             <div class="mb-3">
-                                <label>Preço de Venda</label>
-                                <input type="money" name="precoVenda" class="form-control">
+                                <label>Cargo</label>
+                                <input value="${funcionario.cargo}" type="text" name="cargo" class="form-control">
                                 <div class="invalid-feedback">
-                                    Preço de venda.
+                                    Por favor, coloque o cargo.
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label>Endereço</label>
+                                <input value="${funcionario.endereco}" type="text" name="endereco" class="form-control">
+                                <div class="invalid-feedback">
+                                    Por favor, coloque o endereço.
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <label>Preço de Compra</label>
-                                <input type="money" name="precoCompra" class="form-control">
+                                <label>Sexo</label>
+                                <br>
+                                <input type="radio" name="sexo" value="h" checked> Masculino
+                                &emsp;
+                                <input type="radio" name="sexo" value="m"> Feminino
                                 <div class="invalid-feedback">
-                                    Preço de Compra.
+                                    Por favor, coloque o sexo.
                                 </div>
                             </div>
 
@@ -166,26 +177,26 @@
             <script src="../../../../dist/js/bootstrap.min.js"></script>
             <script src="../../../../assets/js/vendor/holder.min.js"></script>
             <script>
-                        // Example starter JavaScript for disabling form submissions if there are invalid fields
-                        (function () {
-                            'use strict';
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                'use strict';
 
-                            window.addEventListener('load', function () {
-                                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                                var forms = document.getElementsByClassName('needs-validation');
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
 
-                                // Loop over them and prevent submission
-                                var validation = Array.prototype.filter.call(forms, function (form) {
-                                    form.addEventListener('submit', function (event) {
-                                        if (form.checkValidity() === false) {
-                                            event.preventDefault();
-                                            event.stopPropagation();
-                                        }
-                                        form.classList.add('was-validated');
-                                    }, false);
-                                });
-                            }, false);
-                        })();
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
             </script>
 
     </body>

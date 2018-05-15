@@ -38,7 +38,7 @@
                     <div id="myDropdown1" class="dropdown-content">
                         <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
                         <a href="editarFunc.jsp">Editar Funcionário</a>
-                        <a href="listaFunc.jsp">Excluir Funcionário</a>
+                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -54,7 +54,7 @@
                         <div id="myDropdown3" class="dropdown-content">
                             <a href="cadastroProd.jsp">Cadastrar Produto</a>
                             <a href="editarProd.jsp">Editar Produto</a>
-                            <a href="listaProd.jsp">Excluir Produto</a>
+                            <a href="excluirProd.jsp">Excluir Produto</a>
                         </div>
                     </div>
 
