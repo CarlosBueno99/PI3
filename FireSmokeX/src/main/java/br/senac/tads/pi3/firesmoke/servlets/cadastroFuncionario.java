@@ -35,9 +35,9 @@ public class cadastroFuncionario extends HttpServlet {
 
         funcionario.setNome(request.getParameter("nomeFunc"));
         funcionario.setCargo(request.getParameter("cargo"));
-        funcionario.setCpf(request.getParameter("cpf"));
+        funcionario.setCpf(request.getParameter("cpfFunc"));
         funcionario.setEndereco(request.getParameter("endereco"));
-        funcionario.setDtnascimento(request.getParameter("dtnascimento"));
+        funcionario.setDtnascimento(request.getParameter("dataFunc"));
         funcionario.setSexo(request.getParameter("sexo"));
         FuncionarioDAO dao = new FuncionarioDAO();
         String msg = dao.inserir(funcionario);

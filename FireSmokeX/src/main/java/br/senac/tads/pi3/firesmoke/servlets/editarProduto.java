@@ -39,7 +39,7 @@ public class editarProduto extends HttpServlet {
             produto = produtodados.pesquisar(pesquisa);
             request.setAttribute("produto", produto);
             if (produto.getNome() != null) {
-                request.getRequestDispatcher("editarProdResult.jsp").forward(request, response);
+                request.getRequestDispatcher("editarProd.jsp").forward(request, response);
             } else {
                 request.getRequestDispatcher("naosei.jsp").forward(request, response);
             }
