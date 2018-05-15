@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 import br.senac.tads.pi3.firesmoke.DAO.ModuloConexao;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,12 +40,9 @@ public class cadastroCliente extends HttpServlet {
         cliente.setCpf(request.getParameter("cpf"));
         cliente.setFone(request.getParameter("fone"));
         cliente.setDtnascimento(request.getParameter("dtnascimento"));
-        cliente.setEndereco(request.getParameter("endereco"));
-        cliente.setSexo(request.getParameter("sexo"));
         ClienteDAO dao = new ClienteDAO();
         String msg = dao.inserir(cliente);
-        request.getRequestDispatcher("clienteCadastrado.jsp").forward(request, response);
-        System.out.println("Cliente " + cliente.getNome() + " cadastrado com sucesso!");
+        request.getRequestDispatcher("cadastroCliente.jsp").forward(request, response);
 
     }
 

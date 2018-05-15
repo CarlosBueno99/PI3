@@ -21,32 +21,28 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "home", urlPatterns = {"/home"})
 public class login extends HttpServlet {
-   
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         
-        
+
     }
 
-  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-       
-        
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
-        if(username.equals("guimfeitosa@hotmail.com") && password.equals("123")){
+
+        if (username.equals("guimfeitosa@hotmail.com") && password.equals("123")) {
             request.getRequestDispatcher("home.jsp").forward(request, response);
         }
+
         else {
             System.out.println("Usuário não encontrado");
         }
-            
-      
+
     }
 
     @Override

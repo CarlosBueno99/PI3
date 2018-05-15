@@ -6,7 +6,6 @@
 package br.senac.tads.pi3.firesmoke.servlets;
 
 import br.senac.tads.pi3.firesmoke.DAO.ClienteDAO;
-import br.senac.tads.pi3.firesmoke.DAO.VerificaBanco;
 import br.senac.tads.pi3.firesmoke.Model.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -30,25 +29,23 @@ public class editarCliente extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
-
+    
     Cliente cliente;
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //PESQUISAR CLIENTES
         String pesquisa = request.getParameter("pesquisa");
-
+        
         ClienteDAO clientedados = new ClienteDAO();
-        VerificaBanco verificacao = new VerificaBanco();
-        if (!pesquisa.equalsIgnoreCase("") && pesquisa != null) {
+        if( !pesquisa.equalsIgnoreCase("") && pesquisa != null ){
             cliente = new Cliente();
             cliente = clientedados.pesquisar(pesquisa);
             request.setAttribute("cliente", cliente);
             if (cliente.getNome() != null) {
                 request.getRequestDispatcher("editarClienteResult.jsp").forward(request, response);
             } else {
-                request.getRequestDispatcher("editarClienteResult.jsp").forward(request, response);
+                request.getRequestDispatcher("naosei.jsp").forward(request, response);
             }
         }
         //ALTERTAR CLIENTES
@@ -57,9 +54,7 @@ public class editarCliente extends HttpServlet {
         cliente.setCpf(request.getParameter("cpf"));
         cliente.setFone(request.getParameter("fone"));
         cliente.setDtnascimento(request.getParameter("dtnascimento"));
-        cliente.setEndereco(request.getParameter("endereco"));
-        cliente.setSexo(request.getParameter("sexo"));
-
+        
         clientedados.alterar(cliente);
         if (cliente.getNome() != null) {
             request.getRequestDispatcher("editarClienteResult.jsp").forward(request, response);

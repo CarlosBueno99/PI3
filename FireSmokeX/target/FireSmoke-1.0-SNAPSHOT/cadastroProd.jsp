@@ -13,140 +13,179 @@
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/dropdown.css" rel="stylesheet">
-        
-        <!-- Bootstrap core CSS -->
-        <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-        <link href="form-validation.css" rel="stylesheet">
 
     </head>
 
     <body>
 
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
-            
-            <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn">Cliente</button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <a href="cadastroCliente.jsp">Cadastrar cliente</a>
-                            <a href="editarCliente.jsp">Editar cliente</a>
-                            <a href="listaCliente.jsp">Lista de cliente</a>
-                        </div>
-                    </div>
+        <form action="cadastroProduto" method="POST">
 
-                    <div class="dropdown">
-                        <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
-                        <div id="myDropdown1" class="dropdown-content">
-                            <a href="cadastroFunc.jsp">Cadastrar funcionário</a>
-                            <a href="editarFunc.jsp">Editar funcionário</a>
-                            <a href="listaFunc.jsp">Lista de funcionários</a>
-                        </div>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
+
+                </button>
+
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Cliente</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
+                        <a href="editarCliente.jsp">Editar Cliente</a>
+                        <a href="excluirCliente.jsp">Excluir Cliente</a>
                     </div>
-                    <div class="dropdown">
-                        <button onclick="myFunction2()" class="dropbtn">Comanda</button>
-                        <div id="myDropdown2" class="dropdown-content">
-                            <a href="cadastroComanda.jsp">Cadastrar comanda</a>
-                            <a href="inserirComanda.jsp">Inserir</a>
-                        </div>
+                </div>
+
+                <div class="dropdown">
+                    <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
+                    <div id="myDropdown1" class="dropdown-content">
+                        <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
+                        <a href="editarFunc.jsp">Editar Funcionário</a>
+                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
                     </div>
-            
-            <div class="dropdown">
+                </div>
+                <div class="dropdown">
+                    <button onclick="myFunction2()" class="dropbtn">Comanda</button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="cadastroComanda.jsp">Cadastrar comanda</a>
+                        <a href="inserirComanda.jsp">Inserir</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
                         <button onclick="myFunction3()" class="dropbtn">Produto</button>
                         <div id="myDropdown3" class="dropdown-content">
-                            <a href="cadastroProd.jsp">Cadastrar produto</a>
-                            <a href="editarProd.jsp">Editar produto</a>
-                            <a href="listaProd.jsp">Lista de produtos</a>
+                            <a href="cadastroProd.jsp">Cadastrar Produto</a>
+                            <a href="editarProd.jsp">Editar Produto</a>
+                            <a href="excluirProd.jsp">Excluir Produto</a>
                         </div>
                     </div>
-            
-                    <div class="dropdown">
-                        <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
+
+                <div class="dropdown">
+                    <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
+                </div>
+
+                <div class="dropdown">
+                    <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
+                </div>
+
+            </nav>
+
+            <main class="bg-light">
+                <div class="col-md-8 order-md-1">
+
+                    <div class="row">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
                     </div>
-            
-                    <div class="dropdown">
-                        <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
+
+                    <div class="col-md-8 order-md-1">
+                        <h4 class="mb-3">Cadastro de Produto</h4>
+                    </div>
+
+                    <br>
+
+
+                    <div class="mb-3">
+                        <label>Nome</label>
+                        <input type="text" name="nomeProd" class="form-control" required="true" >
+                        <div class="invalid-feedback">
+                            Nome do produto.
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label>Tipo</label>
+                        <input type="text" name="tipo" class="form-control" required="true">
+                        <div class="invalid-feedback">
+                            Tipo.
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label>Marca</label>
+                        <input type="text" name="marca" class="form-control" required="true">
+                        <div class="invalid-feedback">
+                            Marca.
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label>SKU</label>
+                        <input type="text" name="sku" class="form-control" required="true">
+                        <div class="invalid-feedback">
+                            SKU.
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label>Preço de Venda</label>
+                        <input type="text" name="precoVenda" class="form-control" required="true">
+                        <div class="invalid-feedback">
+                            Preço de venda.
+                        </div>
                     </div>
                     
-                </ul>
-                
-            
-        </nav>
+                    <div class="mb-3">
+                        <label>Preço de Compra</label>
+                        <input type="text" name="precoCompra" class="form-control" required="true">
+                        <div class="invalid-feedback">
+                            Preço de Compra.
+                        </div>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>   
+                </div>
 
-        <main role="main" class="container">
 
-           
+            </main>
 
-        </main><!-- /.container -->
+        </form>
+    </body>        
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-        <script src="../../../../assets/js/vendor/popper.min.js"></script>
-        <script src="../../../../dist/js/bootstrap.min.js"></script>
-        
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
     <script src="../../../../dist/js/bootstrap.min.js"></script>
-    <script src="../../../../assets/js/vendor/holder.min.js"></script>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
+</body>
+<script>
 
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
+                        function myFunction() {
+                            document.getElementById("myDropdown").classList.toggle("show");
+                        }
 
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
-    
-    </body>
-    <script>
-        
-                            function myFunction() {
-                                document.getElementById("myDropdown").classList.toggle("show");
-                            }
-                            
-                             function myFunction1() {
-                                document.getElementById("myDropdown1").classList.toggle("show");
-                            }
-                            
-                             function myFunction2() {
-                                document.getElementById("myDropdown2").classList.toggle("show");
-                            }
-                            
-                            function myFunction3() {
-                                document.getElementById("myDropdown3").classList.toggle("show");
-                            }
+                        function myFunction1() {
+                            document.getElementById("myDropdown1").classList.toggle("show");
+                        }
 
-                            window.onclick = function (event) {
-                                if (!event.target.matches('.dropbtn')) {
+                        function myFunction2() {
+                            document.getElementById("myDropdown2").classList.toggle("show");
+                        }
+                        
+                        function myFunction3() {
+                            document.getElementById("myDropdown3").classList.toggle("show");
+                        }
 
-                                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                                    var i;
-                                    for (i = 0; i < dropdowns.length; i++) {
-                                        var openDropdown = dropdowns[i];
-                                        if (openDropdown.classList.contains('show')) {
-                                            openDropdown.classList.remove('show');
-                                        }
+
+                        window.onclick = function (event) {
+                            if (!event.target.matches('.dropbtn')) {
+
+                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                        openDropdown.classList.remove('show');
                                     }
                                 }
                             }
-    </script>
+                        }
+</script>
 </html>

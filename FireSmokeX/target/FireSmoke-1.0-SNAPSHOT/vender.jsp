@@ -18,58 +18,56 @@
 
     <body>
 
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Fire Smoke</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <form action="cadastroCliente" method="POST">
 
-            <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn">Cliente</button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <a href="cadastroCliente.jsp">Cadastrar cliente</a>
-                            <a href="editarCliente.jsp">Editar cliente</a>
-                            <a href="listaCliente.jsp">Lista de cliente</a>
-                        </div>
-                    </div>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
 
-                    <div class="dropdown">
-                        <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
-                        <div id="myDropdown1" class="dropdown-content">
-                            <a href="cadastroFunc.jsp">Cadastrar funcionário</a>
-                            <a href="editarFunc.jsp">Editar funcionário</a>
-                            <a href="listaFunc.jsp">Lista de funcionários</a>
-                        </div>
+                </button>
+
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Cliente</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
+                        <a href="editarCliente.jsp">Editar Cliente</a>
+                        <a href="excluirCliente.jsp">Excluir Cliente</a>
                     </div>
-                    <div class="dropdown">
-                        <button onclick="myFunction2()" class="dropbtn">Comanda</button>
-                        <div id="myDropdown2" class="dropdown-content">
-                            <a href="cadastroComanda.jsp">Cadastrar comanda</a>
-                            <a href="inserirComanda.jsp">Inserir</a>
-                        </div>
+                </div>
+
+                <div class="dropdown">
+                    <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
+                    <div id="myDropdown1" class="dropdown-content">
+                        <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
+                        <a href="editarFunc.jsp">Editar Funcionário</a>
+                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
                     </div>
-            
-            <div class="dropdown">
+                </div>
+                <div class="dropdown">
+                    <button onclick="myFunction2()" class="dropbtn">Comanda</button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="cadastroComanda.jsp">Cadastrar comanda</a>
+                        <a href="inserirComanda.jsp">Inserir</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
                         <button onclick="myFunction3()" class="dropbtn">Produto</button>
                         <div id="myDropdown3" class="dropdown-content">
-                            <a href="cadastroProd.jsp">Cadastrar produto</a>
-                            <a href="editarProd.jsp">Editar produto</a>
-                            <a href="listaProd.jsp">Lista de produtos</a>
+                            <a href="cadastroProd.jsp">Cadastrar Produto</a>
+                            <a href="editarProd.jsp">Editar Produto</a>
+                            <a href="excluirProd.jsp">Excluir Produto</a>
                         </div>
                     </div>
-            
-                    <div class="dropdown">
-                        <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
-                    </div>
-            
-                    <div class="dropdown">
-                        <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
-                    </div>
-                    
-                <form class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="index.html">Sair</a></button>
-                </form>
-        </nav>
+
+                <div class="dropdown">
+                    <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
+                </div>
+
+                <div class="dropdown">
+                    <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
+                </div>
+
+            </nav>
 
         <main role="main" class="container">
 

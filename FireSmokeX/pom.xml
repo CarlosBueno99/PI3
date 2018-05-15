@@ -7,7 +7,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>FireSmoke</name>
+    <name>FireSmokeofc</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -28,32 +28,6 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-    <organization>
-        <name>Senac TADS PI3 - Turma B</name>
-    </organization>
-    <developers>
-        <developer>
-        <id>guilherme.mfeitosa</id>
-        <name>Guilherme de Moura Feitosa</name>
-        <email>guimfeitosa@hotmail.com</email>
-        </developer>
-         <developer>
-        <id>matheus.dsartori</id>
-        <name>Matheus Diamantino Sartori</name>
-        <email>the_te_us@hotmail.com</email>
-        </developer>
-         <developer>
-        <id>carlos.abueno</id>
-        <name>Carlos Alexandre Bueno</name>
-        <email>carlosbueno.contato@gmail.com</email>
-        </developer>
-         <developer>
-        <id>gabriel.gmartins1</id>
-        <name>Gabriel Gomes Martins</name>
-        <email>gabriel-g-martins@hotmail.com</email>
-        </developer>
-    </developers>
-    
 
     <build>
         <plugins>

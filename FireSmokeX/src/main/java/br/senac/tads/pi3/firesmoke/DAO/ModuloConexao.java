@@ -8,7 +8,7 @@ public class ModuloConexao {
         java.sql.Connection conexao = null;
 
         String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/firehookah";
+        String url = "jdbc:mysql://localhost:3306/firesmoke";
         String user = "root";
         String password = "admin";
 

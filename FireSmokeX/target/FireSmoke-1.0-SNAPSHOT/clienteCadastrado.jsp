@@ -18,53 +18,54 @@
 
     <body>
 
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
 
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
+                </button>
 
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Cliente</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="cadastroCliente.jsp">Cadastrar cliente</a>
-                    <a href="editarCliente.jsp">Editar cliente</a>
-                    <a href="excluirCliente.jsp">Excluir Cliente</a>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Cliente</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
+                        <a href="editarCliente.jsp">Editar Cliente</a>
+                        <a href="listaCliente.jsp">Excluir Cliente</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="dropdown">
-                <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
-                <div id="myDropdown1" class="dropdown-content">
-                    <a href="cadastroFunc.jsp">Cadastrar funcionário</a>
-                    <a href="editarFunc.jsp">Editar funcionário</a>
-                    <a href="listaFunc.jsp">Lista de funcionários</a>
+                <div class="dropdown">
+                    <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
+                    <div id="myDropdown1" class="dropdown-content">
+                        <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
+                        <a href="editarFunc.jsp">Editar Funcionário</a>
+                        <a href="listaFunc.jsp">Excluir Funcionário</a>
+                    </div>
                 </div>
-            </div>
-            <div class="dropdown">
-                <button onclick="myFunction2()" class="dropbtn">Comanda</button>
-                <div id="myDropdown2" class="dropdown-content">
-                    <a href="cadastroComanda.jsp">Cadastrar comanda</a>
-                    <a href="inserirComanda.jsp">Inserir</a>
+                <div class="dropdown">
+                    <button onclick="myFunction2()" class="dropbtn">Comanda</button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="cadastroComanda.jsp">Cadastrar comanda</a>
+                        <a href="inserirComanda.jsp">Inserir</a>
+                    </div>
                 </div>
-            </div>
+                
+                <div class="dropdown">
+                        <button onclick="myFunction3()" class="dropbtn">Produto</button>
+                        <div id="myDropdown3" class="dropdown-content">
+                            <a href="cadastroProd.jsp">Cadastrar Produto</a>
+                            <a href="editarProd.jsp">Editar Produto</a>
+                            <a href="listaProd.jsp">Excluir Produto</a>
+                        </div>
+                    </div>
 
-            <div class="dropdown">
-                <button onclick="myFunction3()" class="dropbtn">Produto</button>
-                <div id="myDropdown3" class="dropdown-content">
-                    <a href="cadastroProd.jsp">Cadastrar produto</a>
-                    <a href="editarProd.jsp">Editar produto</a>
-                    <a href="listaProd.jsp">Lista de produtos</a>
+                <div class="dropdown">
+                    <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
                 </div>
-            </div>
 
-            <div class="dropdown">
-                <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
-            </div>
+                <div class="dropdown">
+                    <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
+                </div>
 
-            <div class="dropdown">
-                <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
-            </div>
-
-        </nav>
+            </nav>
 
         <main class="bg-light">
 

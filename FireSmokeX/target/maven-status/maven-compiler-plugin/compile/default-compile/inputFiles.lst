@@ -1,7 +1,15 @@
-C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\login.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\DAO\ProdutoDAO.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\cadastroFuncionario.java
 C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\excluirCliente.java
-C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\DAO\ModuloConexao.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\Model\Funcionario.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\editarProduto.java
 C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\Model\Cliente.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\cadastroProduto.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\login.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\DAO\FuncionarioDAO.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\DAO\VerificaBanco.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\DAO\ModuloConexao.java
+C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\Model\Produto.java
 C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\editarCliente.java
 C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\cadastroCliente.java
 C:\Users\efeit\Documents\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\DAO\ClienteDAO.java

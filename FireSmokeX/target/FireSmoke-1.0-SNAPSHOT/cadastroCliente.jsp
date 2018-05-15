@@ -28,8 +28,8 @@
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn">Cliente</button>
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="cadastroCliente.jsp">Cadastrar cliente</a>
-                        <a href="editarCliente.jsp">Editar cliente</a>
+                        <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
+                        <a href="editarCliente.jsp">Editar Cliente</a>
                         <a href="excluirCliente.jsp">Excluir Cliente</a>
                     </div>
                 </div>
@@ -37,9 +37,9 @@
                 <div class="dropdown">
                     <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
                     <div id="myDropdown1" class="dropdown-content">
-                        <a href="cadastroFunc.jsp">Cadastrar funcionário</a>
-                        <a href="editarFunc.jsp">Editar funcionário</a>
-                        <a href="listaFunc.jsp">Lista de funcionários</a>
+                        <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
+                        <a href="editarFunc.jsp">Editar Funcionário</a>
+                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -53,9 +53,9 @@
                 <div class="dropdown">
                     <button onclick="myFunction3()" class="dropbtn">Produto</button>
                     <div id="myDropdown3" class="dropdown-content">
-                        <a href="cadastroProd.jsp">Cadastrar produto</a>
-                        <a href="editarProd.jsp">Editar produto</a>
-                        <a href="listaProd.jsp">Lista de produtos</a>
+                        <a href="cadastroProd.jsp">Cadastrar Produto</a>
+                        <a href="editarProd.jsp">Editar Produto</a>
+                        <a href="excluirProd.jsp">Excluir Produto</a>
                     </div>
                 </div>
 
@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Cadastro de Clientes</h4>
+                        <h4 class="mb-3">Cadastro de Cliente</h4>
                     </div>
 
                     <br>
@@ -129,26 +129,6 @@
                         <div class="invalid-feedback">
                             Por favor, coloque sua data de nascimento.
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label>Endereco</label>
-                        <input type="text" name="endereco" class="form-control">
-                        <div class="invalid-feedback">
-                            Por favor, coloque seu Endereço.
-                        </div>
-
-                    </div>
-                    <div class="mb-3">
-                        <label>Sexo</label>
-                        <br>
-                        <input type="radio" id="sexo1" name="sexo" checked >
-                        <label for="sexo1" >Masculino</label>
-                        <input type="radio" id="sexo2" name="sexo" >
-                        <label for="sexo2">Feminino</label>
-                        <div class="invalid-feedback">
-                            Por favor, coloque seu Sexo.
-                        </div>
-
                     </div>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>   
                 </div>
