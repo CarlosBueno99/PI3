@@ -69,11 +69,11 @@ public class FuncionarioDAO {
             String sql = "SELECT * FROM tbfuncionarios where cpf = '" + pesquisa + "'";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                funcionario.setNome(rs.getString("nomeFunc"));
-                funcionario.setCpf(rs.getString("cpfFunc"));
+                funcionario.setNome(rs.getString("nome"));
+                funcionario.setCpf(rs.getString("cpf"));
                 funcionario.setCargo(rs.getString("cargo"));
                 funcionario.setEndereco(rs.getString("endereco"));
-                funcionario.setDtnascimento(rs.getString("dataFunc"));
+                funcionario.setDtnascimento(rs.getString("dtnascimento"));
                 System.out.println(funcionario.getNome());
 
             }

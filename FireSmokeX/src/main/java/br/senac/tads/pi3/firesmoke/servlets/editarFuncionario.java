@@ -33,7 +33,7 @@ public class editarFuncionario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //PESQUISAR FUNCIONÁRIOS
-        String pesquisa = request.getParameter("pesquisa");
+        String pesquisa = request.getParameter("pesquisaFunc");
 
         FuncionarioDAO funcionariodados = new FuncionarioDAO();
         if (pesquisa != null && !pesquisa.equalsIgnoreCase("")) {

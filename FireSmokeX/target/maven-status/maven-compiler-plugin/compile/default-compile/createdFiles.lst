@@ -1,5 +1,7 @@
 br\senac\tads\pi3\firesmoke\DAO\ModuloConexao.class
+br\senac\tads\pi3\firesmoke\servlets\editarFuncionario.class
 br\senac\tads\pi3\firesmoke\servlets\editarProduto.class
+br\senac\tads\pi3\firesmoke\servlets\excluirFuncionario.class
 br\senac\tads\pi3\firesmoke\servlets\editarCliente.class
 br\senac\tads\pi3\firesmoke\servlets\login.class
 br\senac\tads\pi3\firesmoke\servlets\cadastroFuncionario.class
@@ -11,5 +13,6 @@ br\senac\tads\pi3\firesmoke\DAO\FuncionarioDAO.class
 br\senac\tads\pi3\firesmoke\DAO\ProdutoDAO.class
 br\senac\tads\pi3\firesmoke\Model\Funcionario.class
 br\senac\tads\pi3\firesmoke\servlets\cadastroProduto.class
+br\senac\tads\pi3\firesmoke\servlets\excluirProduto.class
 br\senac\tads\pi3\firesmoke\DAO\ClienteDAO.class
 br\senac\tads\pi3\firesmoke\DAO\VerificaBanco.class

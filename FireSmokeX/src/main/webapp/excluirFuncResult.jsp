@@ -18,7 +18,7 @@
 
     <body>
 
-        <form action="editarFuncionario" method="POST">
+        <form action="excluirFuncionario" method="POST">
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                 <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
@@ -80,7 +80,7 @@
 
                     </div>
                     <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Editar Funcionário</h4>
+                        <h4 class="mb-3">Excluir Funcionário</h4>
                     </div>
 
                     <br>
@@ -88,9 +88,9 @@
 
                     <div class="mb-3">
                         <div><label>Digite o CPF do funcionário</label></div>
-                        <form action="editarFuncionario" method="POST">
+                        <form action="excluirFuncionario" method="POST">
                             <label for="pesquisa"></label>
-                            <input type="search" name="pesquisa" >
+                            <input type="search" name="pesquisaFunc" >
                             <button type="submit">Pesquisar</button>
 
                             <div class="invalid-feedback">

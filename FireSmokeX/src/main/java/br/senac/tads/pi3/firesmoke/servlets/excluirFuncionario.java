@@ -32,7 +32,7 @@ public class excluirFuncionario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //PESQUISAR PRODUTOS
-        String pesquisa = request.getParameter("pesquisa");
+        String pesquisa = request.getParameter("pesquisaFunc");
 
         FuncionarioDAO funcionariodados = new FuncionarioDAO();
         if (!pesquisa.equalsIgnoreCase("") && pesquisa != null) {
