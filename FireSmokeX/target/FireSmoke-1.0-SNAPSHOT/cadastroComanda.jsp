@@ -69,90 +69,24 @@
 
             </nav>
 
-            <main class="bg-light">
-                <div class="col-md-8 order-md-1">
-
-                    <div class="row">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-
-                    </div>
-                    <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Cadastrar Comanda</h4>
-                    </div>
-
-                    <br>
+            
+                                
+                                <br>
+                                <br>
+                                <br>
 
 
-                    <div class="mb-3">
-                        <div><label>Digite o número da Comanda</label></div>
-                        <form action="cadastrarComanda" method="POST">
-                            <label for="comanda"></label>
-                            <input type="search" name="numcomanda" >
-                            <button type="submit"  >Cadastrar</button>
-
-                            <div class="mb-3">
-                                <label>Nome</label>
-                                <input value="${cliente.nome}" name="nome" type="text" class="form-control" >
-                                <div class="invalid-feedback">
-                                    Por favor, coloque seu nome.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>E-mail</label>
-                                <input value="${cliente.email}" type="email" name="email" class="form-control" >
-                                <div class="invalid-feedback">
-                                    Por favor, coloque seu e-mail.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>CPF</label>
-                                <input value="${cliente.cpf}" type="text" name="cpf" class="form-control">
-                                <div class="invalid-feedback">
-                                    Por favor, coloque seu CPF.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>Telefone</label>
-                                <input value="${cliente.fone}" type="tel" name="fone" class="form-control">
-                                <div class="invalid-feedback">
-                                    Por favor, coloque seu telefone.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>Data de Nascimento</label>
-                                <input value="${cliente.dtnascimento}" type="text" name="dtnascimento" class="form-control">
-                                <div class="invalid-feedback">
-                                    Por favor, coloque sua data de nascimento.
-                                </div>
-
-                            </div>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Alterar</button>
-
-
-                        </form>
-                    </div>
-                    <div class="invalid-feedback">
-                        Por favor, insira um CPF válido.
-                    </div>
-
-
+            <div class="row" style="margin-left: 0px;">
+                <div class="col-md-6">
+                    <span style="font-size: 30px">Cadastro de Comanda</span><br><br>
+                    <button>Gerar ID</button> <input type="text" name="gerarID">
                 </div>
+            </div>
 
 
 
 
-            </main><!-- /.container -->
+            <!-- /.container -->
 
             <!-- Bootstrap core JavaScript
             ================================================== -->

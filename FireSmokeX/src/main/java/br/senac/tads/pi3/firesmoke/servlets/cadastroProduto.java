@@ -40,7 +40,7 @@ public class cadastroProduto extends HttpServlet {
         produto.setPrecocompra(request.getParameter("precocompra"));
         ProdutoDAO dao = new ProdutoDAO();
         String msg = dao.inserir(produto);
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        request.getRequestDispatcher("cadastroProdResult.jsp").forward(request, response);
 
     }
 

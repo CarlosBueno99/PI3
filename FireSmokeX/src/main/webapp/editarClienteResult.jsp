@@ -13,11 +13,13 @@
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/dropdown.css" rel="stylesheet">
+        
+       
 
     </head>
 
     <body>
-
+        
         <form action="editarCliente" method="POST">
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -87,15 +89,22 @@
 
 
             <div class="mb-3">
-                <div><label>Digite o CPF do cliente na base<label></div>
+                <div><label>Digite o CPF do cliente</label></div>
                             <form action="editarCliente" method="POST">
                                 <label for="pesquisa"></label>
-                                <input type="search" name="pesquisa" name="q">
-                                <button type="submit"  >Pesquisar</button>
+                                <input type="search" name="pesquisa" >
+                                <button type="submit">Pesquisar</button>
 
+                                <div class="invalid-feedback">
+                                    Por favor, insira um CPF válido.
+                                </div>
+                                
+                                <br>
+                                <br>
+                                
                                 <div class="mb-3">
                                     <label>Nome</label>
-                                    <input value="${cliente.nome}" name="nome" type="text" class="form-control" >
+                                    <input type="text" name="nome" class="form-control" >
                                     <div class="invalid-feedback">
                                         Por favor, coloque seu nome.
                                     </div>
@@ -104,7 +113,7 @@
 
                                 <div class="mb-3">
                                     <label>E-mail</label>
-                                    <input value="${cliente.email}" type="email" name="email" class="form-control" >
+                                    <input type="email" name="email" class="form-control" >
                                     <div class="invalid-feedback">
                                         Por favor, coloque seu e-mail.
                                     </div>
@@ -113,7 +122,7 @@
 
                                 <div class="mb-3">
                                     <label>CPF</label>
-                                    <input value="${cliente.cpf}" type="text" name="cpf" class="form-control">
+                                    <input type="text" name="cpf" class="form-control">
                                     <div class="invalid-feedback">
                                         Por favor, coloque seu CPF.
                                     </div>
@@ -122,7 +131,7 @@
 
                                 <div class="mb-3">
                                     <label>Telefone</label>
-                                    <input value="${cliente.fone}" type="tel" name="fone" class="form-control">
+                                    <input type="tel" name="fone" class="form-control">
                                     <div class="invalid-feedback">
                                         Por favor, coloque seu telefone.
                                     </div>
@@ -131,7 +140,7 @@
 
                                 <div class="mb-3">
                                     <label>Data de Nascimento</label>
-                                    <input value="${cliente.dtnascimento}" type="text" name="dtnascimento" class="form-control">
+                                    <input type="text" name="dtnascimento" class="form-control">
                                     <div class="invalid-feedback">
                                         Por favor, coloque sua data de nascimento.
                                     </div>
@@ -139,18 +148,8 @@
                                 </div>
                                 <button class="btn btn-lg btn-primary btn-block" type="submit">Alterar</button>
 
-
                             </form>
                             </div>
-                            <div class="invalid-feedback">
-                                Por favor, insira um CPF válido.
-                            </div>
-
-
-                            </div>
-
-
-
 
                             </main><!-- /.container -->
 

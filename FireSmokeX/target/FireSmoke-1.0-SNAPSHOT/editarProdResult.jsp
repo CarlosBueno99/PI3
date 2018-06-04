@@ -13,11 +13,11 @@
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/dropdown.css" rel="stylesheet">
-
+      
     </head>
 
     <body>
-
+ 
         <form action="editarProduto" method="POST">
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -102,15 +102,15 @@
 
                             <div class="mb-3">
                                 <label>Nome</label>
-                                <input value="${produto.nome}" type="text" name="nomeProd" class="form-control">
+                                <input type="text" name="nomeProd" class="form-control" >
                                 <div class="invalid-feedback">
                                     Nome do produto.
                                 </div>
                             </div>
-                                
-                                <div class="mb-3">
+                            
+                            <div class="mb-3">
                                 <label>SKU</label>
-                                <input value="${produto.sku}" type="text" name="sku" class="form-control" >
+                                <input type="text" name="sku" class="form-control" >
                                 <div class="invalid-feedback">
                                     Sku do produto.
                                 </div>
@@ -119,7 +119,7 @@
 
                             <div class="mb-3">
                                 <label>Tipo</label>
-                                <input value="${produto.tipo}" type="text" name="tipo" class="form-control">
+                                <input type="text" name="tipo" class="form-control">
                                 <div class="invalid-feedback">
                                     Tipo.
                                 </div>
@@ -128,7 +128,7 @@
 
                             <div class="mb-3">
                                 <label>Marca</label>
-                                <input value="${produto.marca}" type="text" name="marca" class="form-control">
+                                <input type="text" name="marca" class="form-control">
                                 <div class="invalid-feedback">
                                     Marca.
                                 </div>
@@ -137,7 +137,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Venda</label>
-                                <input value="${produto.precovenda}" type="text" name="precovenda" class="form-control">
+                                <input type="text" name="precovenda" class="form-control">
                                 <div class="invalid-feedback">
                                     Preço de venda.
                                 </div>
@@ -145,7 +145,7 @@
 
                             <div class="mb-3">
                                 <label>Preço de Compra</label>
-                                <input value="${produto.precocompra}" type="text" name="precocompra" class="form-control">
+                                <input type="text" name="precocompra" class="form-control">
                                 <div class="invalid-feedback">
                                     Preço de Compra.
                                 </div>

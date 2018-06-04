@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,10 +9,10 @@
 
         <title>Fire Smoke</title>
 
-        <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/dropdown.css" rel="stylesheet">
+
 
     </head>
 
@@ -28,18 +28,18 @@
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn">Cliente</button>
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
-                        <a href="editarCliente.jsp">Editar Cliente</a>
-                        <a href="excluirCliente.jsp">Excluir Cliente</a>
+                        <a href="cadastroCliente.jsp">Cadastrar cliente</a>
+                        <a href="editarCliente.jsp">Editar cliente</a>
+                        <a href="listaCliente.jsp">Lista de cliente</a>
                     </div>
                 </div>
 
                 <div class="dropdown">
                     <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
                     <div id="myDropdown1" class="dropdown-content">
-                        <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
-                        <a href="editarFunc.jsp">Editar Funcionário</a>
-                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
+                        <a href="cadastroFunc.jsp">Cadastrar funcionário</a>
+                        <a href="editarFunc.jsp">Editar funcionário</a>
+                        <a href="listaFunc.jsp">Lista de funcionários</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -49,15 +49,15 @@
                         <a href="inserirComanda.jsp">Inserir</a>
                     </div>
                 </div>
-                
+
                 <div class="dropdown">
-                        <button onclick="myFunction3()" class="dropbtn">Produto</button>
-                        <div id="myDropdown3" class="dropdown-content">
-                            <a href="cadastroProd.jsp">Cadastrar Produto</a>
-                            <a href="editarProd.jsp">Editar Produto</a>
-                            <a href="excluirProd.jsp">Excluir Produto</a>
-                        </div>
+                    <button onclick="myFunction3()" class="dropbtn">Produto</button>
+                    <div id="myDropdown3" class="dropdown-content">
+                        <a href="cadastroProd.jsp">Cadastrar produto</a>
+                        <a href="editarProd.jsp">Editar produto</a>
+                        <a href="listaProd.jsp">Lista de produtos</a>
                     </div>
+                </div>
 
                 <div class="dropdown">
                     <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
@@ -69,79 +69,42 @@
 
             </nav>
 
-        <main role="main" class="container">
+            <main class="bg-light">
+                <div class="col-md-8 order-md-1">
 
-           
+                    <div class="row">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
 
-        </main><!-- /.container -->
+                    </div>
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-        <script src="../../../../assets/js/vendor/popper.min.js"></script>
-        <script src="../../../../dist/js/bootstrap.min.js"></script>
-        
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-    <script src="../../../../assets/js/vendor/holder.min.js"></script>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
+                    <div class="container">
 
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
+                        <h1>Relatório de Clientes</h1>
 
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
-    
-    </body>
-    <script>
-        
-                            function myFunction() {
-                                document.getElementById("myDropdown").classList.toggle("show");
-                            }
-                            
-                             function myFunction1() {
-                                document.getElementById("myDropdown1").classList.toggle("show");
-                            }
-                            
-                             function myFunction2() {
-                                document.getElementById("myDropdown2").classList.toggle("show");
-                            }
-                            
-                            function myFunction3() {
-                                document.getElementById("myDropdown3").classList.toggle("show");
-                            }
+                        &emsp;
 
-                            window.onclick = function (event) {
-                                if (!event.target.matches('.dropbtn')) {
+                        <table style="height: 10px; width: 775px;" border="1">
+                            <tr>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>CPF</th>
+                                <th>Telefone</th>
+                                <th>Data de Nascimento</th>
 
-                                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                                    var i;
-                                    for (i = 0; i < dropdowns.length; i++) {
-                                        var openDropdown = dropdowns[i];
-                                        if (openDropdown.classList.contains('show')) {
-                                            openDropdown.classList.remove('show');
-                                        }
-                                    }
-                                }
-                            }
-    </script>
-</html>
+                            </tr>
+
+                            <c:forEach items="${atributos}" var="atributo">
+                                <tr>
+                                    <td>${atributos.nome}</td>
+                                    <td>${atributos.email}</td>
+                                    <td>${atributos.cpf}</td>
+                                    <td>${atributos.telefone}</td>
+                                    <td>${atributos.dtnascimento}</td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                        </body>
+                        </html>

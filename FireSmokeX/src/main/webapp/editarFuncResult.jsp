@@ -17,7 +17,7 @@
     </head>
 
     <body>
-
+        
         <form action="editarFuncionario" method="POST">
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -102,7 +102,7 @@
 
                             <div class="mb-3">
                                 <label>Nome</label>
-                                <input value= "${funcionario.nome}" type="text" name="nomeFunc" class="form-control" >
+                                <input type="text" name="nomeFunc" class="form-control" >
                                 <div class="invalid-feedback">
                                     Por favor, coloque o nome.
                                 </div>
@@ -111,7 +111,7 @@
 
                             <div class="mb-3">
                                 <label>Data de Nascimento</label>
-                                <input value="${funcionario.dtnascimento}" type="text" name="dataFunc" class="form-control" >
+                                <input type="text" name="dataFunc" class="form-control" >
                                 <div class="invalid-feedback">
                                     Por favor, coloque a data de nascimento.
                                 </div>
@@ -120,7 +120,7 @@
 
                             <div class="mb-3">
                                 <label>CPF</label>
-                                <input value="${funcionario.cpf}" type="text" name="cpfFunc" class="form-control">
+                                <input type="text" name="cpfFunc" class="form-control">
                                 <div class="invalid-feedback">
                                     Por favor, coloque o CPF.
                                 </div>
@@ -129,7 +129,7 @@
 
                             <div class="mb-3">
                                 <label>Cargo</label>
-                                <input value="${funcionario.cargo}" type="text" name="cargo" class="form-control">
+                                <input type="text" name="cargo" class="form-control">
                                 <div class="invalid-feedback">
                                     Por favor, coloque o cargo.
                                 </div>
@@ -138,7 +138,7 @@
 
                             <div class="mb-3">
                                 <label>Endereço</label>
-                                <input value="${funcionario.endereco}" type="text" name="endereco" class="form-control">
+                                <input type="text" name="endereco" class="form-control">
                                 <div class="invalid-feedback">
                                     Por favor, coloque o endereço.
                                 </div>

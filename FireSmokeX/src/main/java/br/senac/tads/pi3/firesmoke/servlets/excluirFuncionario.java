@@ -56,7 +56,7 @@ public class excluirFuncionario extends HttpServlet {
 
         funcionariodados.deletar(funcionario);
         if (funcionario.getNome() != null) {
-            request.getRequestDispatcher("home.jsp").forward(request, response);
+            request.getRequestDispatcher("excluirFuncFb.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("excluirFunc.jsp").forward(request, response);
         }

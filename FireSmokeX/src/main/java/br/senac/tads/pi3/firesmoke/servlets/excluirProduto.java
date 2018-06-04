@@ -62,7 +62,7 @@ public class excluirProduto extends HttpServlet {
                 
                 produtodados.deletar(produto);
                 if (produto.getNome() != null) {
-                    request.getRequestDispatcher("home.jsp").forward(request, response);
+                    request.getRequestDispatcher("excluirProdFb.jsp").forward(request, response);
                 } else {
                     request.getRequestDispatcher("excluirProd.jsp").forward(request, response);
                 }

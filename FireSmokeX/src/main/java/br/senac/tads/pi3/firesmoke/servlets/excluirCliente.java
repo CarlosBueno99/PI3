@@ -57,7 +57,7 @@ public class excluirCliente extends HttpServlet {
 
         clientedados.deletar(cliente);
         if (cliente.getNome() != null) {
-            request.getRequestDispatcher("home.jsp").forward(request, response);
+            request.getRequestDispatcher("excluirClienteFb.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("excluirCliente.jsp").forward(request, response);
         }

@@ -22,7 +22,7 @@ public class ProdutoDAO {
      public String inserir(Produto produto) {
         String message = "";
         try {
-            String sql = "INSERT INTO tbprodutos(nome, tipo, marca, sku, precovenda, precocompra) VALUES(?,?,?,?,?,?)";
+            String sql = "INSERT INTO tbprodutos(nome, tipo, marca, sku, precovenda) VALUES(?,?,?,?,?)";
             conexao = ModuloConexao.conector();
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, produto.getNome());
@@ -30,7 +30,6 @@ public class ProdutoDAO {
             stmt.setString(3, produto.getMarca());
             stmt.setString(4, produto.getSku());
             stmt.setString(5, produto.getPrecovenda());
-            stmt.setString(6, produto.getPrecocompra());
             stmt.execute();
             stmt.close();
             message = "Produto " + produto.getNome() + " criado com sucesso";
@@ -42,14 +41,13 @@ public class ProdutoDAO {
     }
       public void alterar(Produto produto) {
         try {
-            String sql = "UPDATE tbprodutos SET nome= ?, tipo= ?, marca= ?, precovenda= ?, precocompra=? WHERE tbprodutos.sku = ?";
+            String sql = "UPDATE tbprodutos SET nome= ?, tipo= ?, marca= ?, precovenda= ? WHERE tbprodutos.sku = ?";
             conexao = ModuloConexao.conector();
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, produto.getNome());
             stmt.setString(2, produto.getTipo());
             stmt.setString(3, produto.getMarca());
             stmt.setString(4, produto.getPrecovenda());
-            stmt.setString(5, produto.getPrecocompra());
             stmt.setString(6, produto.getSku());
             stmt.execute();
             stmt.close();
@@ -74,7 +72,6 @@ public class ProdutoDAO {
                 produto.setSku(rs.getString("sku"));
                 produto.setTipo(rs.getString("tipo"));
                 produto.setMarca(rs.getString("marca"));
-                produto.setPrecocompra(rs.getString("precocompra"));
                 produto.setPrecovenda(rs.getString("precovenda"));
                 System.out.println("TESTE 4 "+ sql);
 
@@ -102,7 +99,6 @@ public class ProdutoDAO {
                 produto.setTipo(rs.getString("tipo"));
                 produto.setMarca(rs.getString("marca"));
                 produto.setSku(rs.getString("sku"));
-                produto.setPrecocompra(rs.getString("precocompra"));
                 produto.setPrecovenda(rs.getString("precovenda"));
             }
             rs.close();
