@@ -78,12 +78,11 @@ public class ProdutoDAO {
             }
             rs.close();
             stmt.close();
-            return produto;
             
         } catch (SQLException e) {
             return null; 
         }
-        
+                    return produto;
     }
 
     public void consulta(String pesquisa) {

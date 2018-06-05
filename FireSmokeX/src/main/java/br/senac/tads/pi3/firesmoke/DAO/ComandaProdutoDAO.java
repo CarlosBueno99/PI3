@@ -22,13 +22,14 @@ import java.util.List;
 public class ComandaProdutoDAO {
 
     private Connection conexao;
-    public String inserir (Comanda comanda, Produto produto){
+
+    public String inserir(Comanda comanda, Produto produto) {
         String message = "";
         try {
             String sql = "INSERT INTO tbcomandaproduto(idcomanda, skuproduto, quantidade) VALUES(?,?,?)";
             conexao = ModuloConexao.conector();
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, comanda.getIdcomanda());
+            stmt.setString(1, comanda.getIdcomanda());
             stmt.setString(2, produto.getSku());
             stmt.setInt(3, 1);
             stmt.execute();
@@ -40,12 +41,10 @@ public class ComandaProdutoDAO {
         System.out.println(message);
         return message;
     }
-    
 
-    public List<ComandaProduto> pesquisacomandaproduto(int idcomanda, String sku) {
+    public ArrayList<ComandaProduto> pesquisacomandaproduto(int idcomanda) {
 
-        ComandaProduto comandaproduto = new ComandaProduto();
-        List<ComandaProduto> lista = new ArrayList<ComandaProduto>();
+        ArrayList<ComandaProduto> lista = new ArrayList<ComandaProduto>();
 
         try {
             conexao = ModuloConexao.conector();
@@ -58,11 +57,13 @@ public class ComandaProdutoDAO {
                     + "     , tbprodutos.marca\n"
                     + "     , tbprodutos.precovenda\n"
                     + "  FROM tbcomandaproduto\n"
-                    + "	   INNER JOIN tbprodutos ON tbprodutos.id = tbcomandaproduto.idproduto\n"
-                    + " WHERE tbcomandaproduto.idcomanda = ?; '";
+                    + "	   INNER JOIN tbprodutos ON tbprodutos.sku = tbcomandaproduto.skuproduto\n"
+                    + " WHERE tbcomandaproduto.idcomanda = " + idcomanda + "; '";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                comandaproduto.setIdcomandaCom(rs.getInt("idcomanda"));
+                ComandaProduto comandaproduto = new ComandaProduto();
+                
+                comandaproduto.setIdcomandaCom(rs.getString("idcomanda"));
                 comandaproduto.setValortotalCom(rs.getDouble("valortotal"));
                 comandaproduto.setStatuspagamentoCom(rs.getBoolean("statuspagamento"));
                 comandaproduto.setNomeProd(rs.getString("nome"));
@@ -80,4 +81,3 @@ public class ComandaProdutoDAO {
         return lista;
     }
 }
-

@@ -77,7 +77,8 @@
             <div class="col-md-6">
                 <form action="inserirComanda" method="POST">
                     <span style="font-size: 30px">Inserir na Comanda</span><br><br>
-                    <span>Buscar comanda: </span> <input type="search" name="buscar"> <button>Buscar</button> </form>
+                    <span>Buscar comanda: </span> <input type="search" name="buscar"> <button>Buscar</button> 
+                </form>
                 <br>
                 <br>
                 <span>Comanda nº <!--variavel da comanda--> </span>

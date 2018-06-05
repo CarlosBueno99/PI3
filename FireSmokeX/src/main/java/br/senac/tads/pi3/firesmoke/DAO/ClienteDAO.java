@@ -87,8 +87,9 @@ public class ClienteDAO {
         return cliente;
     }
 
-    public void consulta(String pesquisa) {
-        Cliente cliente = new Cliente();
+    public ArrayList<Cliente> consulta() {
+        
+        ArrayList <Cliente> listacliente = new ArrayList();
         String message = "";
         try {
             conexao = ModuloConexao.conector();
@@ -96,18 +97,22 @@ public class ClienteDAO {
             String sql = "SELECT * FROM tbclientes";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
+                Cliente cliente = new Cliente();
+                
                 cliente.setNome(rs.getString("nome"));
                 cliente.setCpf(rs.getString("cpf"));
                 cliente.setFone(rs.getString("fone"));
                 cliente.setEmail(rs.getString("email"));
                 cliente.setDtnascimento(rs.getString("dtnascimento"));
+                listacliente.add(cliente);
             }
             rs.close();
             stmt.close();
 
         } catch (SQLException e) {
 
-        }
+        } 
+        return listacliente;
     }
 
     public void deletar(Cliente cliente) {

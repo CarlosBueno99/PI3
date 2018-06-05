@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -27,17 +28,17 @@ public class inserirProdutocomanda extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
-    Produto produto;
-    Comanda comanda;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int quantidade = Integer.parseInt(request.getParameter("qtde"));
-        int pesquisa = Integer.parseInt(request.getParameter("buscar"));
-        String busca = request.getParameter("buscaProd");
+        Produto produto = new Produto();
+        Comanda comanda = new Comanda();
+        //int quantidade = Integer.parseInt(request.getParameter("qtde"));
+        HttpSession sessao = request.getSession();
+        String pesquisa = request.getParameter("idcomandaCom");
+        String busca = request.getParameter("prod");
 
         comanda.setIdcomanda(pesquisa);
-        
         produto.setSku(busca);
         ComandaProdutoDAO comandaprodutodados = new ComandaProdutoDAO();
         ComandaProduto comandaproduto = new ComandaProduto();

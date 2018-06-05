@@ -17,7 +17,7 @@ public class ComandaProduto {
     private String skuProd;
     private String precovendaProd;
     private double valortotalCom;
-    private int idcomandaCom;
+    private String idcomandaCom;
     private boolean statuspagamentoCom;
 
     public String getNomeProd() {
@@ -68,11 +68,11 @@ public class ComandaProduto {
         this.valortotalCom = valortotalCom;
     }
 
-    public int getIdcomandaCom() {
+    public String getIdcomandaCom() {
         return idcomandaCom;
     }
 
-    public void setIdcomandaCom(int idcomandaCom) {
+    public void setIdcomandaCom(String idcomandaCom) {
         this.idcomandaCom = idcomandaCom;
     }
 

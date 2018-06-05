@@ -21,6 +21,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -29,41 +30,49 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "inserirComanda", urlPatterns = {"/inserirComanda"})
 public class inserirComanda extends HttpServlet {
 
+    Comanda comanda;
+    Produto produto;
+    ComandaProduto comandaProduto;
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
     }
-
-    Comanda comanda;
-    Produto produto;
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         //PESQUISAR COMANDA
         int pesquisa = Integer.parseInt(request.getParameter("buscar"));
-
+        
         ComandaDAO comandadados = new ComandaDAO();
         if (pesquisa != 0) {
             comanda = new Comanda();
+            comandaProduto = new ComandaProduto();
+            
             comanda = comandadados.pesquisar(pesquisa);
-            request.setAttribute("comanda", comanda);
-            System.out.println(comanda.getIdcomanda());
-            if (comanda.getIdcomanda() == 0) {
+            comandaProduto.setIdcomandaCom(comanda.getIdcomanda());
+            
+            request.setAttribute("comandaProduto", comandaProduto);
+            System.out.println(comandaProduto.getIdcomandaCom());
+            
+            if (comandaProduto.getIdcomandaCom().equals("0")) {
                 request.getRequestDispatcher("inserirComanda.jsp").forward(request, response);
-
+                
             } else {
+                HttpSession sessao = request.getSession();
+                sessao.setAttribute("idcomanda", comanda);
                 request.getRequestDispatcher("inserirComandaResult.jsp").forward(request, response);
             }
         }
         
-    
     }
-
+    
     @Override
     public String getServletInfo() {
         return "Short description";
     }
-
+    
 }

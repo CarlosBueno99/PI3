@@ -79,24 +79,31 @@
         <div class="col-md-6">
             <form action="inserirComanda" method="POST">
                 <span style="font-size: 30px">Inserir na Comanda</span><br><br>
-                <span>Buscar comanda: </span> <input type="search" name="buscar"> <button>Buscar</button> </form>
+                <span>Buscar comanda: </span> <input type="search" name="buscar"> <button>Buscar</button> 
+            </form>
             <br>
             <br>
-            <span style="font-size: 25px">Comanda nº <!--variavel da comanda--> ${comanda.idcomanda} </span>
-
-            <br>
-            <br>
-
             <form action="pesquisaProduto" method="POST">
-                <span>Código do Produto: </span> <input type="search" name="buscaProd"> <button>Buscar</button> <br><br></form>
-            <span>Produto:</span> <input type="text" value="${produto.nome}" name="prod" readonly="readonly"> <!-- Nome do produto que vai ser puxado no SKU acima-->
-            <span>Quantidade</span> <input name= "qtde" type="number" style="width:40px" value="1" >
-            <br>
-            <form action="inserirProdutocomanda" method="POST"> <button>Inserir</button></form>
+
+
+                <span style="font-size: 25px">Comanda nº </span> <!--variavel da comanda--> 
+                <input type="text" value="${comandaProduto.idcomandaCom}" name="idcomandaCom" readonly>
+
+                <br>
+                <br>
+
+                <span>Código do Produto: </span> <input type="search" action="pesquisaProduto" name="buscaProd"> <button>Buscar</button> <br><br>
+            </form>
+            <form action="inserirProdutocomanda" method="POST">
+                <input type="hidden" type="text" value="${comandaProduto.idcomandaCom}" name="idcomandaCom" readonly>
+                <span>Produto:</span> <input type="text" value="${comandaProduto.skuProd}" name="prod" readonly="readonly"> <!-- Nome do produto que vai ser puxado no SKU acima-->
+                <span>Quantidade</span> <input name= "qtde" type="number" style="width:40px" value="1" >
+                <br>
+                <button action="inserirProdutocomanda">Inserir</button></form>
             <br>
             <table border="1">
                 <tbody><tr><td height="30px" width="120px"> Nome </td> <td height="30px" width="120px"> Tipo </td> <td height="30px" width="120px"> Marca </td> <td height="30px" width="70px"> Preço </td></tr>
-                    <tr><td height="30px" width="120px">${produto.nome}</td> <td height="30px" width="120px">${produto.tipo}</td> <td height="30px" width="120px">${produto.marca}</td> <td height="30px" width="70px">${produto.precovenda}</td> </tr>
+                    <tr><td height="30px" width="120px">${comandaProduto.nomeProd}</td> <td height="30px" width="120px">${comandaProduto.tipoProd}</td> <td height="30px" width="120px">${comandaProduto.marcaProd}</td> <td height="30px" width="70px">${comandaProduto.precovendaProd}</td> </tr>
 
                 </tbody></table>
 

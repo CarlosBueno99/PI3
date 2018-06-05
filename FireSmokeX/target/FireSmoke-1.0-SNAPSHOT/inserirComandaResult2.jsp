@@ -80,27 +80,34 @@
             <form action="inserirComanda" method="POST">
                 <span style="font-size: 30px">Inserir na Comanda</span><br><br>
                 <span>Buscar comanda: </span> <input type="search" name="buscar"> <button>Buscar</button> 
-                <br>
-                <br>
-                <span>Comanda nº <!--variavel da comanda--> <input type="number" value="${comanda.idcomanda}" readonly="readonly"> </span>
-
-
             </form>
             <br>
             <br>
-
             <form action="pesquisaProduto" method="POST">
-                <span>Código do Produto: </span> <input type="search" name="buscaProd"> <button>Buscar</button> <br><br>
-                <span>Produto:</span> <input type="text" value="${produto.nome}" readonly="readonly"> <!-- Nome do produto que vai ser puxado no SKU acima--> <button>Inserir</button>
+
+
+                <span style="font-size: 25px">Comanda nº </span> <!--variavel da comanda--> 
+                <input type="text" value="${comandaProduto.idcomandaCom}" name="idcomandaCom" readonly>
+
                 <br>
                 <br>
-                <table border="1">
-                    <tbody><tr><td height="30px" width="120px"> Nome </td> <td height="30px" width="120px"> Tipo </td> <td height="30px" width="120px"> Marca </td> <td height="30px" width="70px"> Preço </td></tr>
-                        <tr><td height="30px" width="120px">${produto.nome}</td> <td height="30px" width="120px">${produto.tipo}</td> <td height="30px" width="120px">${produto.marca}</td> <td height="30px" width="70px">${produto.precovenda}</td> </tr>
 
-                    </tbody></table>
-
+                <span>Código do Produto: </span> <input type="search" action="pesquisaProduto" name="buscaProd"> <button>Buscar</button> <br><br>
             </form>
+            <form action="inserirProdutocomanda" method="POST">
+                <span>Produto:</span> <input type="text" value="${comandaProduto.skuProd}" name="prod" readonly="readonly"> <!-- Nome do produto que vai ser puxado no SKU acima-->
+                <span>Quantidade</span> <input name= "qtde" type="number" style="width:40px" value="1" >
+                <br>
+                <button action="inserirProdutocomanda">Inserir</button></form>
+            <br>
+            </form>
+            <table border="1">
+                <tbody><tr><td height="30px" width="120px"> Nome </td> <td height="30px" width="120px"> Tipo </td> <td height="30px" width="120px"> Marca </td> <td height="30px" width="70px"> Preço </td></tr>
+                    <tr><td height="30px" width="120px">${comandaProduto.nomeProd}</td> <td height="30px" width="120px">${comandaProduto.tipoProd}</td> <td height="30px" width="120px">${comandaProduto.marcaProd}</td> <td height="30px" width="70px">${comandaProduto.precovendaProd}</td> </tr>
+
+                </tbody></table>
+
+
         </div>
 
 

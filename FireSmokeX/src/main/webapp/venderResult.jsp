@@ -18,189 +18,189 @@
 
     <body>
 
-        <form action="Venda" method="POST">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
 
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
-
-                <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Cliente</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
-                        <a href="editarCliente.jsp">Editar Cliente</a>
-                        <a href="excluirCliente.jsp">Excluir Cliente</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
-                    <div id="myDropdown1" class="dropdown-content">
-                        <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
-                        <a href="editarFunc.jsp">Editar Funcionário</a>
-                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button onclick="myFunction2()" class="dropbtn">Comanda</button>
-                    <div id="myDropdown2" class="dropdown-content">
-                        <a href="cadastroComanda.jsp">Cadastrar comanda</a>
-                        <a href="inserirComanda.jsp">Inserir</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <button onclick="myFunction3()" class="dropbtn">Produto</button>
-                    <div id="myDropdown3" class="dropdown-content">
-                        <a href="cadastroProd.jsp">Cadastrar Produto</a>
-                        <a href="editarProd.jsp">Editar Produto</a>
-                        <a href="excluirProd.jsp">Excluir Produto</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
-                </div>
-
-                <div class="dropdown">
-                    <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
-                </div>
-
-            </nav>
-
-            <br>
-            <br>
-
-
-
-
-
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
-
-                <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Cliente</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
-                        <a href="editarCliente.jsp">Editar Cliente</a>
-                        <a href="excluirCliente.jsp">Excluir Cliente</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
-                    <div id="myDropdown1" class="dropdown-content">
-                        <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
-                        <a href="editarFunc.jsp">Editar Funcionário</a>
-                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button onclick="myFunction2()" class="dropbtn">Comanda</button>
-                    <div id="myDropdown2" class="dropdown-content">
-                        <a href="cadastroComanda.jsp">Cadastrar comanda</a>
-                        <a href="inserirComanda.jsp">Inserir</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <button onclick="myFunction3()" class="dropbtn">Produto</button>
-                    <div id="myDropdown3" class="dropdown-content">
-                        <a href="cadastroProd.jsp">Cadastrar Produto</a>
-                        <a href="editarProd.jsp">Editar Produto</a>
-                        <a href="excluirProd.jsp">Excluir Produto</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
-                </div>
-
-                <div class="dropdown">
-                    <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
-                </div>
-
-            </nav>
-
-            <br>
-            <br>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="col-md-6">
-                        <div class="col-md-6">
-                            
-                            <span>Nº Comanda</span> <input type="text" name="ncomanda">
-
-                            <span>Cliente</span> <input type="text" name="cliente">
-                        </div>
-
-                    </div>
-
-
-
-
-                    <div class="row"> 
-                        <div class="col-md-6">
-
-                            <!--aqui-->
-
-                        </div>
-                        <div class="col-md-6">
-
-                            <button>Buscar</button>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6">
-                    <img src="img/logo.png">	
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Cliente</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
+                    <a href="editarCliente.jsp">Editar Cliente</a>
+                    <a href="excluirCliente.jsp">Excluir Cliente</a>
                 </div>
             </div>
 
-            <hr>
+            <div class="dropdown">
+                <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
+                <div id="myDropdown1" class="dropdown-content">
+                    <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
+                    <a href="editarFunc.jsp">Editar Funcionário</a>
+                    <a href="excluirFunc.jsp">Excluir Funcionário</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="myFunction2()" class="dropbtn">Comanda</button>
+                <div id="myDropdown2" class="dropdown-content">
+                    <a href="cadastroComanda.jsp">Cadastrar comanda</a>
+                    <a href="inserirComanda.jsp">Inserir</a>
+                </div>
+            </div>
 
-            <div class="row">
+            <div class="dropdown">
+                <button onclick="myFunction3()" class="dropbtn">Produto</button>
+                <div id="myDropdown3" class="dropdown-content">
+                    <a href="cadastroProd.jsp">Cadastrar Produto</a>
+                    <a href="editarProd.jsp">Editar Produto</a>
+                    <a href="excluirProd.jsp">Excluir Produto</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
+            </div>
+
+            <div class="dropdown">
+                <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
+            </div>
+
+        </nav>
+
+        <br>
+        <br>
+
+
+
+
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Cliente</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
+                    <a href="editarCliente.jsp">Editar Cliente</a>
+                    <a href="excluirCliente.jsp">Excluir Cliente</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
+                <div id="myDropdown1" class="dropdown-content">
+                    <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
+                    <a href="editarFunc.jsp">Editar Funcionário</a>
+                    <a href="excluirFunc.jsp">Excluir Funcionário</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="myFunction2()" class="dropbtn">Comanda</button>
+                <div id="myDropdown2" class="dropdown-content">
+                    <a href="cadastroComanda.jsp">Cadastrar comanda</a>
+                    <a href="inserirComanda.jsp">Inserir</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="myFunction3()" class="dropbtn">Produto</button>
+                <div id="myDropdown3" class="dropdown-content">
+                    <a href="cadastroProd.jsp">Cadastrar Produto</a>
+                    <a href="editarProd.jsp">Editar Produto</a>
+                    <a href="excluirProd.jsp">Excluir Produto</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
+            </div>
+
+            <div class="dropdown">
+                <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
+            </div>
+
+        </nav>
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-6">
+                    <div class="col-md-6">
+                        <form action="PesquisaComanda" method="POST">
+
+                            <span>Nº Comanda</span> <input type="search" name="buscarComanda"  style="width:45px"><button>Buscar</button>
+                            <span> Comanda: </span><input value="${comandaProduto.idcomandaCom} " name="Comandabusca" style="width:45px" >
+                        </form>
+                        <form action="PesquisaCliente" method="POST">
+                            <input type="hidden" value="${comandaProduto.idcomandaCom}" >
+                            <span>CPF do Cliente</span> <input type="search" name="pesqcliente" ><button>Buscar</button> 
+                            <span>Nome do Cliente</span><input type="text" value="${cliente.nome}" name="nomecliente">
+
+                        </form>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="row"> 
+                    <div class="col-md-6">
+
+                        <!--aqui-->
+
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <img src="img/logo.png">	
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="col-md-6">
+
 
                 <div class="col-md-6">
 
-
-                    <div class="col-md-6">
-
+                    <form action="PesquisaProd" method="POST">
+                        <input type="hidden" value="${comandaProduto.idcomandaCom}" name="Comandabusca">
+                        <input type="hidden" value="${cliente.nome}" name="nomecliente">
                         <span>Produto </span>
                         <input type="search" name="skuProd"> 
-                        <button type="submit" name="buscar">»</button><br><br>
+                        <button action="PesquisaProd">»</button><br><br>
 
                         <table border="1">
                             <tbody><tr><td height="30px" width="120px"> Nome </td> <td height="30px" width="120px"> Tipo </td> <td height="30px" width="120px"> Marca </td> <td height="30px" width="70px"> Preço </td></tr>
-                                <tr><td height="30px" width="120px">${produto.nome}</td> <td height="30px" width="120px">${produto.tipo}</td> <td height="30px" width="120px">${produto.marca}</td> <td height="30px" width="70px">${produto.precovenda}</td> </tr>
+                                <tr><td height="30px" width="120px">${comandaProduto.nomeProd}</td> <td height="30px" width="120px">${comandaProduto.tipoProd}</td> <td height="30px" width="120px">${comandaProduto.marcaProd}</td> <td height="30px" width="70px">${comandaProduto.precovendaProd}</td> </tr>
 
                             </tbody></table>
-
-                        <br>
-
-                        <span>Quantidade</span> <input type="number" style="width:40px">
-                        <button>Adicionar</button>
-
-                    </div>
+                    </form>
 
                     <br>
-                    <br>
 
-
-
-
-                </div><div class="col-md-6">
-
-                    <span>Métodos de Pagamento</span><br>
-                    <input type="radio" name="pagamento" value="dinheiro"> Dinheiro <br>
-                    <input type="radio" name="pagamento" value="credito"> Crédito <br>
-                    <input type="radio" name="pagamento" value="debito"> Débito <br>
-
+                    <span>Quantidade</span> <input type="number" style="width:40px">
+                    <form action ="vendaProdutoComanda" method="POST" >
+                        <input type="hidden" value="${comandaProduto.idcomandaCom}" name="Comandabusca">
+                        <input type="hidden" value="${cliente.nome}" name="nomecliente">
+                        <input type="hidden" value="${produto.sku}" name="skuprod">
+                        <button action ="vendaProdutoComanda">Adicionar</button>   
+                    </form>
 
 
                 </div>
+
+                <br>
+                <br>
+
 
             </div><hr>
 
@@ -209,17 +209,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <span style="font-size: 18px">Lista:</span><br><br>
-
+                    
                     <table border="1">
+                        
                         <tbody><tr><td height="30px" width="120px"> Nome </td> <td height="30px" width="120px"> Tipo </td> <td height="30px" width="120px"> Marca </td> <td height="30px" width="70px"> Preço </td></tr>
-                            <tr><td height="30px" width="120px"></td> <td height="30px" width="120px"></td> <td height="30px" width="120px"></td> <td height="30px" width="70px"></td> </tr>
+                            <tr><td height="30px" width="120px">${comandaproduto.nomeProd}</td> <td height="30px" width="120px">${comandaproduto.tipoProd}</td> <td height="30px" width="120px">${comandaproduto.marcaProd}</td> <td height="30px" width="70px">${comandaproduto.precovendaProd}</td> </tr>
 
                         </tbody></table>
 
+
                 </div><div class="col-md-6">
-                    <span style="font-size:30px">Valor total:  </span><br>
+                    <span style="font-size:30px">Valor total:   </span><br>
                     <span style="font-size:30px">Recebido: </span><input type="text" style="width:60px"><br>
-                    <span style="font-size:30px">Troco: </span>
+                    <span style="font-size:30px">Troco:  </span>
                     <br><br>
 
                     <button>Confirmar venda</button>
@@ -235,38 +237,37 @@
 
             <script>
 
-                        function myFunction() {
-                            document.getElementById("myDropdown").classList.toggle("show");
-                        }
+                    function myFunction() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
 
-                        function myFunction1() {
-                            document.getElementById("myDropdown1").classList.toggle("show");
-                        }
+                    function myFunction1() {
+                        document.getElementById("myDropdown1").classList.toggle("show");
+                    }
 
-                        function myFunction2() {
-                            document.getElementById("myDropdown2").classList.toggle("show");
-                        }
+                    function myFunction2() {
+                        document.getElementById("myDropdown2").classList.toggle("show");
+                    }
 
-                        function myFunction3() {
-                            document.getElementById("myDropdown3").classList.toggle("show");
-                        }
+                    function myFunction3() {
+                        document.getElementById("myDropdown3").classList.toggle("show");
+                    }
 
 
-                        window.onclick = function (event) {
-                            if (!event.target.matches('.dropbtn')) {
+                    window.onclick = function (event) {
+                        if (!event.target.matches('.dropbtn')) {
 
-                                var dropdowns = document.getElementsByClassName("dropdown-content");
-                                var i;
-                                for (i = 0; i < dropdowns.length; i++) {
-                                    var openDropdown = dropdowns[i];
-                                    if (openDropdown.classList.contains('show')) {
-                                        openDropdown.classList.remove('show');
-                                    }
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            var i;
+                            for (i = 0; i < dropdowns.length; i++) {
+                                var openDropdown = dropdowns[i];
+                                if (openDropdown.classList.contains('show')) {
+                                    openDropdown.classList.remove('show');
                                 }
                             }
                         }
+                    }
             </script>
-        </form>
 
     </body>
 </html>

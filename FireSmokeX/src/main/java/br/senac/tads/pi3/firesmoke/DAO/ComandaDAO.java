@@ -44,7 +44,7 @@ public class ComandaDAO {
             String sql = "Select idcomanda from tbcomanda order by idcomanda desc limit 1";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                comanda.setIdcomanda(rs.getInt("idcomanda"));
+                comanda.setIdcomanda(rs.getString("idcomanda"));
             }
             rs.close();
             stmt.close();
@@ -61,7 +61,7 @@ public class ComandaDAO {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setDouble(1, comanda.getValortotal());
             stmt.setBoolean(2, comanda.isStatuspagamento());
-            stmt.setInt(3, comanda.getIdcomanda());
+            stmt.setString(3, comanda.getIdcomanda());
             stmt.execute();
             stmt.close();
             System.out.println("Comanda " + comanda.getIdcomanda() + " alterado com sucesso");
@@ -81,7 +81,7 @@ public class ComandaDAO {
             String sql = "SELECT * FROM tbcomanda where idcomanda = '" + pesquisa + "'";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                comanda.setIdcomanda(rs.getInt("idcomanda"));
+                comanda.setIdcomanda(rs.getString("idcomanda"));
                 comanda.setValortotal(rs.getDouble("valortotal"));
                 comanda.setStatuspagamento(rs.getBoolean("statuspagamento"));
                 System.out.println(comanda.getIdcomanda());
@@ -104,7 +104,7 @@ public class ComandaDAO {
             String sql = "SELECT * FROM tbcomanda";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                comanda.setIdcomanda(rs.getInt("idcomanda"));
+                comanda.setIdcomanda(rs.getString("idcomanda"));
                 comanda.setValortotal(rs.getDouble("valortotal"));
                 comanda.setStatuspagamento(rs.getBoolean("statuspagamento"));
             }
@@ -122,7 +122,7 @@ public class ComandaDAO {
             String sql = "DELETE FROM tbcomanda WHERE idcomanda = ?";
             conexao = ModuloConexao.conector();
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, comanda.getIdcomanda());
+            stmt.setString(1, comanda.getIdcomanda());
             stmt.execute();
             stmt.close();
             System.out.println("Comanda " + comanda.getIdcomanda() + " excluído com sucesso");

@@ -16,6 +16,16 @@ public class Produto {
     private String sku;
     private String precovenda;
     private String precocompra;
+    
+    private String idcomanda;
+
+    public String getIdcomanda() {
+        return idcomanda;
+    }
+
+    public void setIdcomanda(String idcomanda) {
+        this.idcomanda = idcomanda;
+    }
 
     public String getNome() {
         return nome;

@@ -18,7 +18,6 @@
 
     <body>
 
-        <form action="cadastroCliente" method="POST">
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                 <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
@@ -70,7 +69,7 @@
             </nav>
 
             <main class="bg-light">
-                <div class="col-md-8 order-md-1">
+                <div class="col-md-12 order-md-1">
 
                     <div class="row">
                         <br>
@@ -82,29 +81,19 @@
 
                     <div class="container">
 
-                        <h1>Relatório de Clientes</h1>
+                        <h1>Relatórios</h1>
+                        
+                        &emsp;
+                        <br><br><br>
+
+                        <table border="1" align="center">
+                            <tr><td><a href="relatorioCliente.jsp"><img src = "img/cliente.jpg" height="70px" width="70px"></a></td> <td width="200px" style="text-align: center"> <a href="relatorioCliente.jsp" style="text-decoration: none"> <span>Clientes</span> </a> </td> </tr>
+                            <tr><td><a href="relatorioFunc.jsp"><img src = "img/func.jpg" height="70px" width="70px"></a></td> <td width="200px" style="text-align: center"> <a href="relatorioFunc.jsp" style="text-decoration: none"> <span>Funcionários</span> </a> </td> </tr>
+                            <tr><td><a href="relatorioVenda.jsp"><img src = "img/venda.jpg" height="70px" width="70px"></a> </td> <td width="200px" style="text-align: center"> <a href="relatorioVenda.jsp" style="text-decoration: none"> <span> Vendas </span> </a> </td> </tr>
+                        </table>
 
                         &emsp;
 
-                        <table style="height: 10px; width: 775px;" border="1">
-                            <tr>
-                                <th>Nome</th>
-                                <th>E-mail</th>
-                                <th>CPF</th>
-                                <th>Telefone</th>
-                                <th>Data de Nascimento</th>
 
-                            </tr>
-
-                            <c:forEach items="${atributos}" var="atributo">
-                                <tr>
-                                    <td>${atributos.nome}</td>
-                                    <td>${atributos.email}</td>
-                                    <td>${atributos.cpf}</td>
-                                    <td>${atributos.telefone}</td>
-                                    <td>${atributos.dtnascimento}</td>
-                                </tr>
-                            </c:forEach>
-                        </table>
                         </body>
                         </html>
