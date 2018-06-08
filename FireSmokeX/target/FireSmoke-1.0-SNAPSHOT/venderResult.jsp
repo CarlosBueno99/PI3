@@ -1,4 +1,5 @@
 <!doctype html>
+<jsp:useBean id="lista" class="java.util.ArrayList" scope="session"/>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -130,6 +131,7 @@
 
                             <span>Nº Comanda</span> <input type="search" name="buscarComanda"  style="width:45px"><button>Buscar</button>
                             <span> Comanda: </span><input value="${comandaProduto.idcomandaCom} " name="Comandabusca" style="width:45px" >
+
                         </form>
                         <form action="PesquisaCliente" method="POST">
                             <input type="hidden" value="${comandaProduto.idcomandaCom}" >
@@ -200,23 +202,29 @@
 
                 <br>
                 <br>
+                <table border="1" height="30px" width="120px">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Marca</th>
+                        <th>Preço</th>
+
+                    </tr>
+
+                    <c:forEach items=${lista} var="lista">
+                    <!--c:forEach var="lista" value="${lista}"-->
+                        <tr>
+                            <td><c:out height="30px" width="120px" value="${lista.get(0).getNomeProd()}"/></td>
+                        </tr>
+                    </c:forEach>
+
+                </table>
 
 
-            </div><hr>
-
-
+            </div>
 
             <div class="row">
                 <div class="col-md-6">
-                    <span style="font-size: 18px">Lista:</span><br><br>
-                    
-                    <table border="1">
-                        
-                        <tbody><tr><td height="30px" width="120px"> Nome </td> <td height="30px" width="120px"> Tipo </td> <td height="30px" width="120px"> Marca </td> <td height="30px" width="70px"> Preço </td></tr>
-                            <tr><td height="30px" width="120px">${comandaproduto.nomeProd}</td> <td height="30px" width="120px">${comandaproduto.tipoProd}</td> <td height="30px" width="120px">${comandaproduto.marcaProd}</td> <td height="30px" width="70px">${comandaproduto.precovendaProd}</td> </tr>
-
-                        </tbody></table>
-
 
                 </div><div class="col-md-6">
                     <span style="font-size:30px">Valor total:   </span><br>
@@ -252,6 +260,7 @@
                     function myFunction3() {
                         document.getElementById("myDropdown3").classList.toggle("show");
                     }
+
 
 
                     window.onclick = function (event) {

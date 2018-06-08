@@ -12,6 +12,7 @@ import br.senac.tads.pi3.firesmoke.Model.ComandaProduto;
 import br.senac.tads.pi3.firesmoke.Model.Produto;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,29 +44,31 @@ public class PesquisaComanda extends HttpServlet {
         comanda = new Comanda();
         produto = new Produto();
         comandaProduto = new ComandaProduto();
+        HttpSession sessao = request.getSession();
+        
         //PESQUISAR COMANDA
         String pesquisa = request.getParameter("buscarComanda");
 
+        sessao.setAttribute("idcomanda", pesquisa);
         ComandaDAO comandadados = new ComandaDAO();
         ComandaProdutoDAO comandaprodutodados = new ComandaProdutoDAO();
         if (pesquisa != null) {
 
             comanda = comandadados.pesquisar(Integer.parseInt(pesquisa));
-            
-            System.out.println("Parei aqui");
+
             comandaProduto.setIdcomandaCom(comanda.getIdcomanda());
 
             request.setAttribute("comandaProduto", comandaProduto);
             System.out.println(comandaProduto.getIdcomandaCom());
 
-            
-            if (comandaProduto.getIdcomandaCom().equals("0")) {
+            if (comandaProduto.getIdcomandaCom()== 0) {
                 request.getRequestDispatcher("vender.jsp").forward(request, response);
 
             } else {
-                HttpSession sessao = request.getSession();
-                sessao.setAttribute("idcomanda", comanda);
-                comandaprodutodados.pesquisacomandaproduto(Integer.parseInt(pesquisa));
+                ArrayList<ComandaProduto> lista = comandaprodutodados.pesquisacomandaproduto(Integer.parseInt(pesquisa));
+                
+                request.setAttribute("lista", lista);
+                
                 request.getRequestDispatcher("venderResult.jsp").forward(request, response);
             }
         }

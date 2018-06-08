@@ -73,7 +73,6 @@ public class ProdutoDAO {
                 produto.setTipo(rs.getString("tipo"));
                 produto.setMarca(rs.getString("marca"));
                 produto.setPrecovenda(rs.getString("precovenda"));
-                System.out.println("TESTE 4 "+ sql);
 
             }
             rs.close();

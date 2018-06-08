@@ -100,18 +100,20 @@
 
 
 
-                        <c:forEach items="${listacliente}" var="listaclientes">
+                        <c:forEach items="${cliente}" var="cliente">
                             <tr>
-                                <td>${listaclientes.nome}</td>
-                                <td>${listaclientes.email}</td>
-                                <td>${listaclientes.cpf}</td>
-                                <td>${listaclientes.telefone}</td>
-                                <td>${listaclientes.dtnascimento}</td>
+                            <td><c:out value="${listacliente.nome}"/></td>
+                            <td><c:out value="${listacliente.email}"/></td>
+                            <td><c:out value="${listacliente.cpf}"/></td>
+                            <td><c:out value="${listacliente.telefone}"/></td>
+                            <td><c:out value="${listacliente.dtnascimento}"/></td>
                             </tr>
                         </c:forEach>
 
                     </table>
                 </form>
-
-                </body>
-                </html>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

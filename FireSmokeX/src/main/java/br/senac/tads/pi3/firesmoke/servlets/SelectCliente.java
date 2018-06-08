@@ -39,12 +39,9 @@ public class SelectCliente extends HttpServlet {
         ClienteDAO clientedados = new ClienteDAO();
 
         ArrayList<Cliente> listacliente = clientedados.consulta();
-
-        if (listacliente != null) {
-            //request.setAttribute("listacliente", listacliente);
-            request.getRequestDispatcher("relatorioClienteResult");
-
-        }
+        System.out.println(listacliente);
+        request.setAttribute("listacliente", listacliente);
+        request.getRequestDispatcher("relatorioClienteResult.jsp").forward(request, response);
 
     }
 

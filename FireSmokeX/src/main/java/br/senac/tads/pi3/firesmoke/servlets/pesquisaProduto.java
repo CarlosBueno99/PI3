@@ -49,13 +49,13 @@ public class pesquisaProduto extends HttpServlet {
         System.out.println("aqui chegou"+idComanda);
         
                 
-        //sessao.setAttribute("idcomandaCom", idComanda);
+        
 
         
         
         String pesquisa = request.getParameter("buscaProd");
         
-
+        sessao.setAttribute("buscaProd", pesquisa);
         ProdutoDAO produtodados = new ProdutoDAO();
         if (!pesquisa.equalsIgnoreCase("") && pesquisa != null) {
             
@@ -63,7 +63,7 @@ public class pesquisaProduto extends HttpServlet {
             produto = new Produto();
 
             produto = produtodados.pesquisar(pesquisa);
-            comandaProduto.setIdcomandaCom(idComanda);
+            comandaProduto.setIdcomandaCom(Integer.parseInt(idComanda));
             comandaProduto.setSkuProd(produto.getSku());
             comandaProduto.setNomeProd(produto.getNome());
             comandaProduto.setMarcaProd(produto.getMarca());

@@ -1,0 +1,5 @@
+br\senac\tads\pi3\firesmoke\servlets\inserirComanda.class
+br\senac\tads\pi3\firesmoke\servlets\vendaProdutoComanda.class
+br\senac\tads\pi3\firesmoke\DAO\ComandaProdutoDAO.class
+br\senac\tads\pi3\firesmoke\servlets\inserirProdutocomanda.class
+br\senac\tads\pi3\firesmoke\servlets\PesquisaComanda.class

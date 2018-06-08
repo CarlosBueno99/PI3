@@ -38,7 +38,7 @@ public class inserirProdutocomanda extends HttpServlet {
         String pesquisa = request.getParameter("idcomandaCom");
         String busca = request.getParameter("prod");
 
-        comanda.setIdcomanda(pesquisa);
+        comanda.setIdcomanda(Integer.parseInt(pesquisa));
         produto.setSku(busca);
         ComandaProdutoDAO comandaprodutodados = new ComandaProdutoDAO();
         ComandaProduto comandaproduto = new ComandaProduto();

@@ -11,13 +11,13 @@ package br.senac.tads.pi3.firesmoke.Model;
  */
 public class Comanda {
     private double valortotal;
-    private String idcomanda;
+    private int idcomanda;
 
-    public String getIdcomanda() {
+    public int getIdcomanda() {
         return idcomanda;
     }
 
-    public void setIdcomanda(String idcomanda) {
+    public void setIdcomanda(int idcomanda) {
         this.idcomanda = idcomanda;
     }
 

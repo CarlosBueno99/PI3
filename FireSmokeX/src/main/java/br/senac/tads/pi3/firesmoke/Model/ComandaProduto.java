@@ -16,8 +16,17 @@ public class ComandaProduto {
     private String marcaProd;
     private String skuProd;
     private String precovendaProd;
+    private int quantidade;
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
     private double valortotalCom;
-    private String idcomandaCom;
+    private int idcomandaCom;
     private boolean statuspagamentoCom;
 
     public String getNomeProd() {
@@ -68,11 +77,11 @@ public class ComandaProduto {
         this.valortotalCom = valortotalCom;
     }
 
-    public String getIdcomandaCom() {
+    public int getIdcomandaCom() {
         return idcomandaCom;
     }
 
-    public void setIdcomandaCom(String idcomandaCom) {
+    public void setIdcomandaCom(int idcomandaCom) {
         this.idcomandaCom = idcomandaCom;
     }
 

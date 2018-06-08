@@ -183,7 +183,7 @@
 
                     <br>
 
-                    <span>Quantidade</span> <input type="number" style="width:40px">
+                    <span>Quantidade</span> <input type="number" name="qtde" style="width:40px">
                     <button>Adicionar</button>
 
                 </div>

@@ -6,6 +6,7 @@
 package br.senac.tads.pi3.firesmoke.servlets;
 
 import br.senac.tads.pi3.firesmoke.DAO.ProdutoDAO;
+import br.senac.tads.pi3.firesmoke.Model.Cliente;
 import br.senac.tads.pi3.firesmoke.Model.Comanda;
 import br.senac.tads.pi3.firesmoke.Model.ComandaProduto;
 import br.senac.tads.pi3.firesmoke.Model.Produto;
@@ -32,20 +33,22 @@ public class PesquisaProd extends HttpServlet {
     ComandaProduto comandaProduto;
     Produto produto;
     Comanda comanda;
-
+    Cliente cliente;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        cliente = new Cliente();
         //PESQUISAR PRODUTOS
         HttpSession sessao = request.getSession();
 
-        String idComanda = request.getParameter("Comandabusca");
+        String idComanda = (String) sessao.getAttribute("idcomanda");
+        String nomeCliente = (String) sessao.getAttribute("nomecliente");
 
         System.out.println("aqui chegou" + idComanda);
 
-        //sessao.setAttribute("idcomandaCom", idComanda);
         String pesquisa = request.getParameter("skuProd");
 
+        sessao.setAttribute("skuprod", pesquisa);
         ProdutoDAO produtodados = new ProdutoDAO();
         if (!pesquisa.equalsIgnoreCase("") && pesquisa != null) {
 
@@ -53,7 +56,8 @@ public class PesquisaProd extends HttpServlet {
             produto = new Produto();
 
             produto = produtodados.pesquisar(pesquisa);
-            comandaProduto.setIdcomandaCom(idComanda);
+            comandaProduto.setIdcomandaCom(Integer.parseInt(idComanda));
+            cliente.setNome(nomeCliente);
             comandaProduto.setSkuProd(produto.getSku());
             comandaProduto.setNomeProd(produto.getNome());
             comandaProduto.setMarcaProd(produto.getMarca());
@@ -61,11 +65,8 @@ public class PesquisaProd extends HttpServlet {
             comandaProduto.setPrecovendaProd(produto.getPrecovenda());
 
             request.setAttribute("comandaProduto", comandaProduto);
-
+            request.setAttribute("cliente", cliente);
             if (comandaProduto.getNomeProd() != null) {
-                System.out.println("entrou aqui inserirComandaResult");
-                sessao.setAttribute("idcomandaCom", idComanda);
-
                 request.getRequestDispatcher("venderResult.jsp").forward(request, response);
             }// else {
             //request.getRequestDispatcher("inserirComanda.jsp").forward(request, response);

@@ -58,7 +58,7 @@ public class inserirComanda extends HttpServlet {
             request.setAttribute("comandaProduto", comandaProduto);
             System.out.println(comandaProduto.getIdcomandaCom());
             
-            if (comandaProduto.getIdcomandaCom().equals("0")) {
+            if (comandaProduto.getIdcomandaCom()== 0) {
                 request.getRequestDispatcher("inserirComanda.jsp").forward(request, response);
                 
             } else {
