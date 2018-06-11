@@ -1,4 +1,13 @@
 use firesmoke;
+CREATE TABLE tbcomandaproduto (
+idcomanda int(11) NOT NULL,
+skuproduto varchar(45) NOT NULL,
+quantidade int(11) NOT NULL,
+  PRIMARY KEY (idcomanda,skuproduto),
+  KEY fk_tbproduto(skuproduto),
+  CONSTRAINT fk_tbcomanda FOREIGN KEY (idcomanda) REFERENCES tbcomanda (idcomanda),
+  CONSTRAINT `fk_tbproduto` FOREIGN KEY (skuproduto) REFERENCES tbprodutos (sku)
+);
 
 INSERT tbcomanda (valortotal,statuspagamento)values(100.00,false);
 SELECT * FROM tbcomanda;
