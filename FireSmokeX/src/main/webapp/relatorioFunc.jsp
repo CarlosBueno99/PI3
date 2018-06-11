@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="br.senac.tads.pi3.firesmoke.DAO.FuncionarioDAO"%>
 <!doctype html>
 <html>
     <head>
@@ -19,93 +21,100 @@
     <body>
 
 
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
 
-                </button>
+        </button>
 
-                <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Cliente</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="cadastroCliente.jsp">Cadastrar cliente</a>
-                        <a href="editarCliente.jsp">Editar cliente</a>
-                        <a href="listaCliente.jsp">Lista de cliente</a>
-                    </div>
-                </div>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Cliente</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="cadastroCliente.jsp">Cadastrar cliente</a>
+                <a href="editarCliente.jsp">Editar cliente</a>
+                <a href="listaCliente.jsp">Lista de cliente</a>
+            </div>
+        </div>
 
-                <div class="dropdown">
-                    <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
-                    <div id="myDropdown1" class="dropdown-content">
-                        <a href="cadastroFunc.jsp">Cadastrar funcionário</a>
-                        <a href="editarFunc.jsp">Editar funcionário</a>
-                        <a href="listaFunc.jsp">Lista de funcionários</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button onclick="myFunction2()" class="dropbtn">Comanda</button>
-                    <div id="myDropdown2" class="dropdown-content">
-                        <a href="cadastroComanda.jsp">Cadastrar comanda</a>
-                        <a href="inserirComanda.jsp">Inserir</a>
-                    </div>
-                </div>
+        <div class="dropdown">
+            <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
+            <div id="myDropdown1" class="dropdown-content">
+                <a href="cadastroFunc.jsp">Cadastrar funcionário</a>
+                <a href="editarFunc.jsp">Editar funcionário</a>
+                <a href="listaFunc.jsp">Lista de funcionários</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="myFunction2()" class="dropbtn">Comanda</button>
+            <div id="myDropdown2" class="dropdown-content">
+                <a href="cadastroComanda.jsp">Cadastrar comanda</a>
+                <a href="inserirComanda.jsp">Inserir</a>
+            </div>
+        </div>
 
-                <div class="dropdown">
-                    <button onclick="myFunction3()" class="dropbtn">Produto</button>
-                    <div id="myDropdown3" class="dropdown-content">
-                        <a href="cadastroProd.jsp">Cadastrar produto</a>
-                        <a href="editarProd.jsp">Editar produto</a>
-                        <a href="listaProd.jsp">Lista de produtos</a>
-                    </div>
-                </div>
+        <div class="dropdown">
+            <button onclick="myFunction3()" class="dropbtn">Produto</button>
+            <div id="myDropdown3" class="dropdown-content">
+                <a href="cadastroProd.jsp">Cadastrar produto</a>
+                <a href="editarProd.jsp">Editar produto</a>
+                <a href="listaProd.jsp">Lista de produtos</a>
+            </div>
+        </div>
 
-                <div class="dropdown">
-                    <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
-                </div>
+        <div class="dropdown">
+            <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
+        </div>
 
-                <div class="dropdown">
-                    <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
-                </div>
+        <div class="dropdown">
+            <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
+        </div>
 
-            </nav>
+    </nav>
 
-            <main class="bg-light">
-                <div class="col-md-8 order-md-1">
+    <main class="bg-light">
+        <div class="col-md-8 order-md-1">
 
-                    <div class="row">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+            <div class="row">
+                <br>
+                <br>
+                <br>
+                <br>
 
-                    </div>
+            </div>
 
-                    <div class="container">
+            <div class="container">
 
-                        <h1>Relatório de Funcionários</h1>
+                <h1>Relatório de Funcionários</h1>
 
-                        &emsp;
+                &emsp;
 
-                        <table style="height: 10px; width: 775px;" border="1">
-                            <tr>
-                                <th>Nome</th>
-                                <th>Endereço</th>
-                                <th>Cargo</th>
-                                <th>CPF</th>
-                                <th>Telefone</th>
-                                <th>Data de Nascimento</th>
+                <table style="height: 10px; width: 775px;" border="1">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Endereço</th>
+                        <th>Cargo</th>
+                        <th>CPF</th>
+                        <th>Data de Nascimento</th>
 
-                            </tr>
+                    </tr>
 
-                            <c:forEach items="${atributos}" var="atributo">
-                                <tr>
-                                    <td>${atributos.nome}</td>
-                                    <td>${atributos.endereco}</td>
-                                    <td>${atributos.cargo}</td>
-                                    <td>${atributos.cpf}</td>
-                                    <td>${atributos.telefone}</td>
-                                    <td>${atributos.dtnascimento}</td>
-                                </tr>
-                            </c:forEach>
-                        </table>
-                        </body>
-                        </html>
+                    <%
+                        HttpSession sessao = request.getSession();
+                        FuncionarioDAO funcionario = new FuncionarioDAO();
+                        ResultSet result = funcionario.consulta();
+                        while (result.next()) {
+
+                    %>
+
+                    <tr>
+                        <td><%=result.getString("nome")%></td>
+                        <td><%=result.getString("endereco")%></td>
+                        <td><%=result.getString("cargo")%></td>
+                        <td><%=result.getString("cpf")%></td>
+                        <td><%=result.getString("dtnascimento")%></td>
+
+                    </tr>
+                    <% }
+                    %>
+                </table>
+                </body>
+                </html>

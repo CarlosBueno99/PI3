@@ -62,7 +62,7 @@ public class PesquisaProd extends HttpServlet {
             comandaProduto.setNomeProd(produto.getNome());
             comandaProduto.setMarcaProd(produto.getMarca());
             comandaProduto.setTipoProd(produto.getTipo());
-            comandaProduto.setPrecovendaProd(produto.getPrecovenda());
+            comandaProduto.setPrecovendaProd(Double.parseDouble(produto.getPrecovenda()));
 
             request.setAttribute("comandaProduto", comandaProduto);
             request.setAttribute("cliente", cliente);

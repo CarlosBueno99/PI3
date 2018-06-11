@@ -9,6 +9,7 @@ import br.senac.tads.pi3.firesmoke.DAO.ClienteDAO;
 import br.senac.tads.pi3.firesmoke.Model.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,10 +39,10 @@ public class SelectCliente extends HttpServlet {
         cliente = new Cliente();
         ClienteDAO clientedados = new ClienteDAO();
 
-        ArrayList<Cliente> listacliente = clientedados.consulta();
+        ResultSet listacliente = clientedados.consulta();
         System.out.println(listacliente);
         request.setAttribute("listacliente", listacliente);
-        request.getRequestDispatcher("relatorioClienteResult.jsp").forward(request, response);
+        request.getRequestDispatcher("relatorioCliente.jsp").forward(request, response);
 
     }
 

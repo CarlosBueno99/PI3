@@ -87,32 +87,33 @@ public class ClienteDAO {
         return cliente;
     }
 
-    public ArrayList<Cliente> consulta() {
+    public ResultSet consulta() {
         
         ArrayList <Cliente> listacliente = new ArrayList();
         String message = "";
+        ResultSet rs = null;
         try {
             conexao = ModuloConexao.conector();
             java.sql.Statement stmt = conexao.createStatement();
             String sql = "SELECT * FROM tbclientes";
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                Cliente cliente = new Cliente();
+             rs = stmt.executeQuery(sql);
+           // while (rs.next()) {
+                //Cliente cliente = new Cliente();
                 
-                cliente.setNome(rs.getString("nome"));
-                cliente.setCpf(rs.getString("cpf"));
-                cliente.setFone(rs.getString("fone"));
-                cliente.setEmail(rs.getString("email"));
-                cliente.setDtnascimento(rs.getString("dtnascimento"));
-                listacliente.add(cliente);
-            }
-            rs.close();
-            stmt.close();
+                //cliente.setNome(rs.getString("nome"));
+                //cliente.setCpf(rs.getString("cpf"));
+                //cliente.setFone(rs.getString("fone"));
+                //cliente.setEmail(rs.getString("email"));
+                //cliente.setDtnascimento(rs.getString("dtnascimento"));
+                //listacliente.add(cliente);
+            
+           // rs.close();
+           // stmt.close();
 
         } catch (SQLException e) {
 
         } 
-        return listacliente;
+        return rs;
     }
 
     public void deletar(Cliente cliente) {

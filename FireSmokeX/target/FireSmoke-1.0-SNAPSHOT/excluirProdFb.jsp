@@ -72,112 +72,104 @@
                 </div>
 
             </nav>
-        </body>
+    </body>
 
-            <main class="bg-light">
-                <div class="col-md-8 order-md-1">
+    <main class="bg-light">
+        <div class="col-md-8 order-md-1">
 
-                    <div class="row">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+            <div class="row">
+                <br>
+                <br>
+                <br>
+                <br>
 
-                    </div>
-                    <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Excluir Produto</h4>
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Excluir Produto</h4>
+            </div>
+
+            <br>
+
+
+            <div class="mb-3">
+                <div><label>Digite o SKU do produto</label></div>
+                <form action="excluirProduto" method="POST">
+                    <label for="pesquisa"></label>
+                    <input type="search" name="pesquisa" >
+                    <button type="submit">Pesquisar</button>
+
+                    <div class="invalid-feedback">
+                        Por favor, insira um SKU válido.
                     </div>
 
                     <br>
+                    <br>
+
+                    <div class="mb-3">
+                        <label>Nome</label>
+                        <input type="text" name="nomeProd" class="form-control" >
+                        <div class="invalid-feedback">
+                            Nome do produto.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>SKU</label>
+                        <input type="text" name="sku" class="form-control" >
+                        <div class="invalid-feedback">
+                            Sku do produto.
+                        </div>
+                    </div>
 
 
                     <div class="mb-3">
-                        <div><label>Digite o SKU do produto</label></div>
-                        <form action="excluirProduto" method="POST">
-                            <label for="pesquisa"></label>
-                            <input type="search" name="pesquisa" >
-                            <button type="submit">Pesquisar</button>
-
-                            <div class="invalid-feedback">
-                                Por favor, insira um SKU válido.
-                            </div>
-
-                            <br>
-                            <br>
-
-                            <div class="mb-3">
-                                <label>Nome</label>
-                                <input type="text" name="nomeProd" class="form-control" >
-                                <div class="invalid-feedback">
-                                    Nome do produto.
-                                </div>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label>SKU</label>
-                                <input type="text" name="sku" class="form-control" >
-                                <div class="invalid-feedback">
-                                    Sku do produto.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>Tipo</label>
-                                <input type="text" name="tipo" class="form-control">
-                                <div class="invalid-feedback">
-                                    Tipo.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>Marca</label>
-                                <input type="text" name="marca" class="form-control" >
-                                <div class="invalid-feedback">
-                                    Marca.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>Preço de Venda</label>
-                                <input type="text" name="precovenda" class="form-control">
-                                <div class="invalid-feedback">
-                                    Preço de venda.
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label>Preço de Compra</label>
-                                <input type="text" name="precocompra" class="form-control">
-                                <div class="invalid-feedback">
-                                    Preço de Compra.
-                                </div>
-                            </div>
-
-
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Excluir</button>
-
-                        </form>
+                        <label>Tipo</label>
+                        <input type="text" name="tipo" class="form-control">
+                        <div class="invalid-feedback">
+                            Tipo.
+                        </div>
                     </div>
 
-            </main><!-- /.container -->
 
-            <!-- Bootstrap core JavaScript
-            ================================================== -->
-            <!-- Placed at the end of the document so the pages load faster -->
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-            <script src="../../../../assets/js/vendor/popper.min.js"></script>
-            <script src="../../../../dist/js/bootstrap.min.js"></script>
+                    <div class="mb-3">
+                        <label>Marca</label>
+                        <input type="text" name="marca" class="form-control" >
+                        <div class="invalid-feedback">
+                            Marca.
+                        </div>
+                    </div>
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-            <script src="../../../../assets/js/vendor/popper.min.js"></script>
-            <script src="../../../../dist/js/bootstrap.min.js"></script>
-            <script src="../../../../assets/js/vendor/holder.min.js"></script>
-            <script>
+
+                    <div class="mb-3">
+                        <label>Preço de Venda</label>
+                        <input type="text" name="precovenda" class="form-control">
+                        <div class="invalid-feedback">
+                            Preço de venda.
+                        </div>
+                    </div>
+
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Excluir</button>
+
+                </form>
+            </div>
+
+    </main><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script>
                         // Example starter JavaScript for disabling form submissions if there are invalid fields
                         (function () {
                             'use strict';
@@ -198,39 +190,39 @@
                                 });
                             }, false);
                         })();
-            </script>
+    </script>
 
-    </body>
-    <script>
+</body>
+<script>
 
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
 
-        function myFunction1() {
-            document.getElementById("myDropdown1").classList.toggle("show");
-        }
+    function myFunction1() {
+        document.getElementById("myDropdown1").classList.toggle("show");
+    }
 
-        function myFunction2() {
-            document.getElementById("myDropdown2").classList.toggle("show");
-        }
+    function myFunction2() {
+        document.getElementById("myDropdown2").classList.toggle("show");
+    }
 
-        function myFunction3() {
-            document.getElementById("myDropdown3").classList.toggle("show");
-        }
+    function myFunction3() {
+        document.getElementById("myDropdown3").classList.toggle("show");
+    }
 
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
 
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
                 }
             }
         }
-    </script>
+    }
+</script>
 </html>

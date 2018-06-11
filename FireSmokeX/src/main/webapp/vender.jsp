@@ -211,14 +211,16 @@
                     </tbody></table>
 
             </div><div class="col-md-6">
+                
                 <span style="font-size:30px">Valor total: </span><br>
                 <span style="font-size:30px">Recebido: </span><br>
                 <span style="font-size:30px">Troco: </span>
                 <br><br>
 
                 <button>Confirmar venda</button>
-                <button>Cancelar</button>
-
+                <form action="Menu" method="POST">
+                <button action ="Menu">Cancelar</button>
+                </form>
             </div>
         </div>
 

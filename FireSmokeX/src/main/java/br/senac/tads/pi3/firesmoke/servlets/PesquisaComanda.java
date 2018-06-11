@@ -12,6 +12,7 @@ import br.senac.tads.pi3.firesmoke.Model.ComandaProduto;
 import br.senac.tads.pi3.firesmoke.Model.Produto;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -65,7 +66,7 @@ public class PesquisaComanda extends HttpServlet {
                 request.getRequestDispatcher("vender.jsp").forward(request, response);
 
             } else {
-                ArrayList<ComandaProduto> lista = comandaprodutodados.pesquisacomandaproduto(Integer.parseInt(pesquisa));
+                ResultSet lista = comandaprodutodados.pesquisacomandaproduto(Integer.parseInt(pesquisa));
                 
                 request.setAttribute("lista", lista);
                 

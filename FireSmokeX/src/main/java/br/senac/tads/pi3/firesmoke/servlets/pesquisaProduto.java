@@ -29,36 +29,28 @@ public class pesquisaProduto extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
-    
+
     ComandaProduto comandaProduto;
     Produto produto;
     Comanda comanda;
-    
-     String idComanda;
+
+    String idComanda;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //PESQUISAR PRODUTOS
         HttpSession sessao = request.getSession();
-        
-        
-        
-        
-        idComanda = request.getParameter("idcomandaCom");
-        
-        System.out.println("aqui chegou"+idComanda);
-        
-                
-        
 
-        
-        
+        idComanda = request.getParameter("idcomandaCom");
+
+        System.out.println("aqui chegou" + idComanda);
+
         String pesquisa = request.getParameter("buscaProd");
-        
+
         sessao.setAttribute("buscaProd", pesquisa);
         ProdutoDAO produtodados = new ProdutoDAO();
         if (!pesquisa.equalsIgnoreCase("") && pesquisa != null) {
-            
+
             comandaProduto = new ComandaProduto();
             produto = new Produto();
 
@@ -68,13 +60,11 @@ public class pesquisaProduto extends HttpServlet {
             comandaProduto.setNomeProd(produto.getNome());
             comandaProduto.setMarcaProd(produto.getMarca());
             comandaProduto.setTipoProd(produto.getTipo());
-            comandaProduto.setPrecovendaProd(produto.getPrecovenda());
-            System.out.println(comandaProduto.getIdcomandaCom()+" sgdyagsy");
-            
+            comandaProduto.setPrecovendaProd(Double.parseDouble(produto.getPrecovenda()));
+            System.out.println(comandaProduto.getIdcomandaCom() + " sgdyagsy");
 
             request.setAttribute("comandaProduto", comandaProduto);
-            
-            
+
             if (comandaProduto.getNomeProd() != null) {
                 System.out.println("entrou aqui inserirComandaResult");
                 sessao.setAttribute("idcomandaCom", idComanda);

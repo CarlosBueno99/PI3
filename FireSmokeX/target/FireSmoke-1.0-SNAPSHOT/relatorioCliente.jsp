@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="br.senac.tads.pi3.firesmoke.DAO.ClienteDAO"%>
 <!doctype html>
 <html>
     <head>
@@ -82,36 +84,38 @@
             <div class="container">
 
 
-                <h1>Relatório de Clientes</h1>
-                <form action="SelectCliente" method="POST">
-                    <button>Gerar relatório</button>   
-                    &emsp;
+                <h1>Relatório de Clientes</h1> 
+                &emsp;
 
-                    <table style="height: 10px; width: 775px;" border="1">
-                        <tr>
-                            <th>Nome</th>
-                            <th>E-mail</th>
-                            <th>CPF</th>
-                            <th>Telefone</th>
-                            <th>Data de Nascimento</th>
+                <table style="height: 10px; width: 775px;" border="1">
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>Data de Nascimento</th>
 
-                        </tr>
+                    </tr>
 
+                    <%
+                        HttpSession sessao = request.getSession();
+                        ClienteDAO cliente = new ClienteDAO();
+                        ResultSet result = cliente.consulta();
+                        while (result.next()) {
 
+                    %>
 
+                    <tr>
+                        <td><%=result.getString("nome")%></td>
+                        <td><%=result.getString("email")%></td>
+                        <td><%=result.getString("cpf")%></td>
+                        <td><%=result.getString("fone")%></td>
+                        <td><%=result.getString("dtnascimento")%></td>
 
-                        <c:forEach var="listacliente">
-                            <tr>
-                                <td>${listacliente.nome}</td>
-                                <td>${listacliente.email}</td>
-                                <td>${listacliente.cpf}</td>
-                                <td>${listacliente.telefone}</td>
-                                <td>${listacliente.dtnascimento}</td>
-                            </tr>
-                        </c:forEach>
-
-                    </table>
-                </form>
+                    </tr>
+                    <% }
+                    %>
+                </table>
 
                 </body>
                 </html>

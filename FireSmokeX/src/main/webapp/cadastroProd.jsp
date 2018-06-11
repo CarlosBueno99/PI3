@@ -49,15 +49,15 @@
                         <a href="inserirComanda.jsp">Inserir</a>
                     </div>
                 </div>
-                
+
                 <div class="dropdown">
-                        <button onclick="myFunction3()" class="dropbtn">Produto</button>
-                        <div id="myDropdown3" class="dropdown-content">
-                            <a href="cadastroProd.jsp">Cadastrar Produto</a>
-                            <a href="editarProd.jsp">Editar Produto</a>
-                            <a href="excluirProd.jsp">Excluir Produto</a>
-                        </div>
+                    <button onclick="myFunction3()" class="dropbtn">Produto</button>
+                    <div id="myDropdown3" class="dropdown-content">
+                        <a href="cadastroProd.jsp">Cadastrar Produto</a>
+                        <a href="editarProd.jsp">Editar Produto</a>
+                        <a href="excluirProd.jsp">Excluir Produto</a>
                     </div>
+                </div>
 
                 <div class="dropdown">
                     <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
@@ -130,14 +130,6 @@
                             Preço de venda.
                         </div>
                     </div>
-                    
-                    <div class="mb-3">
-                        <label>Preço de Compra</label>
-                        <input type="money" name="precocompra" class="form-control">
-                        <div class="invalid-feedback">
-                            Preço de Compra.
-                        </div>
-                    </div>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>   
                 </div>
 
@@ -168,7 +160,7 @@
                         function myFunction2() {
                             document.getElementById("myDropdown2").classList.toggle("show");
                         }
-                        
+
                         function myFunction3() {
                             document.getElementById("myDropdown3").classList.toggle("show");
                         }

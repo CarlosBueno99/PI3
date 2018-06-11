@@ -23,7 +23,7 @@ public class ComandaProdutoDAO {
 
     private Connection conexao;
 
-    public String inserir(Comanda comanda, Produto produto) {
+    public String inserir(Comanda comanda, Produto produto, int quantidade) {
         String message = "";
         ComandaProduto comandaproduto = new ComandaProduto();
         try {
@@ -32,7 +32,7 @@ public class ComandaProdutoDAO {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, comanda.getIdcomanda());
             stmt.setString(2, produto.getSku());
-            stmt.setInt(3, comandaproduto.getQuantidade());
+            stmt.setInt(3, quantidade);
             stmt.execute();
             stmt.close();
             message = "Cliente " + comanda.getIdcomanda() + " criado com sucesso";
@@ -43,10 +43,10 @@ public class ComandaProdutoDAO {
         return message;
     }
 
-    public ArrayList<ComandaProduto> pesquisacomandaproduto(int idcomanda) {
+    public ResultSet pesquisacomandaproduto(int idcomanda) {
 
         ArrayList<ComandaProduto> lista = new ArrayList<ComandaProduto>();
-
+        ResultSet rs = null;
         try {
             conexao = ModuloConexao.conector();
             java.sql.Statement stmt = conexao.createStatement();
@@ -60,27 +60,24 @@ public class ComandaProdutoDAO {
                     + " FROM tbcomandaproduto\n"
                     + " INNER JOIN tbprodutos ON tbprodutos.sku = tbcomandaproduto.skuproduto\n"
                     + " WHERE tbcomandaproduto.idcomanda = " + idcomanda + ";";
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                ComandaProduto comandaproduto = new ComandaProduto();
+            rs = stmt.executeQuery(sql);
+            //while (rs.next()) {
+            //ComandaProduto comandaproduto = new ComandaProduto();
 
-                comandaproduto.setIdcomandaCom(rs.getInt("idcomanda"));
-                //comandaproduto.setValortotalCom(rs.getDouble("valortotal"));
-                //comandaproduto.setStatuspagamentoCom(rs.getBoolean("statuspagamento"));
-                comandaproduto.setNomeProd(rs.getString("nome"));
-                comandaproduto.setMarcaProd(rs.getString("marca"));
-                comandaproduto.setTipoProd(rs.getString("tipo"));
-                comandaproduto.setPrecovendaProd(rs.getString("precovenda"));
-
-                lista.add(comandaproduto);
-
-            }
-            rs.close();
-            stmt.close();
+            //comandaproduto.setIdcomandaCom(rs.getInt("idcomanda"));
+            //comandaproduto.setValortotalCom(rs.getDouble("valortotal"));
+            //comandaproduto.setStatuspagamentoCom(rs.getBoolean("statuspagamento"));
+            //comandaproduto.setNomeProd(rs.getString("nome"));
+            //comandaproduto.setMarcaProd(rs.getString("marca"));
+            //comandaproduto.setTipoProd(rs.getString("tipo"));
+            //comandaproduto.setPrecovendaProd(rs.getString("precovenda"));
+            //lista.add(comandaproduto);
+            //}
+            //rs.close();
+            // stmt.close();
         } catch (SQLException e) {
 
         }
-        return lista;
-
+        return rs;
     }
 }

@@ -37,12 +37,13 @@ public class inserirProdutocomanda extends HttpServlet {
         HttpSession sessao = request.getSession();
         String pesquisa = request.getParameter("idcomandaCom");
         String busca = request.getParameter("prod");
+        int quantidade = Integer.parseInt(request.getParameter("qtde"));
 
         comanda.setIdcomanda(Integer.parseInt(pesquisa));
         produto.setSku(busca);
         ComandaProdutoDAO comandaprodutodados = new ComandaProdutoDAO();
         ComandaProduto comandaproduto = new ComandaProduto();
-        String msg = comandaprodutodados.inserir(comanda, produto);
+        String msg = comandaprodutodados.inserir(comanda, produto,quantidade);
         request.getRequestDispatcher("inserirComandaResult.jsp").forward(request, response);
     }
 

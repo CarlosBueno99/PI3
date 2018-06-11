@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="br.senac.tads.pi3.firesmoke.DAO.ComandaProdutoDAO"%>
 <!doctype html>
 <html lang="en">
     <head>
@@ -80,6 +82,37 @@
             <form action="inserirComanda" method="POST">
                 <span style="font-size: 30px">Inserir na Comanda</span><br><br>
                 <span>Buscar comanda: </span> <input type="search" name="buscar"> <button>Buscar</button> 
+                <table border="1" height="30px" width="120px">
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Marca</th>
+                        <th>Preço</th>
+
+                    </tr>
+
+                    <%
+                        HttpSession sessao = request.getSession();
+                        String idComanda = (String) sessao.getAttribute("idcomanda");
+                        ComandaProdutoDAO comandaproduto = new ComandaProdutoDAO();
+                        ResultSet result = comandaproduto.pesquisacomandaproduto(Integer.parseInt(idComanda));
+                        while (result.next()) {
+
+                    %>
+
+                    <tr>
+                        <td><%=result.getInt("quantidade")%></td>
+                        <td><%=result.getString("nome")%></td>
+                        <td><%=result.getString("tipo")%></td>
+                        <td><%=result.getString("marca")%></td>
+                        <td><%=result.getString("precovenda")%></td>
+
+                    </tr>
+                    <% }
+                    %>
+
+                </table>
             </form>
             <br>
             <br>

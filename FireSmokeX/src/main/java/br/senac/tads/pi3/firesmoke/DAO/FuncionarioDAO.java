@@ -85,27 +85,29 @@ public class FuncionarioDAO {
         return funcionario;
     }
 
-    public void consulta(String pesquisa) {
+    public ResultSet consulta() {
         Funcionario funcionario = new Funcionario();
         String message = "";
+        ResultSet rs = null;
         try {
             conexao = ModuloConexao.conector();
             java.sql.Statement stmt = conexao.createStatement();
             String sql = "SELECT * FROM tbfuncionarios";
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                funcionario.setNome(rs.getString("nome"));
-                funcionario.setCpf(rs.getString("cpf"));
-                funcionario.setCargo(rs.getString("cargo"));
-                funcionario.setEndereco(rs.getString("endereco"));
-                funcionario.setDtnascimento(rs.getString("dtnascimento"));
-            }
-            rs.close();
-            stmt.close();
+            rs = stmt.executeQuery(sql);
+            //while (rs.next()) {
+              //  funcionario.setNome(rs.getString("nome"));
+                //funcionario.setCpf(rs.getString("cpf"));
+              //  funcionario.setCargo(rs.getString("cargo"));
+              //  funcionario.setEndereco(rs.getString("endereco"));
+               // funcionario.setDtnascimento(rs.getString("dtnascimento"));
+            //}
+            //rs.close();
+            //stmt.close();
 
         } catch (SQLException e) {
 
         }
+        return rs;
     }
 
     public void deletar(Funcionario funcionario) {

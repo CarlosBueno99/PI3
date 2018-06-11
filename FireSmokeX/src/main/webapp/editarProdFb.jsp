@@ -111,7 +111,7 @@
                                     Nome do produto.
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label>SKU</label>
                                 <input type="text" name="sku" class="form-control" >
@@ -147,14 +147,6 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label>Preço de Compra</label>
-                                <input type="text" name="precocompra" class="form-control">
-                                <div class="invalid-feedback">
-                                    Preço de Compra.
-                                </div>
-                            </div>
-
 
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Alterar</button>
 
@@ -177,26 +169,26 @@
             <script src="../../../../dist/js/bootstrap.min.js"></script>
             <script src="../../../../assets/js/vendor/holder.min.js"></script>
             <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-                                    (function () {
-                                        'use strict';
+                        // Example starter JavaScript for disabling form submissions if there are invalid fields
+                        (function () {
+                            'use strict';
 
-                                        window.addEventListener('load', function () {
-                                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                                            var forms = document.getElementsByClassName('needs-validation');
+                            window.addEventListener('load', function () {
+                                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                var forms = document.getElementsByClassName('needs-validation');
 
-                                            // Loop over them and prevent submission
-                                            var validation = Array.prototype.filter.call(forms, function (form) {
-                                                form.addEventListener('submit', function (event) {
-                                                    if (form.checkValidity() === false) {
-                                                        event.preventDefault();
-                                                        event.stopPropagation();
-                                                    }
-                                                    form.classList.add('was-validated');
-                                                }, false);
-                                            });
-                                        }, false);
-                                    })();
+                                // Loop over them and prevent submission
+                                var validation = Array.prototype.filter.call(forms, function (form) {
+                                    form.addEventListener('submit', function (event) {
+                                        if (form.checkValidity() === false) {
+                                            event.preventDefault();
+                                            event.stopPropagation();
+                                        }
+                                        form.classList.add('was-validated');
+                                    }, false);
+                                });
+                            }, false);
+                        })();
             </script>
 
     </body>

@@ -14,6 +14,7 @@ import br.senac.tads.pi3.firesmoke.Model.Produto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -33,46 +34,49 @@ public class inserirComanda extends HttpServlet {
     Comanda comanda;
     Produto produto;
     ComandaProduto comandaProduto;
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        HttpSession sessao = request.getSession();
         //PESQUISAR COMANDA
         int pesquisa = Integer.parseInt(request.getParameter("buscar"));
-        
+        ComandaProdutoDAO comandaprodutodados = new ComandaProdutoDAO();
         ComandaDAO comandadados = new ComandaDAO();
         if (pesquisa != 0) {
             comanda = new Comanda();
             comandaProduto = new ComandaProduto();
-            
+
             comanda = comandadados.pesquisar(pesquisa);
             comandaProduto.setIdcomandaCom(comanda.getIdcomanda());
-            
+
             request.setAttribute("comandaProduto", comandaProduto);
             System.out.println(comandaProduto.getIdcomandaCom());
-            
-            if (comandaProduto.getIdcomandaCom()== 0) {
+
+            if (comandaProduto.getIdcomandaCom() == 0) {
                 request.getRequestDispatcher("inserirComanda.jsp").forward(request, response);
-                
+
             } else {
-                HttpSession sessao = request.getSession();
+
+                ResultSet lista = comandaprodutodados.pesquisacomandaproduto(pesquisa);
+
+                request.setAttribute("lista", lista);
                 sessao.setAttribute("idcomanda", comanda);
                 request.getRequestDispatcher("inserirComandaResult.jsp").forward(request, response);
             }
         }
-        
+
     }
-    
+
     @Override
     public String getServletInfo() {
         return "Short description";
     }
-    
+
 }

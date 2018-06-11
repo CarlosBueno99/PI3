@@ -15,7 +15,15 @@ public class ComandaProduto {
     private String tipoProd;
     private String marcaProd;
     private String skuProd;
-    private String precovendaProd;
+    private double precovendaProd;
+
+    public double getPrecovendaProd() {
+        return precovendaProd;
+    }
+
+    public void setPrecovendaProd(double precovendaProd) {
+        this.precovendaProd = precovendaProd;
+    }
     private int quantidade;
 
     public int getQuantidade() {
@@ -59,14 +67,6 @@ public class ComandaProduto {
 
     public void setSkuProd(String skuProd) {
         this.skuProd = skuProd;
-    }
-
-    public String getPrecovendaProd() {
-        return precovendaProd;
-    }
-
-    public void setPrecovendaProd(String precovendaProd) {
-        this.precovendaProd = precovendaProd;
     }
 
     public double getValortotalCom() {

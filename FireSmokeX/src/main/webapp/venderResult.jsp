@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="br.senac.tads.pi3.firesmoke.DAO.ComandaProdutoDAO"%>
 <!doctype html>
 <jsp:useBean id="lista" class="java.util.ArrayList" scope="session"/>
 <html lang="en">
@@ -131,6 +133,43 @@
 
                             <span>Nº Comanda</span> <input type="search" name="buscarComanda"  style="width:45px"><button>Buscar</button>
                             <span> Comanda: </span><input value="${comandaProduto.idcomandaCom} " name="Comandabusca" style="width:45px" >
+                            <table border="1" height="30px" width="120px">
+                                <tr>
+                                    <th>Quantidade</th>
+                                    <th>Nome</th>
+                                    <th>Tipo</th>
+                                    <th>Marca</th>
+                                    <th>Preço</th>
+
+                                </tr>
+
+                                <%
+                                    HttpSession sessao = request.getSession();
+                                    String idComanda = (String) sessao.getAttribute("idcomanda");
+                                    ComandaProdutoDAO comandaproduto = new ComandaProdutoDAO();
+                                    ResultSet result = comandaproduto.pesquisacomandaproduto(Integer.parseInt(idComanda));
+                                    double valor = 0;
+                                    while (result.next()) {
+
+                                %>
+
+                                <tr>
+                                    <td><%=result.getString("quantidade")%></td>
+                                    <td><%=result.getString("nome")%></td>
+                                    <td><%=result.getString("tipo")%></td>
+                                    <td><%=result.getString("marca")%></td>
+                                    <td><%=result.getString("precovenda")%></td>
+
+                                </tr>
+                                <%
+
+                                        double total = valor + result.getDouble("precovenda");
+                                        sessao.setAttribute("valortotal", total);
+                                    }
+
+                                %>
+
+                            </table>
 
                         </form>
                         <form action="PesquisaCliente" method="POST">
@@ -188,9 +227,9 @@
                     </form>
 
                     <br>
-
-                    <span>Quantidade</span> <input type="number" style="width:40px">
                     <form action ="vendaProdutoComanda" method="POST" >
+                        <span>Quantidade</span> <input type="number" name="qtde" style="width:40px">
+
                         <input type="hidden" value="${comandaProduto.idcomandaCom}" name="Comandabusca">
                         <input type="hidden" value="${cliente.nome}" name="nomecliente">
                         <input type="hidden" value="${produto.sku}" name="skuprod">
@@ -202,23 +241,6 @@
 
                 <br>
                 <br>
-                <table border="1" height="30px" width="120px">
-                    <tr>
-                        <th>Nome</th>
-                        <th>Tipo</th>
-                        <th>Marca</th>
-                        <th>Preço</th>
-
-                    </tr>
-
-                    <c:forEach items=${lista} var="lista">
-                    <!--c:forEach var="lista" value="${lista}"-->
-                        <tr>
-                            <td><c:out height="30px" width="120px" value="${lista.get(0).getNomeProd()}"/></td>
-                        </tr>
-                    </c:forEach>
-
-                </table>
 
 
             </div>
@@ -227,13 +249,19 @@
                 <div class="col-md-6">
 
                 </div><div class="col-md-6">
-                    <span style="font-size:30px">Valor total:   </span><br>
-                    <span style="font-size:30px">Recebido: </span><input type="text" style="width:60px"><br>
+                    <span style="font-size:30px">Valor total: <%sessao.getAttribute("valortotal");%>  </span><br>
+                    <form action="" method="POST">
+                        <span style="font-size:30px">Recebido: </span><input type="text" style="width:60px"><br><button>Calcular</button>
+                    </form>
                     <span style="font-size:30px">Troco:  </span>
                     <br><br>
 
-                    <button>Confirmar venda</button>
-                    <button>Cancelar</button>
+                    <form action ="Vender" method="POST">
+                        <button>Confirmar venda</button>
+                    </form>
+                    <form action="Menu" method="POST">
+                        <button action ="Menu">Cancelar</button>
+                    </form>
 
                 </div>
             </div>
