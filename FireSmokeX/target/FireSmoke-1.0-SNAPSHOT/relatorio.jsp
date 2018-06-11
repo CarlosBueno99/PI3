@@ -92,7 +92,7 @@
                             <tr><td><a href="relatorioCliente.jsp" action="SelectCliente"><img src = "img/cliente.jpg" height="70px" width="70px"></a></td> <td width="200px" style="text-align: center"> <a href="relatorioCliente.jsp" style="text-decoration: none"> <span>Clientes</span> </a> </td> </tr>
                             
                             <tr><td><a href="relatorioFunc.jsp" action="SelectFuncionario"><img src = "img/func.jpg" height="70px" width="70px"></a></td> <td width="200px" style="text-align: center"> <a href="relatorioFunc.jsp" style="text-decoration: none"> <span>Funcionários</span> </a> </td> </tr>
-                            <tr><td><a href="relatorioVenda.jsp"><img src = "img/venda.jpg" height="70px" width="70px"></a> </td> <td width="200px" style="text-align: center"> <a href="relatorioVenda.jsp" style="text-decoration: none"> <span> Vendas </span> </a> </td> </tr>
+                            <tr><td><a href="relatorioVenda.jsp" action="SelectVendas"><img src = "img/venda.jpg" height="70px" width="70px"></a> </td> <td width="200px" style="text-align: center"> <a href="relatorioVenda.jsp" style="text-decoration: none"> <span> Vendas </span> </a> </td> </tr>
                         </table>
 
                         &emsp;

@@ -20,136 +20,137 @@
 
     <body>
 
-        <form action="cadastroProduto" method="POST">
 
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
 
-                </button>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
 
-                <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Cliente</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
-                        <a href="editarCliente.jsp">Editar Cliente</a>
-                        <a href="excluirCliente.jsp">Excluir Cliente</a>
-                    </div>
-                </div>
+        </button>
 
-                <div class="dropdown">
-                    <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
-                    <div id="myDropdown1" class="dropdown-content">
-                        <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
-                        <a href="editarFunc.jsp">Editar Funcionário</a>
-                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button onclick="myFunction2()" class="dropbtn">Comanda</button>
-                    <div id="myDropdown2" class="dropdown-content">
-                        <a href="cadastroComanda.jsp">Cadastrar comanda</a>
-                        <a href="inserirComanda.jsp">Inserir</a>
-                    </div>
-                </div>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Cliente</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
+                <a href="editarCliente.jsp">Editar Cliente</a>
+                <a href="excluirCliente.jsp">Excluir Cliente</a>
+            </div>
+        </div>
 
-                <div class="dropdown">
-                    <button onclick="myFunction3()" class="dropbtn">Produto</button>
-                    <div id="myDropdown3" class="dropdown-content">
-                        <a href="cadastroProd.jsp">Cadastrar Produto</a>
-                        <a href="editarProd.jsp">Editar Produto</a>
-                        <a href="excluirProd.jsp">Excluir Produto</a>
-                    </div>
-                </div>
+        <div class="dropdown">
+            <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
+            <div id="myDropdown1" class="dropdown-content">
+                <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
+                <a href="editarFunc.jsp">Editar Funcionário</a>
+                <a href="excluirFunc.jsp">Excluir Funcionário</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="myFunction2()" class="dropbtn">Comanda</button>
+            <div id="myDropdown2" class="dropdown-content">
+                <a href="cadastroComanda.jsp">Cadastrar comanda</a>
+                <a href="inserirComanda.jsp">Inserir</a>
+            </div>
+        </div>
 
-                <div class="dropdown">
-                    <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
-                </div>
+        <div class="dropdown">
+            <button onclick="myFunction3()" class="dropbtn">Produto</button>
+            <div id="myDropdown3" class="dropdown-content">
+                <a href="cadastroProd.jsp">Cadastrar Produto</a>
+                <a href="editarProd.jsp">Editar Produto</a>
+                <a href="excluirProd.jsp">Excluir Produto</a>
+            </div>
+        </div>
 
-                <div class="dropdown">
-                    <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
-                </div>
+        <div class="dropdown">
+            <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
+        </div>
 
-            </nav>
+        <div class="dropdown">
+            <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
+        </div>
 
-            <main class="bg-light">
+    </nav>
+
+    <main class="bg-light">
+        <div class="col-md-8 order-md-1">
+
+            <div class="row">
+                <br>
+                <br>
+                <br>
+                <br>
+
+            </div>
+            <form action="cadastroProduto" method="POST">
                 <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Cadastro de Produto</h4>
+                </div>
 
-                    <div class="row">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                <br>
 
+
+                <div class="mb-3">
+                    <label>Nome</label>
+                    <input type="text" name="nomeProd" class="form-control">
+                    <div class="invalid-feedback">
+                        Nome do produto.
                     </div>
-
-                    <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Cadastro de Produto</h4>
-                    </div>
-
-                    <br>
-
-
-                    <div class="mb-3">
-                        <label>Nome</label>
-                        <input type="text" name="nomeProd" class="form-control">
-                        <div class="invalid-feedback">
-                            Nome do produto.
-                        </div>
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label>Tipo</label>
-                        <input type="text" name="tipo" class="form-control">
-                        <div class="invalid-feedback">
-                            Tipo.
-                        </div>
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label>Marca</label>
-                        <input type="text" name="marca" class="form-control">
-                        <div class="invalid-feedback">
-                            Marca.
-                        </div>
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label>SKU</label>
-                        <input type="text" name="sku" class="form-control" required="true">
-                        <div class="invalid-feedback">
-                            SKU.
-                        </div>
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label>Preço de Venda</label>
-                        <input type="money" name="precovenda" class="form-control" >
-                        <div class="invalid-feedback">
-                            Preço de venda.
-                        </div>
-                    </div>
-
-
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>   
                 </div>
 
 
-            </main>
+                <div class="mb-3">
+                    <label>Tipo</label>
+                    <input type="text" name="tipo" class="form-control">
+                    <div class="invalid-feedback">
+                        Tipo.
+                    </div>
+                </div>
 
-        </form>
-    </body>        
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
+                <div class="mb-3">
+                    <label>Marca</label>
+                    <input type="text" name="marca" class="form-control">
+                    <div class="invalid-feedback">
+                        Marca.
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label>SKU</label>
+                    <input type="text" name="sku" class="form-control" required="true">
+                    <div class="invalid-feedback">
+                        SKU.
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label>Preço de Venda</label>
+                    <input type="money" name="precovenda" class="form-control" >
+                    <div class="invalid-feedback">
+                        Preço de venda.
+                    </div>
+                </div>
+
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>  
+            </form>
+        </div>
+
+
+    </main>
+
+
+</body>        
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../../../assets/js/vendor/popper.min.js"></script>
+<script src="../../../../dist/js/bootstrap.min.js"></script>
 </body>
 <script>
 

@@ -19,18 +19,17 @@ import java.sql.SQLException;
 public class VendaDAO {
      private Connection conexao;
 
-    public String inserir(int idcomanda, String nomecliente, double valortotal) {
+    public String inserir(int idcomanda, String nomecliente, double valortotal, String filial) {
         String message = "";
         Venda venda = new Venda();
         try {
-            String sql = "INSERT INTO tbvendas(nomeprod, idcomanda, cliente, valorvenda, filial) VALUES(?,?,?,?,?)";
+            String sql = "INSERT INTO tbvendas(idcomanda, cliente, valorvenda, filial) VALUES(?,?,?,?,?)";
             conexao = ModuloConexao.conector();
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, venda.getNomeproduto());
-            stmt.setInt(2, venda.getIdcomanda());
-            stmt.setString(3, venda.getNomecliente());
-            stmt.setDouble(4, venda.getValorvenda());
-            stmt.setString(5, venda.getFilial());
+            stmt.setInt(1, idcomanda);
+            stmt.setString(2, nomecliente);
+            stmt.setDouble(3, valortotal);
+            stmt.setString(4, filial);
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {

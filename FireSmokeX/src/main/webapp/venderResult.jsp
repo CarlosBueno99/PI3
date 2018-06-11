@@ -162,9 +162,12 @@
 
                                 </tr>
                                 <%
+                                        int qtde = Integer.parseInt(result.getString("quantidade"));
+                                        double valor2 = Double.parseDouble(result.getString("precovenda"));
+                                        double conta = valor2 * qtde;
+                                        valor = valor + conta;
 
-                                        double total = valor + result.getDouble("precovenda");
-                                        sessao.setAttribute("valortotal", total);
+                                        sessao.setAttribute("total", valor);
                                     }
 
                                 %>
@@ -249,18 +252,19 @@
                 <div class="col-md-6">
 
                 </div><div class="col-md-6">
-                    <span style="font-size:30px">Valor total: <%sessao.getAttribute("valortotal");%>  </span><br>
-                    <form action="" method="POST">
-                        <span style="font-size:30px">Recebido: </span><input type="text" style="width:60px"><br><button>Calcular</button>
-                    </form>
-                    <span style="font-size:30px">Troco:  </span>
-                    <br><br>
+                    
+                        <span style="font-size:30px">Valor total: </span><input value="${total}" style="width:60px" > <br>
+
+                        <span style="font-size:30px">Recebido: </span><input type="text" name="recebido" style="width:60px"><br><button onclick="calcula();">Calcular</button>
+
+                        <span style="font-size:30px">Troco:  </span>
+                        <br><br>
 
                     <form action ="Vender" method="POST">
-                        <button>Confirmar venda</button>
+                        <button onclick="validaCampo();">Confirmar venda</button>
                     </form>
                     <form action="Menu" method="POST">
-                        <button action ="Menu">Cancelar</button>
+                        <button action ="Menu" onclick="mensagem();">Cancelar</button>
                     </form>
 
                 </div>
@@ -270,40 +274,63 @@
             <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
             <script src="../../../../assets/js/vendor/popper.min.js"></script>
             <script src="../../../../dist/js/bootstrap.min.js"></script>
-
+            <script>
+                            function mensagem() {
+                                confirm("Deseja cancelar?")
+                            }
+                            function calcula() {
+                                var valor = document.getElementsByName("total");
+                                var recebido = document.getElementsByName("recebido");
+                                if (recebido >= valor) {
+                                    var total = recebido - valor;
+                                } else {
+                                    var total = 0.0;
+                                }
+                            }
+            </script>
+            <script>
+                function confirmacao() {
+                    alert("Venda efetuada com sucesso!")
+                }
+                function validaCampo() {
+                    if (document.getElementsByName("buscarComanda")).value == "" || document.getElementsByName("Comandabusca").value == "" || document.getElementsByName("pesqcliente").value == "" || document.getElementsByName("nomecliente").value == "" || document.getElementsByName("skuProd").value == "") {
+                        alert("Todos os campos são obrigatórios!")
+                    }
+                }
+            </script>
             <script>
 
-                    function myFunction() {
-                        document.getElementById("myDropdown").classList.toggle("show");
-                    }
+                function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
 
-                    function myFunction1() {
-                        document.getElementById("myDropdown1").classList.toggle("show");
-                    }
+                function myFunction1() {
+                    document.getElementById("myDropdown1").classList.toggle("show");
+                }
 
-                    function myFunction2() {
-                        document.getElementById("myDropdown2").classList.toggle("show");
-                    }
+                function myFunction2() {
+                    document.getElementById("myDropdown2").classList.toggle("show");
+                }
 
-                    function myFunction3() {
-                        document.getElementById("myDropdown3").classList.toggle("show");
-                    }
+                function myFunction3() {
+                    document.getElementById("myDropdown3").classList.toggle("show");
+                }
 
 
 
-                    window.onclick = function (event) {
-                        if (!event.target.matches('.dropbtn')) {
+                window.onclick = function (event) {
+                    if (!event.target.matches('.dropbtn')) {
 
-                            var dropdowns = document.getElementsByClassName("dropdown-content");
-                            var i;
-                            for (i = 0; i < dropdowns.length; i++) {
-                                var openDropdown = dropdowns[i];
-                                if (openDropdown.classList.contains('show')) {
-                                    openDropdown.classList.remove('show');
-                                }
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
                             }
                         }
                     }
+                }
             </script>
 
     </body>

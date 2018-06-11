@@ -37,13 +37,13 @@ public class Vender extends HttpServlet {
 
         String idcomanda = (String) sessao.getAttribute("idcomanda");
         String nomecliente = (String) sessao.getAttribute("nomecliente");
-        Double valortotal = (Double) sessao.getAttribute("valortotal");
-
+        Double valortotal = (Double) sessao.getAttribute("total");
+        String filial = (String) sessao.getAttribute("filial");
         Venda venda = new Venda();
         VendaDAO vendadados = new VendaDAO();
 
         venda.setValorvenda(valortotal);
-        vendadados.inserir(Integer.parseInt(idcomanda), nomecliente, valortotal);
+        vendadados.inserir(Integer.parseInt(idcomanda), nomecliente, valortotal, filial);
         request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }

@@ -49,8 +49,7 @@ public class editarProduto extends HttpServlet {
         produto.setTipo(request.getParameter("tipo"));
         produto.setMarca(request.getParameter("marca"));
         produto.setSku(request.getParameter("sku"));
-        produto.setPrecocompra(request.getParameter("precocompra"));
-        produto.setPrecovenda(request.getParameter("precovenda"));
+        produto.setPrecovenda(request.getParameter("precovenda").replace(",", "."));
         
         produtodados.alterar(produto);
         if (produto.getNome() != null) {
