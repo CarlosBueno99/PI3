@@ -54,10 +54,9 @@ public class editarCliente extends HttpServlet {
         cliente.setCpf(request.getParameter("cpf"));
         cliente.setFone(request.getParameter("fone"));
         cliente.setDtnascimento(request.getParameter("dtnascimento"));
-        
         clientedados.alterar(cliente);
         if (cliente.getNome() != null) {
-            request.getRequestDispatcher("editarClienteFb.jsp").forward(request, response);
+            request.getRequestDispatcher("editarClienteResult.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("editarCliente.jsp").forward(request, response);
         }

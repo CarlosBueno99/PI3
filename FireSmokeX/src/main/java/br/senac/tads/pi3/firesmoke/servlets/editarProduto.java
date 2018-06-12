@@ -53,7 +53,7 @@ public class editarProduto extends HttpServlet {
         
         produtodados.alterar(produto);
         if (produto.getNome() != null) {
-            request.getRequestDispatcher("editarProdFb.jsp").forward(request, response);
+            request.getRequestDispatcher("editarProdResult.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("editarProd.jsp").forward(request, response);
         }

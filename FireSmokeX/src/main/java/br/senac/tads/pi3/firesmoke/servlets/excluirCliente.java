@@ -53,7 +53,6 @@ public class excluirCliente extends HttpServlet {
         cliente.setFone(request.getParameter("fone"));
         cliente.setDtnascimento(request.getParameter("dtnascimento"));
         cliente.setEndereco(request.getParameter("endereco"));
-        cliente.setSexo(request.getParameter("sexo"));
 
         clientedados.deletar(cliente);
         if (cliente.getNome() != null) {

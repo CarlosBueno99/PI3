@@ -39,9 +39,6 @@ public class excluirProduto extends HttpServlet {
         if (!pesquisa.equalsIgnoreCase("") && pesquisa != null) {
             produto = new Produto();
             produto = produtodados.pesquisar(pesquisa);
-            // System.out.println("TESTE 1" + produto.getNome());
-
-            //  if (produto != null) {
             request.setAttribute("produto", produto);
             if (produto.getNome() != null) {
                 request.getRequestDispatcher("excluirProdResult.jsp").forward(request, response);

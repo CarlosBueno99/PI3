@@ -10,21 +10,13 @@ package br.senac.tads.pi3.firesmoke.Model;
  * @author Guilherme Feitosa
  */
 public class Cliente {
+
     private String cpf;
     private String nome;
     private String email;
     private String fone;
     private String dtnascimento;
     private String endereco;
-    private String sexo;
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
 
     public String getEndereco() {
         return endereco;
@@ -73,7 +65,5 @@ public class Cliente {
     public void setDtnascimento(String dtnascimento) {
         this.dtnascimento = dtnascimento;
     }
-    
-    
-    
+
 }

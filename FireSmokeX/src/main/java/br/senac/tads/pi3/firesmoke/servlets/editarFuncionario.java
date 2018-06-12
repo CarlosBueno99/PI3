@@ -56,7 +56,7 @@ public class editarFuncionario extends HttpServlet {
 
         funcionariodados.alterar(funcionario);
         if (funcionario.getNome() != null) {
-            request.getRequestDispatcher("editarFuncFb.jsp").forward(request, response);
+            request.getRequestDispatcher("editarFuncResult.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("editarFunc.jsp").forward(request, response);
         }

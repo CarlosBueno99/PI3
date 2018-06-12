@@ -48,7 +48,7 @@ public class ProdutoDAO {
             stmt.setString(2, produto.getTipo());
             stmt.setString(3, produto.getMarca());
             stmt.setString(4, produto.getPrecovenda());
-            stmt.setString(6, produto.getSku());
+            stmt.setString(5, produto.getSku());
             stmt.execute();
             stmt.close();
             System.out.println("Produto " + produto.getNome() + " alterado com sucesso");

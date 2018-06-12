@@ -18,7 +18,7 @@
 
     <body>
 
-        <form action="editarCliente" method="POST">
+        
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                 <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
@@ -79,6 +79,7 @@
                 <br>
 
             </div>
+            
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Editar Cliente</h4>
             </div>
