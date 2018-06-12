@@ -267,16 +267,16 @@
             <div class="col-md-6">
 
             </div><div class="col-md-6">
+                <form action="Calcular" method="POST">
+                    <span style="font-size:30px">Valor total: </span><input value="${total}" style="width:60px" > <br>
 
-                <span style="font-size:30px">Valor total: </span><input value="${total}" style="width:60px" > <br>
+                    <span style="font-size:30px">Recebido: </span><input type="text" name="recebido" style="width:60px"><br><button>Calcular</button>
 
-                <span style="font-size:30px">Recebido: </span><input type="text" name="recebido" style="width:60px"><br><button onclick="calcula();">Calcular</button>
-
-                <span style="font-size:30px">Troco:  </span><input name="troco">
-                <br><br>
+                    <span style="font-size:30px">Troco:  </span><input value="${troco}" name="troco">
+                    <br><br></form>
 
                 <form action ="Vender" method="POST">
-                    <button onclick="receber();">Confirmar venda</button>
+                    <button onclick="confirma();">Confirmar venda</button>
                 </form>
                 <form action="Menu" method="POST">
                     <button action ="Menu" onclick="mensagem();">Cancelar</button>
@@ -291,64 +291,68 @@
         <script src="../../../../dist/js/bootstrap.min.js"></script>
         <script>
                         function mensagem() {
-                        confirm("Deseja cancelar?")
+                            confirm("Deseja cancelar?")
                         }
 
+                        function confirma() {
+                            confirm("Confirmar Venda?")
+                        }
         </script>
         <script>
             function calcula() {
-            var valor = document.getElementsByName("total");
-            var recebido = document.getElementsByName("recebido");
-            if (recebido >= valor) {
-            var total = recebido - valor;
-            } else {
-            var total = 0.0;
-            }}
+                var valor = document.getElementsByName("total");
+                var recebido = document.getElementsByName("recebido");
+                if (recebido >= valor) {
+                    var total = recebido - valor;
+                } else {
+                    var total = 0.0;
+                }
+            }
             console.log("\nTroco " + total);
-            
+
         </script>
         <script>
             function confirmacao() {
-            alert("Venda efetuada com sucesso!")
+                alert("Venda efetuada com sucesso!")
             }
             function validaCampo() {
-            if (document.getElementsByName("buscarComanda")).value == "" || document.getElementsByName("Comandabusca").value == "" || document.getElementsByName("pesqcliente").value == "" || document.getElementsByName("nomecliente").value == "" || document.getElementsByName("skuProd").value == "") {
-            alert("Todos os campos são obrigatórios!")
-            }
+                if (document.getElementsByName("buscarComanda")).value == "" || document.getElementsByName("Comandabusca").value == "" || document.getElementsByName("pesqcliente").value == "" || document.getElementsByName("nomecliente").value == "" || document.getElementsByName("skuProd").value == "") {
+                    alert("Todos os campos são obrigatórios!")
+                }
             }
         </script>
         <script>
 
             function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
+                document.getElementById("myDropdown").classList.toggle("show");
             }
 
             function myFunction1() {
-            document.getElementById("myDropdown1").classList.toggle("show");
+                document.getElementById("myDropdown1").classList.toggle("show");
             }
 
             function myFunction2() {
-            document.getElementById("myDropdown2").classList.toggle("show");
+                document.getElementById("myDropdown2").classList.toggle("show");
             }
 
             function myFunction3() {
-            document.getElementById("myDropdown3").classList.toggle("show");
+                document.getElementById("myDropdown3").classList.toggle("show");
             }
 
 
 
             window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
+                if (!event.target.matches('.dropbtn')) {
 
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-            }
-            }
-            }
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
             }
         </script>
 

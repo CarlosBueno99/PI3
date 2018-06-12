@@ -21,8 +21,6 @@
 
     <body>
 
-        <div class="alert-box success feedback">Cadastrado com sucesso</div>
-
 
 
 
@@ -156,6 +154,9 @@
 </body>
 <script>
 
+  function feedback() {
+                        alert("Cliente cadastrado!")
+                        }
                 function myFunction() {
                     document.getElementById("myDropdown").classList.toggle("show");
                 }
@@ -171,11 +172,6 @@
                 function myFunction3() {
                     document.getElementById("myDropdown3").classList.toggle("show");
                 }
-                $(function () {
-                    setTimeout(function () {
-                        $('.alert-box').css('display', 'none');
-                    }, 3000)
-                });
 
                 window.onclick = function (event) {
                     if (!event.target.matches('.dropbtn')) {

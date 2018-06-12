@@ -18,151 +18,151 @@
 
     <body>
 
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="home.jsp">Fire Smoke</a>
 
-                </button>
+        </button>
 
-                <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Cliente</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
-                        <a href="editarCliente.jsp">Editar Cliente</a>
-                        <a href="excluirCliente.jsp">Excluir Cliente</a>
-                    </div>
-                </div>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Cliente</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="cadastroCliente.jsp">Cadastrar Cliente</a>
+                <a href="editarCliente.jsp">Editar Cliente</a>
+                <a href="excluirCliente.jsp">Excluir Cliente</a>
+            </div>
+        </div>
 
-                <div class="dropdown">
-                    <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
-                    <div id="myDropdown1" class="dropdown-content">
-                        <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
-                        <a href="editarFunc.jsp">Editar Funcionário</a>
-                        <a href="excluirFunc.jsp">Excluir Funcionário</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button onclick="myFunction2()" class="dropbtn">Comanda</button>
-                    <div id="myDropdown2" class="dropdown-content">
-                        <a href="cadastroComanda.jsp">Cadastrar comanda</a>
-                        <a href="inserirComanda.jsp">Inserir</a>
-                    </div>
-                </div>
+        <div class="dropdown">
+            <button onclick="myFunction1()" class="dropbtn">Funcionário</button>
+            <div id="myDropdown1" class="dropdown-content">
+                <a href="cadastroFunc.jsp">Cadastrar Funcionário</a>
+                <a href="editarFunc.jsp">Editar Funcionário</a>
+                <a href="excluirFunc.jsp">Excluir Funcionário</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="myFunction2()" class="dropbtn">Comanda</button>
+            <div id="myDropdown2" class="dropdown-content">
+                <a href="cadastroComanda.jsp">Cadastrar comanda</a>
+                <a href="inserirComanda.jsp">Inserir</a>
+            </div>
+        </div>
 
-                <div class="dropdown">
-                    <button onclick="myFunction3()" class="dropbtn">Produto</button>
-                    <div id="myDropdown3" class="dropdown-content">
-                        <a href="cadastroProd.jsp">Cadastrar Produto</a>
-                        <a href="editarProd.jsp">Editar Produto</a>
-                        <a href="excluirProd.jsp">Excluir Produto</a>
-                    </div>
-                </div>
+        <div class="dropdown">
+            <button onclick="myFunction3()" class="dropbtn">Produto</button>
+            <div id="myDropdown3" class="dropdown-content">
+                <a href="cadastroProd.jsp">Cadastrar Produto</a>
+                <a href="editarProd.jsp">Editar Produto</a>
+                <a href="excluirProd.jsp">Excluir Produto</a>
+            </div>
+        </div>
 
-                <div class="dropdown">
-                    <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
-                </div>
+        <div class="dropdown">
+            <a href="relatorio.jsp"><button class="dropbtn">Relatórios</button></a>
+        </div>
 
-                <div class="dropdown">
-                    <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
-                </div>
+        <div class="dropdown">
+            <a href="vender.jsp"><button class="dropbtn">Venda</button></a>
+        </div>
 
-            </nav>
+    </nav>
 
-            <main class="bg-light">
-                <div class="col-md-8 order-md-1">
+    <main class="bg-light">
+        <div class="col-md-8 order-md-1">
 
-                    <div class="row">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+            <div class="row">
+                <br>
+                <br>
+                <br>
+                <br>
 
-                    </div>
-                    <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Editar Produto</h4>
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Editar Produto</h4>
+            </div>
+
+            <br>
+
+
+            <div class="mb-3">
+                <div><label>Digite o SKU do produto</label></div>
+                <form action="editarProduto" method="POST">
+                    <label for="pesquisa"></label>
+                    <input type="search" name="pesquisa" >
+                    <button type="submit">Pesquisar</button>
+
+                    <div class="invalid-feedback">
+                        Por favor, insira um SKU válido.
                     </div>
 
                     <br>
+                    <br>
+
+                    <div class="mb-3">
+                        <label>Nome</label>
+                        <input value="${produto.nome}" type="text" name="nomeProd" class="form-control" >
+                        <div class="invalid-feedback">
+                            Nome do produto.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>SKU</label>
+                        <input value="${produto.sku}" type="text" name="sku" class="form-control" >
+                        <div class="invalid-feedback">
+                            Sku do produto.
+                        </div>
+                    </div>
 
 
                     <div class="mb-3">
-                        <div><label>Digite o SKU do produto</label></div>
-                        <form action="editarProduto" method="POST">
-                            <label for="pesquisa"></label>
-                            <input type="search" name="pesquisa" >
-                            <button type="submit">Pesquisar</button>
-
-                            <div class="invalid-feedback">
-                                Por favor, insira um SKU válido.
-                            </div>
-
-                            <br>
-                            <br>
-
-                            <div class="mb-3">
-                                <label>Nome</label>
-                                <input value="${produto.nome}" type="text" name="nomeProd" class="form-control" >
-                                <div class="invalid-feedback">
-                                    Nome do produto.
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label>SKU</label>
-                                <input value="${produto.sku}" type="text" name="sku" class="form-control" >
-                                <div class="invalid-feedback">
-                                    Sku do produto.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>Tipo</label>
-                                <input value="${produto.tipo}" type="text" name="tipo" class="form-control">
-                                <div class="invalid-feedback">
-                                    Tipo.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>Marca</label>
-                                <input value="${produto.marca}" type="text" name="marca" class="form-control">
-                                <div class="invalid-feedback">
-                                    Marca.
-                                </div>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label>Preço de Venda</label>
-                                <input value="${produto.precovenda}" type="text" name="precovenda" class="form-control">
-                                <div class="invalid-feedback">
-                                    Preço de venda.
-                                </div>
-                            </div>
-
-
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Alterar</button>
-
-                        </form>
+                        <label>Tipo</label>
+                        <input value="${produto.tipo}" type="text" name="tipo" class="form-control">
+                        <div class="invalid-feedback">
+                            Tipo.
+                        </div>
                     </div>
 
-            </main><!-- /.container -->
 
-            <!-- Bootstrap core JavaScript
-            ================================================== -->
-            <!-- Placed at the end of the document so the pages load faster -->
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-            <script src="../../../../assets/js/vendor/popper.min.js"></script>
-            <script src="../../../../dist/js/bootstrap.min.js"></script>
+                    <div class="mb-3">
+                        <label>Marca</label>
+                        <input value="${produto.marca}" type="text" name="marca" class="form-control">
+                        <div class="invalid-feedback">
+                            Marca.
+                        </div>
+                    </div>
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-            <script src="../../../../assets/js/vendor/popper.min.js"></script>
-            <script src="../../../../dist/js/bootstrap.min.js"></script>
-            <script src="../../../../assets/js/vendor/holder.min.js"></script>
-            <script>
+
+                    <div class="mb-3">
+                        <label>Preço de Venda</label>
+                        <input value="${produto.precovenda}" type="text" name="precovenda" class="form-control">
+                        <div class="invalid-feedback">
+                            Preço de venda.
+                        </div>
+                    </div>
+
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="feedback();">Alterar</button>
+
+                </form>
+            </div>
+
+    </main><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script>
                         // Example starter JavaScript for disabling form submissions if there are invalid fields
                         (function () {
                             'use strict';
@@ -183,39 +183,41 @@
                                 });
                             }, false);
                         })();
-            </script>
+    </script>
 
-    </body>
-    <script>
+</body>
+<script>
+    function feedback() {
+        alert("Produto alterado!")
+    }
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
 
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
+    function myFunction1() {
+        document.getElementById("myDropdown1").classList.toggle("show");
+    }
 
-        function myFunction1() {
-            document.getElementById("myDropdown1").classList.toggle("show");
-        }
+    function myFunction2() {
+        document.getElementById("myDropdown2").classList.toggle("show");
+    }
 
-        function myFunction2() {
-            document.getElementById("myDropdown2").classList.toggle("show");
-        }
+    function myFunction3() {
+        document.getElementById("myDropdown3").classList.toggle("show");
+    }
 
-        function myFunction3() {
-            document.getElementById("myDropdown3").classList.toggle("show");
-        }
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
 
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
                 }
             }
         }
-    </script>
+    }
+</script>
 </html>

@@ -17,7 +17,7 @@
     </head>
 
     <body>
-
+<div class="alert-box success feedback">Comanda cadastrada com sucesso!</div>
 
 
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -144,6 +144,11 @@
     function myFunction3() {
         document.getElementById("myDropdown3").classList.toggle("show");
     }
+    $(function () {
+        setTimeout(function () {
+            $('.alert-box').css('display', 'none');
+        }, 3000)
+    });
 
     window.onclick = function (event) {
         if (!event.target.matches('.dropbtn')) {

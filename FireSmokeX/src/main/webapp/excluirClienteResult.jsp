@@ -85,7 +85,7 @@
 
 
             <div class="mb-3">
-                <div><label>Digite o CPF do cliente na base</label></div>
+                <div><label>Digite o CPF do cliente</label></div>
                 <form action="excluirCliente" method="POST">
                     <label for="pesquisa"></label>
                     <input type="search" name="pesquisa" name="q">
@@ -136,7 +136,7 @@
 
                     </div>
 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Excluir</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="feedback();">Excluir</button>
 
 
                 </form>
@@ -192,6 +192,9 @@
 </body>
 <script>
 
+    function feedback() {
+        alert("Cliente excluído!")
+    }
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }

@@ -108,7 +108,7 @@ public class ComandaProdutoDAO {
         String message = "";
         try {
             conexao = ModuloConexao.conector();
-            String sql = "DELETE FROM tbprodutocomanda WHERE idcomanda=? AND skuprod = ? ";
+            String sql = "DELETE FROM tbcomandaproduto WHERE idcomanda=? AND skuprod = ? ";
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, idcomanda);
             stmt.setString(2, nomeprod);
@@ -119,4 +119,20 @@ public class ComandaProdutoDAO {
         }
         return message;
     }
+    public String deletarComanda(int idcomanda) {
+        Venda venda = new Venda();
+        String message = "";
+        try {
+            conexao = ModuloConexao.conector();
+            String sql = "DELETE FROM tbcomandaproduto WHERE idcomanda=? ";
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, idcomanda);
+            stmt.execute();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Não deletou " + message);
+        }
+        return message;
+    }
 }
+

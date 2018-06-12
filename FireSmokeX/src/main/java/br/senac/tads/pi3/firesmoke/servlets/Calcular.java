@@ -32,15 +32,18 @@ public class Calcular extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession sessao = request.getSession();
-        
-        double valor = (Double)sessao.getAttribute("valortotal");
+
+        double valor = (Double) sessao.getAttribute("total");
         double recebido = Double.parseDouble(request.getParameter("recebido"));
-        
-        if(recebido>=valor){
-        double troco = (recebido - valor);
-        } else{
+
+        if (recebido >= valor) {
+            double troco = (recebido - valor);
+            sessao.setAttribute("troco", troco);
+        } else {
             double troco = 0.0;
+            sessao.setAttribute("troco", troco);
         }
+
         request.getRequestDispatcher("venderResult.jsp").forward(request, response);
 
     }

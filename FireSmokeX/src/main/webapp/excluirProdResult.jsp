@@ -143,7 +143,7 @@
                     </div>
 
 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Excluir</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="feedback();">Excluir</button>
 
                 </form>
             </div>
@@ -188,7 +188,9 @@
 
 </body>
 <script>
-
+    function feedback() {
+        alert("Produto excluído!")
+    }
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }

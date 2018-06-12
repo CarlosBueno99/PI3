@@ -157,7 +157,7 @@
                     </div>
 
 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Alterar</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="feedback();">Alterar</button>
 
                 </form>
             </div>
@@ -203,6 +203,9 @@
 </body>
 <script>
 
+    function feedback() {
+        alert("Funcionário alterado!")
+    }
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }

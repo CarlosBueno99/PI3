@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-    <head>
+<html lang="en"><head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -123,26 +121,32 @@
         <br>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
 
-                <div class="col-md-6">
-                    <div class="col-md-6">
+                <div class="col-md-12">
+                    <div class="col-md-12">
                         <form action="PesquisaComanda" method="POST">
-                            <div class="col-md-6">
-                                <h1>Filial: </h1> <br>
-
+							<div class="row">
+                           <div class="col-md-6"> 
+                    <span>Nº Comanda</span><input type="search" name="buscarComanda" style="width:45px"> <button>Buscar</button>
+    
+    <br><br>
+                     <span>CPF do Cliente</span> <input type="search" name="pesqcliente"><button>Buscar</button>
+                        </div>  
+                             
+    <div class="col-md-6">
+                            <h1>Filial: </h1>
+								<br>
+                              
                                 <select name="select">
-                                    <option value="São Paulo" selected> São Paulo </option> 
+                                    <option value="São Paulo" selected=""> São Paulo </option> 
                                     <option value="Rio Grande do Sul"> Rio Grande do Sul </option>
                                     <option value="Rio de Janeiro"> Rio de Janeiro </option>
                                 </select>
-                            </div>
-                            <span>Nº Comanda</span><input type="search" name="buscarComanda" style="width:45px"> <button>Buscar</button>
-                        </form>
+                            </div></div>
+</form>
                         <br>
-                        <form action="PesquisaCliente" method="POST">
-                            <span>CPF do Cliente</span> <input type="search" name="pesqcliente"><button>Buscar</button>
-                        </form>
+                        
                     </div>
 
                 </div>
@@ -226,7 +230,7 @@
 
                 <button>Confirmar venda</button>
                 <form action="Menu" method="POST">
-                    <button action ="Menu" onclick="mensagem();">Cancelar</button>
+                    <button action="Menu" onclick="mensagem();">Cancelar</button>
                 </form>
             </div>
         </div>
@@ -273,7 +277,7 @@
                 }
             }
         </script>
-    </form>
+    
 
-</body>
-</html>
+
+</body></html>

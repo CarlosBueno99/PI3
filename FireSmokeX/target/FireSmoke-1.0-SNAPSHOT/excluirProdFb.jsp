@@ -20,8 +20,6 @@
 
     <body>
 
-        <div class="alert-box success feedback">Excluído com sucesso</div>
-
         <form action="excluirProduto" method="POST">
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -149,7 +147,7 @@
                     </div>
 
 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Excluir</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="feedback();">Excluir</button>
 
                 </form>
             </div>
@@ -194,7 +192,9 @@
 
 </body>
 <script>
-
+    function feedback() {
+        alert("Produto excluído!")
+    }
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }

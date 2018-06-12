@@ -131,7 +131,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="feedback();">Cadastrar</button>
             </form>
         </div>
 
@@ -151,35 +151,38 @@
 </body>
 <script>
 
-                function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }
+                    function feedback() {
+                        alert("Produto cadastrado!")
+                    }
+                    function myFunction() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
 
-                function myFunction1() {
-                    document.getElementById("myDropdown1").classList.toggle("show");
-                }
+                    function myFunction1() {
+                        document.getElementById("myDropdown1").classList.toggle("show");
+                    }
 
-                function myFunction2() {
-                    document.getElementById("myDropdown2").classList.toggle("show");
-                }
+                    function myFunction2() {
+                        document.getElementById("myDropdown2").classList.toggle("show");
+                    }
 
-                function myFunction3() {
-                    document.getElementById("myDropdown3").classList.toggle("show");
-                }
+                    function myFunction3() {
+                        document.getElementById("myDropdown3").classList.toggle("show");
+                    }
 
 
-                window.onclick = function (event) {
-                    if (!event.target.matches('.dropbtn')) {
+                    window.onclick = function (event) {
+                        if (!event.target.matches('.dropbtn')) {
 
-                        var dropdowns = document.getElementsByClassName("dropdown-content");
-                        var i;
-                        for (i = 0; i < dropdowns.length; i++) {
-                            var openDropdown = dropdowns[i];
-                            if (openDropdown.classList.contains('show')) {
-                                openDropdown.classList.remove('show');
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            var i;
+                            for (i = 0; i < dropdowns.length; i++) {
+                                var openDropdown = dropdowns[i];
+                                if (openDropdown.classList.contains('show')) {
+                                    openDropdown.classList.remove('show');
+                                }
                             }
                         }
                     }
-                }
 </script>
 </html>

@@ -5,7 +5,9 @@
  */
 package br.senac.tads.pi3.firesmoke.servlets;
 
+import br.senac.tads.pi3.firesmoke.DAO.ComandaProdutoDAO;
 import br.senac.tads.pi3.firesmoke.DAO.VendaDAO;
+import br.senac.tads.pi3.firesmoke.Model.ComandaProduto;
 import br.senac.tads.pi3.firesmoke.Model.Venda;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,10 +42,12 @@ public class Vender extends HttpServlet {
         Double valortotal = (Double) sessao.getAttribute("total");
         String filial = (String) sessao.getAttribute("filial");
         Venda venda = new Venda();
+        ComandaProdutoDAO comandaprodutodados = new ComandaProdutoDAO();
         VendaDAO vendadados = new VendaDAO();
 
         venda.setValorvenda(valortotal);
         vendadados.inserir(Integer.parseInt(idcomanda), nomecliente, valortotal, filial);
+        comandaprodutodados.deletarComanda(Integer.parseInt(idcomanda));
         request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }
