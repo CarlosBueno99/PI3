@@ -116,8 +116,6 @@ public class ProdutoDAO {
             stmt.setString(1, produto.getSku());
             stmt.execute();
             stmt.close();
-            System.out.println("TESTE 5 " + produto.getSku());
-            System.out.println("Produto " + produto.getNome() + " excluído com sucesso");
         } catch (SQLException e) {
             System.out.println("Produto " + produto.getNome() + "não foi excluído com sucesso" + e.getMessage());
         }

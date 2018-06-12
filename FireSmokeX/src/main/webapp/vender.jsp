@@ -128,6 +128,15 @@
                 <div class="col-md-6">
                     <div class="col-md-6">
                         <form action="PesquisaComanda" method="POST">
+                            <div class="col-md-6">
+                                <h1>Filial: </h1> <br>
+
+                                <select name="select">
+                                    <option value="São Paulo" selected> São Paulo </option> 
+                                    <option value="Rio Grande do Sul"> Rio Grande do Sul </option>
+                                    <option value="Rio de Janeiro"> Rio de Janeiro </option>
+                                </select>
+                            </div>
                             <span>Nº Comanda</span><input type="search" name="buscarComanda" style="width:45px"> <button>Buscar</button>
                         </form>
                         <br>
@@ -156,9 +165,7 @@
             </div>
 
 
-            <div class="col-md-6">
-                <img src="img/logo.png">	
-            </div>
+
         </div>
 
         <hr>
@@ -211,7 +218,7 @@
                     </tbody></table>
 
             </div><div class="col-md-6">
-                
+
                 <span style="font-size:30px">Valor total: </span><br>
                 <span style="font-size:30px">Recebido: </span><br>
                 <span style="font-size:30px">Troco: </span>
@@ -229,42 +236,42 @@
         <script src="../../../../assets/js/vendor/popper.min.js"></script>
         <script src="../../../../dist/js/bootstrap.min.js"></script>
         <script>
-            function mensagem(){
-                confirm("Deseja cancelar?")
-            }
-            </script>
+                        function mensagem() {
+                            confirm("Deseja cancelar?")
+                        }
+        </script>
         <script>
 
-                    function myFunction() {
-                        document.getElementById("myDropdown").classList.toggle("show");
-                    }
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
 
-                    function myFunction1() {
-                        document.getElementById("myDropdown1").classList.toggle("show");
-                    }
+            function myFunction1() {
+                document.getElementById("myDropdown1").classList.toggle("show");
+            }
 
-                    function myFunction2() {
-                        document.getElementById("myDropdown2").classList.toggle("show");
-                    }
+            function myFunction2() {
+                document.getElementById("myDropdown2").classList.toggle("show");
+            }
 
-                    function myFunction3() {
-                        document.getElementById("myDropdown3").classList.toggle("show");
-                    }
+            function myFunction3() {
+                document.getElementById("myDropdown3").classList.toggle("show");
+            }
 
 
-                    window.onclick = function (event) {
-                        if (!event.target.matches('.dropbtn')) {
+            window.onclick = function (event) {
+                if (!event.target.matches('.dropbtn')) {
 
-                            var dropdowns = document.getElementsByClassName("dropdown-content");
-                            var i;
-                            for (i = 0; i < dropdowns.length; i++) {
-                                var openDropdown = dropdowns[i];
-                                if (openDropdown.classList.contains('show')) {
-                                    openDropdown.classList.remove('show');
-                                }
-                            }
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
                         }
                     }
+                }
+            }
         </script>
     </form>
 

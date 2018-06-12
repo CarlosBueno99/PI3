@@ -37,11 +37,12 @@ public class vendaProdutoComanda extends HttpServlet {
         Cliente cliente = new Cliente();
         ComandaProduto comandaproduto = new ComandaProduto();
         int quantidade = Integer.parseInt(request.getParameter("qtde"));
+        String prod = comandaproduto.getNomeProd();
         HttpSession sessao = request.getSession();
         String pesquisa = (String) sessao.getAttribute("idcomanda");
         String busca = (String) sessao.getAttribute("skuprod");
         String nome = (String) sessao.getAttribute("nomecliente");
-
+        String nomeprod = (String) sessao.getAttribute("nome");
         comanda.setIdcomanda(Integer.parseInt(pesquisa));
         produto.setSku(busca);
         cliente.setNome(nome);
@@ -50,8 +51,6 @@ public class vendaProdutoComanda extends HttpServlet {
         ComandaProdutoDAO comandaprodutodados = new ComandaProdutoDAO();
 
         String msg = comandaprodutodados.inserir(comanda, produto, quantidade);
-        
-        System.out.println("Salvou " + msg);
         request.getRequestDispatcher("venderResult.jsp").forward(request, response);
     }
 

@@ -17,13 +17,14 @@ import java.sql.SQLException;
  * @author Guilherme Feitosa
  */
 public class VendaDAO {
-     private Connection conexao;
+
+    private Connection conexao;
 
     public String inserir(int idcomanda, String nomecliente, double valortotal, String filial) {
         String message = "";
         Venda venda = new Venda();
         try {
-            String sql = "INSERT INTO tbvendas(idcomanda, cliente, valorvenda, filial) VALUES(?,?,?,?,?)";
+            String sql = "INSERT INTO tbvendas(idcomanda, cliente, valorvenda, filial) VALUES(?,?,?,?)";
             conexao = ModuloConexao.conector();
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, idcomanda);
@@ -38,7 +39,8 @@ public class VendaDAO {
         System.out.println(message);
         return message;
     }
-     public ResultSet consulta() {
+
+    public ResultSet consulta() {
         Venda venda = new Venda();
         String message = "";
         ResultSet rs = null;
@@ -47,10 +49,10 @@ public class VendaDAO {
             java.sql.Statement stmt = conexao.createStatement();
             String sql = "SELECT * FROM tbvendas";
             rs = stmt.executeQuery(sql);
-           // while (rs.next()) {
-             //   venda.setIdcomanda(rs.getInt("idcomanda"));
-               // venda.setValortotal(rs.getDouble("valortotal"));
-               // venda.setStatuspagamento(rs.getBoolean("statuspagamento"));
+            // while (rs.next()) {
+            //   venda.setIdcomanda(rs.getInt("idcomanda"));
+            // venda.setValortotal(rs.getDouble("valortotal"));
+            // venda.setStatuspagamento(rs.getBoolean("statuspagamento"));
             //}
             //rs.close();
             //stmt.close();
@@ -60,4 +62,6 @@ public class VendaDAO {
         }
         return rs;
     }
+
+    
 }

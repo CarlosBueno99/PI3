@@ -1,6 +1,8 @@
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\Model\Cliente.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\DAO\ModuloConexao.java
+C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\ExcluirProdComanda.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\PesquisaComanda.java
+C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\Calcular.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\DAO\ProdutoDAO.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\Menu.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\cadastroCliente.java
@@ -26,6 +28,7 @@ C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\cadastroProduto.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\excluirFuncionario.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\pesquisaProduto.java
+C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\SelectVendas.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\login.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\cadastroFuncionario.java
 C:\Users\efeit\Desktop\PI3\FireSmokeX\src\main\java\br\senac\tads\pi3\firesmoke\servlets\editarFuncionario.java

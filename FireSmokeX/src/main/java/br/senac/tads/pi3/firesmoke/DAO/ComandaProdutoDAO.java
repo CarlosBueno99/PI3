@@ -8,6 +8,7 @@ package br.senac.tads.pi3.firesmoke.DAO;
 import br.senac.tads.pi3.firesmoke.Model.Comanda;
 import br.senac.tads.pi3.firesmoke.Model.ComandaProduto;
 import br.senac.tads.pi3.firesmoke.Model.Produto;
+import br.senac.tads.pi3.firesmoke.Model.Venda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,9 +36,9 @@ public class ComandaProdutoDAO {
             stmt.setInt(3, quantidade);
             stmt.execute();
             stmt.close();
-            message = "Cliente " + comanda.getIdcomanda() + " criado com sucesso";
+            message = "Comanda " + comanda.getIdcomanda() + " criado com sucesso";
         } catch (SQLException e) {
-            message = "Cliente " + comanda.getIdcomanda() + " não foi criado com sucesso. erro= " + e.getMessage();
+            message = "Comanda " + comanda.getIdcomanda() + " não foi criado com sucesso. erro= " + e.getMessage();
         }
         System.out.println(message);
         return message;
@@ -79,5 +80,43 @@ public class ComandaProdutoDAO {
 
         }
         return rs;
+    }
+
+    public String alterar(int quantidade, int idcomanda, String nomeprod) {
+        ComandaProduto comandaproduto = new ComandaProduto();
+        String message = "";
+        
+        try {
+            conexao = ModuloConexao.conector();
+            
+            String sql = "UPDATE tbprodutocomanda SET quantidade = ? WHERE idcomanda=? AND skuprod = ? ";
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, quantidade);
+            stmt.setInt(2, idcomanda);
+            stmt.setString(3, nomeprod);
+            stmt.execute();
+            stmt.close();
+
+        } catch (SQLException e) {
+            System.out.println("Não Alterou " + message);
+        }
+        return message;
+    }
+
+    public String deletar(int idcomanda, String nomeprod) {
+        Venda venda = new Venda();
+        String message = "";
+        try {
+            conexao = ModuloConexao.conector();
+            String sql = "DELETE FROM tbprodutocomanda WHERE idcomanda=? AND skuprod = ? ";
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, idcomanda);
+            stmt.setString(2, nomeprod);
+            stmt.execute();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Não deletou " + message);
+        }
+        return message;
     }
 }

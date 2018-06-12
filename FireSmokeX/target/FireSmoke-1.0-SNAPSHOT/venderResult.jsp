@@ -132,10 +132,10 @@
                         <form action="PesquisaComanda" method="POST">
 
                             <span>Nº Comanda</span> <input type="search" name="buscarComanda"  style="width:45px"><button>Buscar</button>
-                            <span> Comanda: </span><input value="${comandaProduto.idcomandaCom} " name="Comandabusca" style="width:45px" >
+                            <span> Comanda: </span><input value="${comandaProduto.idcomandaCom} " name="Comandabusca" style="width:45px">
                             <table border="1" height="30px" width="120px">
                                 <tr>
-                                    <th>Quantidade</th>
+                                    <th>Qtd</th>
                                     <th>Nome</th>
                                     <th>Tipo</th>
                                     <th>Marca</th>
@@ -162,6 +162,7 @@
 
                                 </tr>
                                 <%
+
                                         int qtde = Integer.parseInt(result.getString("quantidade"));
                                         double valor2 = Double.parseDouble(result.getString("precovenda"));
                                         double conta = valor2 * qtde;
@@ -174,11 +175,12 @@
 
                             </table>
 
+
                         </form>
                         <form action="PesquisaCliente" method="POST">
                             <input type="hidden" value="${comandaProduto.idcomandaCom}" >
                             <span>CPF do Cliente</span> <input type="search" name="pesqcliente" ><button>Buscar</button> 
-                            <span>Nome do Cliente</span><input type="text" value="${cliente.nome}" name="nomecliente">
+                            <span>Nome do Cliente</span><input type="text" value="${cliente.nome}" name="nomecliente" >
 
                         </form>
                     </div>
@@ -202,136 +204,153 @@
 
 
             <div class="col-md-6">
-                <img src="img/logo.png">	
+                <h1>Filial: </h1> <br>
+                <select name="select" id="filial">
+                    <option value="sp" selected> São Paulo </option> 
+                    <option value="rs"> Rio Grande do Sul </option>
+                    <option value="rj"> Rio de Janeiro </option>
+                </select>
             </div>
         </div>
 
         <hr>
 
-        <div class="row">
+
+
+        <div class="col-md-6">
+
 
             <div class="col-md-6">
 
+                <form action="PesquisaProd" method="POST">
+                    <input type="hidden" value="${comandaProduto.idcomandaCom}" name="Comandabusca">
+                    <input type="hidden" value="${cliente.nome}" name="nomecliente">
+                    <span>Produto </span>
+                    <input type="search" name="skuProd"> 
+                    <button action="PesquisaProd">»</button><br><br>
 
-                <div class="col-md-6">
+                    <table border="1">
+                        <tbody><tr><td height="30px" width="120px"> Nome </td> <td height="30px" width="120px"> Tipo </td> <td height="30px" width="120px"> Marca </td> <td height="30px" width="70px"> Preço </td></tr>
+                            <tr><td height="30px" width="120px">${comandaProduto.nomeProd}</td> <td height="30px" width="120px">${comandaProduto.tipoProd}</td> <td height="30px" width="120px">${comandaProduto.marcaProd}</td> <td height="30px" width="70px">${comandaProduto.precovendaProd}</td> </tr>
 
-                    <form action="PesquisaProd" method="POST">
-                        <input type="hidden" value="${comandaProduto.idcomandaCom}" name="Comandabusca">
-                        <input type="hidden" value="${cliente.nome}" name="nomecliente">
-                        <span>Produto </span>
-                        <input type="search" name="skuProd"> 
-                        <button action="PesquisaProd">»</button><br><br>
-
-                        <table border="1">
-                            <tbody><tr><td height="30px" width="120px"> Nome </td> <td height="30px" width="120px"> Tipo </td> <td height="30px" width="120px"> Marca </td> <td height="30px" width="70px"> Preço </td></tr>
-                                <tr><td height="30px" width="120px">${comandaProduto.nomeProd}</td> <td height="30px" width="120px">${comandaProduto.tipoProd}</td> <td height="30px" width="120px">${comandaProduto.marcaProd}</td> <td height="30px" width="70px">${comandaProduto.precovendaProd}</td> </tr>
-
-                            </tbody></table>
-                    </form>
-
-                    <br>
-                    <form action ="vendaProdutoComanda" method="POST" >
-                        <span>Quantidade</span> <input type="number" name="qtde" style="width:40px">
-
-                        <input type="hidden" value="${comandaProduto.idcomandaCom}" name="Comandabusca">
-                        <input type="hidden" value="${cliente.nome}" name="nomecliente">
-                        <input type="hidden" value="${produto.sku}" name="skuprod">
-                        <button action ="vendaProdutoComanda">Adicionar</button>   
-                    </form>
-
-
-                </div>
+                        </tbody></table>
+                </form>
 
                 <br>
-                <br>
+                <form action ="vendaProdutoComanda" method="POST" >
+                    <span>Quantidade</span> <input type="number" name="qtde" style="width:40px">
+
+                    <input type="hidden" value="${comandaProduto.idcomandaCom}" name="Comandabusca">
+                    <input type="hidden" value="${cliente.nome}" name="nomecliente">
+                    <input type="hidden" value="${produto.sku}" name="skuprod">
+                    <button action ="vendaProdutoComanda">Adicionar</button>   
+                </form>
+                <form action="ExcluirProdComanda" method="POST">
+                    <input type="hidden" name="qtde">
+                    <input type="hidden" value="${comandaProduto.idcomandaCom}" name="Comandabusca">
+                    <input type="hidden" value="${cliente.nome}" name="nomecliente">
+                    <input type="hidden" value="${produto.sku}" name="skuprod">
+
+                    <button action="ExcluirProdComanda">Excluir</button>    
+                </form>
 
 
             </div>
 
-            <div class="row">
-                <div class="col-md-6">
+            <br>
+            <br>
 
-                </div><div class="col-md-6">
-                    
-                        <span style="font-size:30px">Valor total: </span><input value="${total}" style="width:60px" > <br>
 
-                        <span style="font-size:30px">Recebido: </span><input type="text" name="recebido" style="width:60px"><br><button onclick="calcula();">Calcular</button>
+        </div>
 
-                        <span style="font-size:30px">Troco:  </span>
-                        <br><br>
+        <div class="row">
+            <div class="col-md-6">
 
-                    <form action ="Vender" method="POST">
-                        <button onclick="validaCampo();">Confirmar venda</button>
-                    </form>
-                    <form action="Menu" method="POST">
-                        <button action ="Menu" onclick="mensagem();">Cancelar</button>
-                    </form>
+            </div><div class="col-md-6">
 
-                </div>
+                <span style="font-size:30px">Valor total: </span><input value="${total}" style="width:60px" > <br>
+
+                <span style="font-size:30px">Recebido: </span><input type="text" name="recebido" style="width:60px"><br><button onclick="calcula();">Calcular</button>
+
+                <span style="font-size:30px">Troco:  </span><input name="troco">
+                <br><br>
+
+                <form action ="Vender" method="POST">
+                    <button onclick="receber();">Confirmar venda</button>
+                </form>
+                <form action="Menu" method="POST">
+                    <button action ="Menu" onclick="mensagem();">Cancelar</button>
+                </form>
+
             </div>
+        </div>
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-            <script src="../../../../assets/js/vendor/popper.min.js"></script>
-            <script src="../../../../dist/js/bootstrap.min.js"></script>
-            <script>
-                            function mensagem() {
-                                confirm("Deseja cancelar?")
-                            }
-                            function calcula() {
-                                var valor = document.getElementsByName("total");
-                                var recebido = document.getElementsByName("recebido");
-                                if (recebido >= valor) {
-                                    var total = recebido - valor;
-                                } else {
-                                    var total = 0.0;
-                                }
-                            }
-            </script>
-            <script>
-                function confirmacao() {
-                    alert("Venda efetuada com sucesso!")
-                }
-                function validaCampo() {
-                    if (document.getElementsByName("buscarComanda")).value == "" || document.getElementsByName("Comandabusca").value == "" || document.getElementsByName("pesqcliente").value == "" || document.getElementsByName("nomecliente").value == "" || document.getElementsByName("skuProd").value == "") {
-                        alert("Todos os campos são obrigatórios!")
-                    }
-                }
-            </script>
-            <script>
-
-                function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }
-
-                function myFunction1() {
-                    document.getElementById("myDropdown1").classList.toggle("show");
-                }
-
-                function myFunction2() {
-                    document.getElementById("myDropdown2").classList.toggle("show");
-                }
-
-                function myFunction3() {
-                    document.getElementById("myDropdown3").classList.toggle("show");
-                }
-
-
-
-                window.onclick = function (event) {
-                    if (!event.target.matches('.dropbtn')) {
-
-                        var dropdowns = document.getElementsByClassName("dropdown-content");
-                        var i;
-                        for (i = 0; i < dropdowns.length; i++) {
-                            var openDropdown = dropdowns[i];
-                            if (openDropdown.classList.contains('show')) {
-                                openDropdown.classList.remove('show');
-                            }
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="../../../../assets/js/vendor/popper.min.js"></script>
+        <script src="../../../../dist/js/bootstrap.min.js"></script>
+        <script>
+                        function mensagem() {
+                        confirm("Deseja cancelar?")
                         }
-                    }
-                }
-            </script>
+
+        </script>
+        <script>
+            function calcula() {
+            var valor = document.getElementsByName("total");
+            var recebido = document.getElementsByName("recebido");
+            if (recebido >= valor) {
+            var total = recebido - valor;
+            } else {
+            var total = 0.0;
+            }}
+            console.log("\nTroco " + total);
+            
+        </script>
+        <script>
+            function confirmacao() {
+            alert("Venda efetuada com sucesso!")
+            }
+            function validaCampo() {
+            if (document.getElementsByName("buscarComanda")).value == "" || document.getElementsByName("Comandabusca").value == "" || document.getElementsByName("pesqcliente").value == "" || document.getElementsByName("nomecliente").value == "" || document.getElementsByName("skuProd").value == "") {
+            alert("Todos os campos são obrigatórios!")
+            }
+            }
+        </script>
+        <script>
+
+            function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            function myFunction1() {
+            document.getElementById("myDropdown1").classList.toggle("show");
+            }
+
+            function myFunction2() {
+            document.getElementById("myDropdown2").classList.toggle("show");
+            }
+
+            function myFunction3() {
+            document.getElementById("myDropdown3").classList.toggle("show");
+            }
+
+
+
+            window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            }
+            }
+            }
+            }
+        </script>
 
     </body>
 </html>

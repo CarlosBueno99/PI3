@@ -47,6 +47,8 @@ public class PesquisaComanda extends HttpServlet {
         comandaProduto = new ComandaProduto();
         HttpSession sessao = request.getSession();
         
+        String filial = request.getParameter("select");
+        sessao.setAttribute("filial", filial);
         //PESQUISAR COMANDA
         String pesquisa = request.getParameter("buscarComanda");
 
